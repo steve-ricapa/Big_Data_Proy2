@@ -1,0 +1,1038 @@
+{
+  "api": {
+    "CVE-2021-44228:search": {
+      "status": 200,
+      "body": {
+        "items": [],
+        "total": 0,
+        "page": 1,
+        "page_size": 25
+      }
+    },
+    "CVE-2021-44228:detail": {
+      "status": 404,
+      "body": {
+        "detail": "CVE not found"
+      }
+    },
+    "CVE-2021-44228:graph": {
+      "status": 404,
+      "body": {
+        "detail": "CVE not found in graph"
+      }
+    },
+    "CVE-2024-0001:search": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "cve_id": "CVE-2024-0001",
+            "published": "2024-09-23T18:15:04.070000+00:00",
+            "last_modified": "2026-06-17T06:52:34.403000+00:00",
+            "month": "2024-09",
+            "year": 2024,
+            "status": "Analyzed",
+            "description": "A condition exists in FlashArray Purity whereby a local account intended for initial array configuration remains active potentially allowing a malicious actor to gain elevated privileges.",
+            "cvss": {
+              "version": "3.1",
+              "score": 9.8,
+              "severity": "CRITICAL",
+              "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "source": "nvd@nist.gov"
+            },
+            "severity": "CRITICAL",
+            "cwes": [
+              "CWE-1188"
+            ],
+            "products": [
+              {
+                "id": "[\"a\",\"purestorage\",\"purity//fa\"]",
+                "part": "a",
+                "vendor": "purestorage",
+                "product": "purity//fa"
+              }
+            ],
+            "cpes": [
+              {
+                "criteria": "cpe:2.3:a:purestorage:purity\\/\\/fa:*:*:*:*:*:*:*:*",
+                "product_id": "[\"a\",\"purestorage\",\"purity//fa\"]"
+              }
+            ],
+            "references": [
+              "https://purestorage.com/security"
+            ],
+            "content_hash": "14e99ede43d8e83284903a467f836cd3f752f4882102296a6e9888341e081bd0"
+          }
+        ],
+        "total": 1,
+        "page": 1,
+        "page_size": 25
+      }
+    },
+    "CVE-2024-0001:detail": {
+      "status": 200,
+      "body": {
+        "cve_id": "CVE-2024-0001",
+        "published": "2024-09-23T18:15:04.070000+00:00",
+        "last_modified": "2026-06-17T06:52:34.403000+00:00",
+        "month": "2024-09",
+        "year": 2024,
+        "status": "Analyzed",
+        "description": "A condition exists in FlashArray Purity whereby a local account intended for initial array configuration remains active potentially allowing a malicious actor to gain elevated privileges.",
+        "cvss": {
+          "version": "3.1",
+          "score": 9.8,
+          "severity": "CRITICAL",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "source": "nvd@nist.gov"
+        },
+        "severity": "CRITICAL",
+        "cwes": [
+          "CWE-1188"
+        ],
+        "products": [
+          {
+            "id": "[\"a\",\"purestorage\",\"purity//fa\"]",
+            "part": "a",
+            "vendor": "purestorage",
+            "product": "purity//fa"
+          }
+        ],
+        "cpes": [
+          {
+            "criteria": "cpe:2.3:a:purestorage:purity\\/\\/fa:*:*:*:*:*:*:*:*",
+            "product_id": "[\"a\",\"purestorage\",\"purity//fa\"]"
+          }
+        ],
+        "references": [
+          "https://purestorage.com/security"
+        ],
+        "raw_cve": {
+          "id": "CVE-2024-0001",
+          "sourceIdentifier": "psirt@purestorage.com",
+          "published": "2024-09-23T18:15:04.070",
+          "lastModified": "2026-06-17T06:52:34.403",
+          "vulnStatus": "Analyzed",
+          "cveTags": [],
+          "descriptions": [
+            {
+              "lang": "en",
+              "value": "A condition exists in FlashArray Purity whereby a local account intended for initial array configuration remains active potentially allowing a malicious actor to gain elevated privileges."
+            },
+            {
+              "lang": "es",
+              "value": "Existe una condici\u00f3n en FlashArray Purity por la cual una cuenta local destinada a la configuraci\u00f3n inicial de la matriz permanece activa, lo que potencialmente permite que un actor malintencionado obtenga privilegios elevados."
+            }
+          ],
+          "affected": [
+            {
+              "source": "psirt@purestorage.com",
+              "affectedData": [
+                {
+                  "vendor": "Pure Storage",
+                  "product": "FlashArray",
+                  "defaultStatus": "unaffected",
+                  "platforms": [
+                    "Purity"
+                  ],
+                  "versions": [
+                    {
+                      "version": "6.3.0",
+                      "lessThanOrEqual": "6.3.14",
+                      "versionType": "custom",
+                      "status": "affected"
+                    },
+                    {
+                      "version": "6.4.0",
+                      "lessThanOrEqual": "6.4.10",
+                      "versionType": "custom",
+                      "status": "affected"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+              "affectedData": [
+                {
+                  "vendor": "purestorage",
+                  "product": "flasharray",
+                  "defaultStatus": "unknown",
+                  "cpes": [
+                    "cpe:2.3:a:purestorage:flasharray:6.3.0:*:*:*:*:*:*:*"
+                  ],
+                  "versions": [
+                    {
+                      "version": "6.3.0",
+                      "lessThanOrEqual": "6.3.14",
+                      "versionType": "custom",
+                      "status": "affected"
+                    }
+                  ]
+                },
+                {
+                  "vendor": "purestorage",
+                  "product": "flasharray",
+                  "defaultStatus": "unknown",
+                  "cpes": [
+                    "cpe:2.3:a:purestorage:flasharray:6.4.0:*:*:*:*:*:*:*"
+                  ],
+                  "versions": [
+                    {
+                      "version": "6.4.0",
+                      "lessThanOrEqual": "6.4.10",
+                      "versionType": "custom",
+                      "status": "affected"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "metrics": {
+            "cvssMetricV31": [
+              {
+                "source": "psirt@purestorage.com",
+                "type": "Secondary",
+                "cvssData": {
+                  "version": "3.1",
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+                  "baseScore": 10.0,
+                  "baseSeverity": "CRITICAL",
+                  "attackVector": "NETWORK",
+                  "attackComplexity": "LOW",
+                  "privilegesRequired": "NONE",
+                  "userInteraction": "NONE",
+                  "scope": "CHANGED",
+                  "confidentialityImpact": "HIGH",
+                  "integrityImpact": "HIGH",
+                  "availabilityImpact": "HIGH"
+                },
+                "exploitabilityScore": 3.9,
+                "impactScore": 6.0
+              },
+              {
+                "source": "nvd@nist.gov",
+                "type": "Primary",
+                "cvssData": {
+                  "version": "3.1",
+                  "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                  "baseScore": 9.8,
+                  "baseSeverity": "CRITICAL",
+                  "attackVector": "NETWORK",
+                  "attackComplexity": "LOW",
+                  "privilegesRequired": "NONE",
+                  "userInteraction": "NONE",
+                  "scope": "UNCHANGED",
+                  "confidentialityImpact": "HIGH",
+                  "integrityImpact": "HIGH",
+                  "availabilityImpact": "HIGH"
+                },
+                "exploitabilityScore": 3.9,
+                "impactScore": 5.9
+              }
+            ],
+            "ssvcV203": [
+              {
+                "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+                "ssvcData": {
+                  "timestamp": "2024-09-23T17:51:47.992533Z",
+                  "id": "CVE-2024-0001",
+                  "options": [
+                    {
+                      "exploitation": "none"
+                    },
+                    {
+                      "automatable": "no"
+                    },
+                    {
+                      "technicalImpact": "total"
+                    }
+                  ],
+                  "role": "CISA Coordinator",
+                  "version": "2.0.3"
+                }
+              }
+            ]
+          },
+          "weaknesses": [
+            {
+              "source": "psirt@purestorage.com",
+              "type": "Secondary",
+              "description": [
+                {
+                  "lang": "en",
+                  "value": "CWE-1188"
+                }
+              ]
+            },
+            {
+              "source": "nvd@nist.gov",
+              "type": "Primary",
+              "description": [
+                {
+                  "lang": "en",
+                  "value": "CWE-1188"
+                }
+              ]
+            }
+          ],
+          "configurations": [
+            {
+              "nodes": [
+                {
+                  "operator": "OR",
+                  "negate": false,
+                  "cpeMatch": [
+                    {
+                      "vulnerable": true,
+                      "criteria": "cpe:2.3:a:purestorage:purity\\/\\/fa:*:*:*:*:*:*:*:*",
+                      "versionStartIncluding": "6.3.0",
+                      "versionEndIncluding": "6.3.14",
+                      "matchCriteriaId": "A81E5420-C4D6-42CD-93EB-0B0BCB01F918"
+                    },
+                    {
+                      "vulnerable": true,
+                      "criteria": "cpe:2.3:a:purestorage:purity\\/\\/fa:*:*:*:*:*:*:*:*",
+                      "versionStartIncluding": "6.4.0",
+                      "versionEndIncluding": "6.4.10",
+                      "matchCriteriaId": "07C73EC4-5F8C-422B-971F-0C8445E72145"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "references": [
+            {
+              "url": "https://purestorage.com/security",
+              "source": "psirt@purestorage.com",
+              "tags": [
+                "Vendor Advisory"
+              ]
+            }
+          ]
+        },
+        "content_hash": "14e99ede43d8e83284903a467f836cd3f752f4882102296a6e9888341e081bd0"
+      }
+    },
+    "CVE-2024-0001:graph": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "cve_id": "CVE-2024-0001",
+            "relationship": "REFERENCES",
+            "labels": [
+              "Reference"
+            ],
+            "entity": {
+              "url": "https://purestorage.com/security"
+            }
+          },
+          {
+            "cve_id": "CVE-2024-0001",
+            "relationship": "AFFECTS",
+            "labels": [
+              "Product"
+            ],
+            "entity": {
+              "id": "[\"a\",\"purestorage\",\"purity//fa\"]",
+              "name": "purity//fa",
+              "part": "a"
+            }
+          },
+          {
+            "cve_id": "CVE-2024-0001",
+            "relationship": "AFFECTS_CPE",
+            "labels": [
+              "CPE"
+            ],
+            "entity": {
+              "id": "cpe:2.3:a:purestorage:purity\\/\\/fa:*:*:*:*:*:*:*:*"
+            }
+          },
+          {
+            "cve_id": "CVE-2024-0001",
+            "relationship": "CLASSIFIED_AS",
+            "labels": [
+              "CWE"
+            ],
+            "entity": {
+              "id": "CWE-1188"
+            }
+          }
+        ],
+        "limit": 250
+      }
+    },
+    "ready": {
+      "status": 200,
+      "body": {
+        "status": "ready",
+        "checked": [
+          "mongodb",
+          "cassandra",
+          "neo4j"
+        ]
+      }
+    },
+    "stats": {
+      "status": 200,
+      "body": {
+        "as_of": "2026-11-11T03:01:47.586892+00:00",
+        "total_cves": 174734,
+        "rejected_cves": 4019,
+        "severity": {
+          "CRITICAL": 17894,
+          "HIGH": 64615,
+          "MEDIUM": 74203,
+          "LOW": 10115,
+          "UNKNOWN": 7828,
+          "NONE": 79
+        },
+        "severity_percent": {
+          "CRITICAL": 10.2407,
+          "HIGH": 36.9791,
+          "MEDIUM": 42.4663,
+          "LOW": 5.7888,
+          "UNKNOWN": 4.48,
+          "NONE": 0.0452
+        },
+        "monthly": {
+          "2021-06": 1,
+          "2021-09": 1,
+          "2021-10": 1,
+          "2022-01": 2,
+          "2022-03": 1,
+          "2022-04": 4,
+          "2022-08": 1,
+          "2022-12": 1,
+          "2023-02": 10,
+          "2023-03": 11,
+          "2023-04": 5,
+          "2023-05": 4,
+          "2023-06": 2,
+          "2023-07": 47,
+          "2023-08": 108,
+          "2023-10": 9,
+          "2023-11": 2,
+          "2023-12": 1,
+          "2024-01": 1143,
+          "2024-02": 1759,
+          "2024-03": 2640,
+          "2024-04": 3240,
+          "2024-05": 3386,
+          "2024-06": 2752,
+          "2024-07": 2894,
+          "2024-08": 2708,
+          "2024-09": 2420,
+          "2024-10": 3378,
+          "2024-11": 3776,
+          "2024-12": 3025,
+          "2025-01": 4150,
+          "2025-02": 2960,
+          "2025-03": 3953,
+          "2025-04": 4062,
+          "2025-05": 3759,
+          "2025-06": 3441,
+          "2025-07": 3846,
+          "2025-08": 3559,
+          "2025-09": 3916,
+          "2025-10": 3828,
+          "2025-11": 3076,
+          "2025-12": 4717,
+          "2026-01": 4691,
+          "2026-02": 4402,
+          "2026-03": 5976,
+          "2026-04": 5685,
+          "2026-05": 6731,
+          "2026-06": 7808,
+          "2026-07": 9905,
+          "2026-08": 12481,
+          "2026-09": 15012,
+          "2026-10": 17385,
+          "2026-11": 6059
+        },
+        "top_cwes": [
+          [
+            "CWE-79",
+            22861
+          ],
+          [
+            "CWE-89",
+            10249
+          ],
+          [
+            "CWE-862",
+            8869
+          ],
+          [
+            "CWE-284",
+            6476
+          ],
+          [
+            "CWE-416",
+            5321
+          ],
+          [
+            "CWE-22",
+            5044
+          ],
+          [
+            "CWE-74",
+            4814
+          ],
+          [
+            "CWE-787",
+            4750
+          ],
+          [
+            "CWE-125",
+            4537
+          ],
+          [
+            "CWE-352",
+            4276
+          ],
+          [
+            "CWE-94",
+            4142
+          ],
+          [
+            "CWE-200",
+            4003
+          ],
+          [
+            "CWE-78",
+            3665
+          ],
+          [
+            "CWE-863",
+            3378
+          ],
+          [
+            "CWE-20",
+            3358
+          ],
+          [
+            "CWE-122",
+            3218
+          ],
+          [
+            "CWE-918",
+            3154
+          ],
+          [
+            "CWE-639",
+            2964
+          ],
+          [
+            "CWE-121",
+            2908
+          ],
+          [
+            "CWE-476",
+            2844
+          ]
+        ],
+        "top_products": [
+          [
+            "[\"o\",\"linux\",\"linux_kernel\"]",
+            8140
+          ],
+          [
+            "[\"a\",\"google\",\"chrome\"]",
+            4337
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_server_2022\"]",
+            3854
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_server_2019\"]",
+            3671
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_server_2025\"]",
+            3632
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_11_24h2\"]",
+            3559
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_10_22h2\"]",
+            3482
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_10_21h2\"]",
+            3471
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_10_1809\"]",
+            3452
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_11_23h2\"]",
+            3359
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_server_2016\"]",
+            3131
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_10_1607\"]",
+            2916
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_11_25h2\"]",
+            2827
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_server_2012\"]",
+            2547
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_11_26h1\"]",
+            2535
+          ],
+          [
+            "[\"o\",\"apple\",\"macos\"]",
+            2060
+          ],
+          [
+            "[\"o\",\"microsoft\",\"windows_server_2022_23h2\"]",
+            1653
+          ],
+          [
+            "[\"o\",\"google\",\"android\"]",
+            1439
+          ],
+          [
+            "[\"o\",\"apple\",\"iphone_os\"]",
+            1241
+          ],
+          [
+            "[\"o\",\"apple\",\"ipados\"]",
+            1232
+          ]
+        ],
+        "top_vendors": [
+          [
+            "linux",
+            8140
+          ],
+          [
+            "microsoft",
+            6727
+          ],
+          [
+            "google",
+            5853
+          ],
+          [
+            "oracle",
+            4053
+          ],
+          [
+            "adobe",
+            2551
+          ],
+          [
+            "apple",
+            2361
+          ],
+          [
+            "ibm",
+            2042
+          ],
+          [
+            "apache",
+            1326
+          ],
+          [
+            "debian",
+            1147
+          ],
+          [
+            "tenda",
+            1137
+          ],
+          [
+            "mozilla",
+            999
+          ],
+          [
+            "dell",
+            945
+          ],
+          [
+            "phpgurukul",
+            846
+          ],
+          [
+            "samsung",
+            734
+          ],
+          [
+            "dlink",
+            728
+          ],
+          [
+            "totolink",
+            645
+          ],
+          [
+            "cisco",
+            620
+          ],
+          [
+            "redhat",
+            604
+          ],
+          [
+            "openclaw",
+            577
+          ],
+          [
+            "qualcomm",
+            566
+          ]
+        ],
+        "unique_affected_products": 23082,
+        "cvss_by_version": {
+          "3.1": {
+            "count": 121906,
+            "average": 6.9193
+          },
+          "4.0": {
+            "count": 43602,
+            "average": 6.2432
+          },
+          "3.0": {
+            "count": 1398,
+            "average": 7.3237
+          }
+        },
+        "modified_last_30_days": 59011,
+        "notes": [
+          "CVE no equivale a ataque confirmado",
+          "Productos \u00fanicos no equivalen a registros CPE",
+          "Promedios CVSS separados por versi\u00f3n; UNKNOWN no se imputa a cero"
+        ],
+        "graph": {
+          "nodes": 627477,
+          "relationships": 1488730
+        }
+      }
+    },
+    "keyword": {
+      "status": 200,
+      "body": {
+        "total": 174734,
+        "first_ids": [
+          "CVE-2020-9709",
+          "CVE-2021-20027",
+          "CVE-2021-20031"
+        ],
+        "q_appears_ignored": true
+      }
+    },
+    "severity": {
+      "status": 200,
+      "body": {
+        "items": [
+          {
+            "cve_id": "CVE-2022-22274",
+            "published": "2022-03-25T23:15:08.353000+00:00",
+            "last_modified": "2026-11-09T14:43:41.437000+00:00",
+            "month": "2022-03",
+            "year": 2022,
+            "status": "Modified",
+            "description": "A Stack-based buffer overflow vulnerability in the SonicOS via HTTP request allows a remote unauthenticated attacker to cause Denial of Service (DoS) or potentially results in code execution in the firewall.",
+            "cvss": {
+              "version": "3.1",
+              "score": 9.8,
+              "severity": "CRITICAL",
+              "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "source": "nvd@nist.gov"
+            },
+            "severity": "CRITICAL",
+            "cwes": [
+              "CWE-121",
+              "CWE-787"
+            ],
+            "products": [
+              {
+                "id": "[\"o\",\"sonicwall\",\"sonicos\"]",
+                "part": "o",
+                "vendor": "sonicwall",
+                "product": "sonicos"
+              },
+              {
+                "id": "[\"o\",\"sonicwall\",\"sonicosv\"]",
+                "part": "o",
+                "vendor": "sonicwall",
+                "product": "sonicosv"
+              }
+            ],
+            "cpes": [
+              {
+                "criteria": "cpe:2.3:o:sonicwall:sonicos:*:*:*:*:*:*:*:*",
+                "product_id": "[\"o\",\"sonicwall\",\"sonicos\"]"
+              },
+              {
+                "criteria": "cpe:2.3:o:sonicwall:sonicosv:*:*:*:*:*:*:*:*",
+                "product_id": "[\"o\",\"sonicwall\",\"sonicosv\"]"
+              }
+            ],
+            "references": [
+              "https://psirt.global.sonicwall.com/vuln-detail/SNWLID-2022-0003"
+            ],
+            "content_hash": "9aaef106c85358da05256c439cff882d4034935beca9ffcfc7b9fb0ff2c9feb0"
+          }
+        ],
+        "total": 17894,
+        "page": 1,
+        "page_size": 1
+      }
+    }
+  },
+  "databases": {
+    "CVE-2021-44228": {
+      "mongodb": {
+        "found": false,
+        "row": null
+      },
+      "cassandra": {
+        "found": false,
+        "content_hash": null
+      },
+      "neo4j": {
+        "found": false,
+        "rows": []
+      }
+    },
+    "CVE-2024-0001": {
+      "mongodb": {
+        "found": true,
+        "row": {
+          "cve_id": "CVE-2024-0001",
+          "cvss": {
+            "version": "3.1",
+            "score": 9.8,
+            "severity": "CRITICAL",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+            "source": "nvd@nist.gov"
+          },
+          "products": [
+            {
+              "id": "[\"a\",\"purestorage\",\"purity//fa\"]",
+              "part": "a",
+              "vendor": "purestorage",
+              "product": "purity//fa"
+            }
+          ],
+          "content_hash": "14e99ede43d8e83284903a467f836cd3f752f4882102296a6e9888341e081bd0"
+        }
+      },
+      "cassandra": {
+        "found": true,
+        "content_hash": "14e99ede43d8e83284903a467f836cd3f752f4882102296a6e9888341e081bd0"
+      },
+      "neo4j": {
+        "found": true,
+        "rows": [
+          {
+            "id": "CVE-2024-0001",
+            "hash": "14e99ede43d8e83284903a467f836cd3f752f4882102296a6e9888341e081bd0",
+            "relationships": 4
+          }
+        ]
+      }
+    }
+  },
+  "sample": {
+    "cve_id": "CVE-2024-0001",
+    "cvss": {
+      "version": "3.1",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "source": "nvd@nist.gov"
+    },
+    "products": [
+      {
+        "id": "[\"a\",\"purestorage\",\"purity//fa\"]",
+        "part": "a",
+        "vendor": "purestorage",
+        "product": "purity//fa"
+      }
+    ]
+  },
+  "mongodb_total": 174734,
+  "at": "2026-11-11T17:33:22.607650+00:00",
+  "logs": {
+    "mcp-remote": {
+      "read_exit": 0,
+      "error_labels": [
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ]
+      ]
+    },
+    "api": {
+      "read_exit": 0,
+      "error_labels": [
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ],
+        [
+          "404 Not Found"
+        ]
+      ]
+    },
+    "caddy": {
+      "read_exit": 0,
+      "error_labels": [
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ],
+        [
+          "invalid_token"
+        ]
+      ]
+    },
+    "mongodb": {
+      "read_exit": 0,
+      "error_labels": []
+    },
+    "cassandra": {
+      "read_exit": 0,
+      "error_labels": []
+    },
+    "neo4j": {
+      "read_exit": 0,
+      "error_labels": []
+    }
+  }
+}

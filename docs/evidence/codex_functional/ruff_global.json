@@ -1,0 +1,669 @@
+[
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 25,
+      "row": 60
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_airflow_ui_shots.py",
+    "fix": null,
+    "location": {
+      "column": 16,
+      "row": 60
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 60,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC210",
+    "end_location": {
+      "column": 36,
+      "row": 71
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_airflow_ui_shots.py",
+    "fix": null,
+    "location": {
+      "column": 14,
+      "row": 71
+    },
+    "message": "Async functions should not call blocking HTTP methods",
+    "name": "blocking-http-call-in-async-function",
+    "noqa_row": 71,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-http-call-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 19,
+      "row": 93
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_airflow_ui_shots.py",
+    "fix": null,
+    "location": {
+      "column": 9,
+      "row": 93
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 93,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 27,
+      "row": 103
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_airflow_ui_shots.py",
+    "fix": null,
+    "location": {
+      "column": 17,
+      "row": 103
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 103,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 19,
+      "row": 108
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_airflow_ui_shots.py",
+    "fix": null,
+    "location": {
+      "column": 9,
+      "row": 108
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 108,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 27,
+      "row": 25
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_closure_v2.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 114,
+            "row": 25
+          },
+          "location": {
+            "column": 114,
+            "row": 25
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 13,
+      "row": 25
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 25,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 31,
+      "row": 39
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_closure_v2.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 38,
+            "row": 39
+          },
+          "location": {
+            "column": 38,
+            "row": 39
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 17,
+      "row": 39
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 39,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 37,
+      "row": 24
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_component_health.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 104,
+            "row": 24
+          },
+          "location": {
+            "column": 104,
+            "row": 24
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 23,
+      "row": 24
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 24,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "I001",
+    "end_location": {
+      "column": 40,
+      "row": 18
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": {
+      "applicability": "safe",
+      "edits": [
+        {
+          "content": "import base64\nimport json\nimport subprocess\nimport tempfile\nimport time\nimport urllib.request\nfrom pathlib import Path\n\nimport websockets\nfrom cloud_test_credentials import load\n\n",
+          "end_location": {
+            "column": 1,
+            "row": 20
+          },
+          "location": {
+            "column": 1,
+            "row": 8
+          }
+        }
+      ],
+      "message": "Organize imports"
+    },
+    "location": {
+      "column": 1,
+      "row": 8
+    },
+    "message": "Import block is un-sorted or un-formatted",
+    "name": "unsorted-imports",
+    "noqa_row": 8,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/unsorted-imports"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 25,
+      "row": 49
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 16,
+      "row": 49
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 49,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC210",
+    "end_location": {
+      "column": 36,
+      "row": 61
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 14,
+      "row": 61
+    },
+    "message": "Async functions should not call blocking HTTP methods",
+    "name": "blocking-http-call-in-async-function",
+    "noqa_row": 61,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-http-call-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 23,
+      "row": 90
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 13,
+      "row": 90
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 90,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 31,
+      "row": 102
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 21,
+      "row": 102
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 102,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 27,
+      "row": 104
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 17,
+      "row": 104
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 104,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 23,
+      "row": 105
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 13,
+      "row": 105
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 105,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "ASYNC251",
+    "end_location": {
+      "column": 31,
+      "row": 112
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_dashboard_shots.py",
+    "fix": null,
+    "location": {
+      "column": 21,
+      "row": 112
+    },
+    "message": "Async functions should not call `time.sleep`",
+    "name": "blocking-sleep-in-async-function",
+    "noqa_row": 112,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blocking-sleep-in-async-function"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 37,
+      "row": 31
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_rebuild_check.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 44,
+            "row": 31
+          },
+          "location": {
+            "column": 44,
+            "row": 31
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 23,
+      "row": 31
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 31,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 23,
+      "row": 22
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_restore_three.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 30,
+            "row": 22
+          },
+          "location": {
+            "column": 30,
+            "row": 22
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 9,
+      "row": 22
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 22,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "BLE001",
+    "end_location": {
+      "column": 25,
+      "row": 165
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_restore_three.py",
+    "fix": null,
+    "location": {
+      "column": 16,
+      "row": 165
+    },
+    "message": "Do not catch blind exception: `Exception`",
+    "name": "blind-except",
+    "noqa_row": 165,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/blind-except"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 27,
+      "row": 169
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_restore_three.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 70,
+            "row": 169
+          },
+          "location": {
+            "column": 70,
+            "row": 169
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 13,
+      "row": 169
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 169,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 27,
+      "row": 170
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\cloud_restore_three.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 70,
+            "row": 170
+          },
+          "location": {
+            "column": 70,
+            "row": 170
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 13,
+      "row": 170
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 170,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 27,
+      "row": 16
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\validate_rebuild_inputs.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 59,
+            "row": 16
+          },
+          "location": {
+            "column": 59,
+            "row": 16
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 13,
+      "row": 16
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 16,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 23,
+      "row": 22
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\validate_rebuild_inputs.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 54,
+            "row": 22
+          },
+          "location": {
+            "column": 54,
+            "row": 22
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 9,
+      "row": 22
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 22,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 23,
+      "row": 24
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\validate_rebuild_inputs.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 51,
+            "row": 24
+          },
+          "location": {
+            "column": 51,
+            "row": 24
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 9,
+      "row": 24
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 24,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  },
+  {
+    "cell": null,
+    "code": "PLW1510",
+    "end_location": {
+      "column": 23,
+      "row": 28
+    },
+    "filename": "C:\\Users\\steve\\Desktop\\Big_Data2\\scripts\\validate_rebuild_inputs.py",
+    "fix": {
+      "applicability": "displayonly",
+      "edits": [
+        {
+          "content": "check=False, ",
+          "end_location": {
+            "column": 98,
+            "row": 28
+          },
+          "location": {
+            "column": 98,
+            "row": 28
+          }
+        }
+      ],
+      "message": "Add explicit `check=False`"
+    },
+    "location": {
+      "column": 9,
+      "row": 28
+    },
+    "message": "`subprocess.run` without explicit `check` argument",
+    "name": "subprocess-run-without-check",
+    "noqa_row": 28,
+    "severity": "error",
+    "url": "https://docs.astral.sh/ruff/rules/subprocess-run-without-check"
+  }
+]

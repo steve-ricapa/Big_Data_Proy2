@@ -1,0 +1,67 @@
+# Datos: conservar únicamente marcadores y documentación, nunca datasets originales.
+/data/**
+!/data/**/
+!/data/**/.gitkeep
+!/data/**/*.md
+/nvdcve-*.json
+*.json.gz
+
+# Credenciales y configuración local
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*credentials*.json
+*service-account*.json
+*.pem
+*.key
+
+# Python y herramientas
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+.ipynb_checkpoints/
+
+# Estado de infraestructura y datos de ejecución
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+plan.txt
+crash.log
+*.hcl.backup
+*.tfvars
+*.tfvars.json
+!*.tfvars.example
+airflow/airflow.db
+airflow/airflow.cfg
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.bak
+volumes/
+backups/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Planes generados y evidencia con cadenas de autenticación: solo uso local.
+tfplan.*
+/docs/evidence/airflow_dependency_audit.json
+/docs/evidence/gcp_deployment_plan_latest.txt
+/docs/evidence/revalidation_terraform_plan.txt
+/docs/evidence/terraform_plan.txt

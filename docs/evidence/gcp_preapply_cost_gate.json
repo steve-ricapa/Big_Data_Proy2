@@ -1,0 +1,28 @@
+{
+  "region": "us-central1",
+  "machine_type": "e2-standard-4",
+  "vm_hourly_official": 0.13402284,
+  "daily_items_usd": {
+    "vm_24h": 3.21655,
+    "130GiB_zonal_pd_balanced": 0.4274,
+    "external_IPv4_24h": 0.12,
+    "gcs_raw_processed_backups_allowance": 0.05,
+    "artifact_registry_5GB": 0.01644,
+    "secret_manager_allowance": 0.03,
+    "logging_monitoring_allowance": 0.1,
+    "egress_1GB_per_day_allowance": 0.12
+  },
+  "daily_estimate_usd": 4.0804,
+  "contingency_percent": 20,
+  "daily_with_contingency_usd": 4.8965,
+  "target_daily_usd": 5,
+  "within_target": true,
+  "assumptions": [
+    "No Cloud Run, NAT, load balancer, GPU or additional VM",
+    "130GiB zonal disks; do not use regional replicated disk SKU",
+    "Low-traffic academic use, up to 1GB/day internet egress",
+    "Backups <=30GiB including soft-delete retention",
+    "Not a guaranteed spending cap; public access needs authentication and bounded requests"
+  ],
+  "source": "docs/evidence/gcp_official_skus.json and official network/storage/secret pricing pages"
+}

@@ -1,0 +1,537 @@
+{
+  "at": "2026-11-11T05:25:52.704505+00:00",
+  "docker": [
+    {
+      "service": "mcp-remote",
+      "state": "running",
+      "health": "NO_HEALTHCHECK",
+      "ports": {},
+      "image": "ti-mcp:local"
+    },
+    {
+      "service": "mongodb",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "27017/tcp": null
+      },
+      "image": "mongo:8.0.12"
+    },
+    {
+      "service": "keycloak",
+      "state": "running",
+      "health": "NO_HEALTHCHECK",
+      "ports": {
+        "8080/tcp": null,
+        "8443/tcp": null,
+        "9000/tcp": null
+      },
+      "image": "quay.io/keycloak/keycloak:26.8.2"
+    },
+    {
+      "service": "keycloak-db",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "5432/tcp": null
+      },
+      "image": "postgres:16.10-bookworm"
+    },
+    {
+      "service": "airflow3-scheduler",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "8080/tcp": null
+      },
+      "image": "ti-airflow:3.4-local"
+    },
+    {
+      "service": "airflow3-api",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18081"
+          }
+        ]
+      },
+      "image": "ti-airflow:3.4-local"
+    },
+    {
+      "service": "caddy",
+      "state": "running",
+      "health": "NO_HEALTHCHECK",
+      "ports": {
+        "2019/tcp": null,
+        "443/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "443"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "443"
+          }
+        ],
+        "443/udp": null,
+        "80/tcp": [
+          {
+            "HostIp": "0.0.0.0",
+            "HostPort": "80"
+          },
+          {
+            "HostIp": "::",
+            "HostPort": "80"
+          }
+        ]
+      },
+      "image": "caddy:2.10.2-alpine"
+    },
+    {
+      "service": "api",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "8000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18000"
+          }
+        ]
+      },
+      "image": "ti-app:local"
+    },
+    {
+      "service": "dashboard",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "8501/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18501"
+          }
+        ]
+      },
+      "image": "ti-app:local"
+    },
+    {
+      "service": "airflow3-dag-processor",
+      "state": "running",
+      "health": "NO_HEALTHCHECK",
+      "ports": {
+        "8080/tcp": null
+      },
+      "image": "ti-airflow:3.4-local"
+    },
+    {
+      "service": "airflow3-postgres",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "5432/tcp": null
+      },
+      "image": "postgres:16.10-bookworm"
+    },
+    {
+      "service": "cassandra",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "7000/tcp": null,
+        "7001/tcp": null,
+        "7199/tcp": null,
+        "9042/tcp": null,
+        "9160/tcp": null
+      },
+      "image": "cassandra:4.1.9"
+    },
+    {
+      "service": "neo4j",
+      "state": "running",
+      "health": "healthy",
+      "ports": {
+        "7473/tcp": null,
+        "7474/tcp": null,
+        "7687/tcp": null
+      },
+      "image": "neo4j:5.26.12-community"
+    }
+  ],
+  "airflow": {
+    "version": "3.4.0",
+    "paused": false,
+    "active_runs": [],
+    "latest_run": {
+      "run_id": "scheduled__2026-11-11T03:00:00+00:00",
+      "state": "success",
+      "start": "2026-11-11 03:00:46.465455+00:00",
+      "end": "2026-11-11 03:02:32.301134+00:00",
+      "duration_seconds": 105.835679
+    },
+    "latest_success": {
+      "run_id": "scheduled__2026-11-11T03:00:00+00:00",
+      "state": "success",
+      "start": "2026-11-11 03:00:46.465455+00:00",
+      "end": "2026-11-11 03:02:32.301134+00:00",
+      "duration_seconds": 105.835679
+    },
+    "tasks": [
+      {
+        "task": "calculate_kpis",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 8.011663
+      },
+      {
+        "task": "extract",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 27.130753
+      },
+      {
+        "task": "verify",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 34.415102
+      },
+      {
+        "task": "validate",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 1.282534
+      },
+      {
+        "task": "load_mongodb",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 3.527972
+      },
+      {
+        "task": "load_cassandra",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 10.455403
+      },
+      {
+        "task": "load_neo4j",
+        "state": "success",
+        "try": 1,
+        "duration_seconds": 9.835106
+      }
+    ]
+  },
+  "databases": {
+    "mongodb": {
+      "records": 174734,
+      "unique": 174734,
+      "duplicate_ids": 0,
+      "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1",
+      "unique_index": true
+    },
+    "cassandra": {
+      "records": 174734,
+      "unique": 174734,
+      "duplicate_ids": 0,
+      "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1"
+    },
+    "neo4j": {
+      "records": 174734,
+      "unique": 174734,
+      "duplicate_ids": 0,
+      "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1",
+      "relationships": 1488730
+    }
+  },
+  "latest_nvd_manifest": {
+    "run_dir": "/opt/project/data/staging/1a79aee22c2a84d0b0b7",
+    "sources": [
+      "/opt/project/data/staging/1a79aee22c2a84d0b0b7/nvd_sync/window-00000-page-00000000.json",
+      "/opt/project/data/staging/1a79aee22c2a84d0b0b7/nvd_sync/window-00000-page-00002000.json"
+    ],
+    "limit": 0,
+    "started_at": "2026-11-11T03:01:14.006777+00:00",
+    "stages": {
+      "nvd_sync": {
+        "from": "2026-11-10T19:51:09.307664+00:00",
+        "through": "2026-11-11T02:55:53.733106+00:00",
+        "pages": [
+          "window-00000-page-00000000.json",
+          "window-00000-page-00002000.json"
+        ],
+        "records": 2335,
+        "requests": 2,
+        "retries": 0,
+        "complete": true
+      },
+      "validate": {
+        "seen": 2335,
+        "invalid": 0,
+        "duplicates": 0,
+        "unique_valid": 2335
+      },
+      "mongodb": {
+        "seen": 2335,
+        "new": 127,
+        "modified": 802,
+        "unchanged": 1406,
+        "stale": 0,
+        "written": 929,
+        "batches_committed": 12,
+        "total_in_engine": 174734,
+        "seconds": 3.24
+      },
+      "cassandra": {
+        "seen": 2335,
+        "new": 127,
+        "modified": 802,
+        "unchanged": 1406,
+        "stale": 0,
+        "written": 929,
+        "batches_committed": 12,
+        "total_in_engine": 174734,
+        "seconds": 10.179
+      },
+      "neo4j": {
+        "seen": 2335,
+        "new": 127,
+        "modified": 802,
+        "unchanged": 1406,
+        "stale": 0,
+        "written": 929,
+        "batches_committed": 12,
+        "total_in_engine": 174734,
+        "seconds": 9.369
+      },
+      "kpis": {
+        "total_cves": 174734,
+        "as_of": "2026-11-11T03:01:47.586892+00:00"
+      },
+      "verify": {
+        "counts": {
+          "mongodb": 174734,
+          "cassandra": 174734,
+          "neo4j": 174734
+        },
+        "fingerprints": {
+          "mongodb": {
+            "records": 174734,
+            "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1"
+          },
+          "cassandra": {
+            "records": 174734,
+            "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1"
+          },
+          "neo4j": {
+            "records": 174734,
+            "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1"
+          }
+        }
+      }
+    }
+  },
+  "backup_validation.json": {
+    "started_at": "2026-11-11T02:01:30.278148+00:00",
+    "type": "coordinated-cold-volumes",
+    "directory": "/srv/ti-data/backups/20261111T020125",
+    "archives": [
+      {
+        "volume": "threat-intelligence_mongodb_data",
+        "file": "mongodb_data.tar.gz",
+        "bytes": 252133386,
+        "sha256": "445e79db649650446a78ee9444f30011e21c73b45f77e2287fb2c06664830be9",
+        "members": 149
+      },
+      {
+        "volume": "threat-intelligence_cassandra_data",
+        "file": "cassandra_data.tar.gz",
+        "bytes": 191039543,
+        "sha256": "3e9cd225278a9943ada193c57e2903eae9e58e27680a6a308320b53945a40440",
+        "members": 530
+      },
+      {
+        "volume": "threat-intelligence_neo4j_data",
+        "file": "neo4j_data.tar.gz",
+        "bytes": 218420566,
+        "sha256": "0a2c7d561ccb9ead6faab7d74e0e0a5b1f0ccbf5a5c49be0d3f7c03c6500f86e",
+        "members": 120
+      },
+      {
+        "volume": "threat-intelligence_airflow3_postgres",
+        "file": "airflow3_postgres.tar.gz",
+        "bytes": 12314279,
+        "sha256": "a0266bd1cf3587c980d2900dc638adc62c946a2b6d34a27534bf8ee898842933",
+        "members": 1630
+      },
+      {
+        "volume": "threat-intelligence_checkpoint_data",
+        "file": "checkpoint_data.tar.gz",
+        "bytes": 57664372,
+        "sha256": "40619eb9171f194b830bdb9e66e5d22fb23baa825d421b214d1abcae23c8a98c",
+        "members": 3
+      },
+      {
+        "volume": "threat-intelligence_airflow3_auth",
+        "file": "airflow3_auth.tar.gz",
+        "bytes": 347,
+        "sha256": "086c7ce5915956febee91abe3492ecf078fa4ed2d07e47a619ab0fb99d60c61f",
+        "members": 2
+      },
+      {
+        "volume": "threat-intelligence_keycloak_postgres",
+        "file": "keycloak_postgres.tar.gz",
+        "bytes": 9900080,
+        "sha256": "0187440267577b530fa88bfe9f0040d5b39c950d3ac95ac8fec9e896c90e49f8",
+        "members": 1802
+      },
+      {
+        "volume": "threat-intelligence_caddy_data",
+        "file": "caddy_data.tar.gz",
+        "bytes": 5150,
+        "sha256": "6c3b9be8ee1585218f72ad091041443559214b2fa9fc9484a283d034897fec53",
+        "members": 18
+      },
+      {
+        "volume": "threat-intelligence_caddy_config",
+        "file": "caddy_config.tar.gz",
+        "bytes": 1178,
+        "sha256": "445674e5db742bafb7562c0ea063664757aa5b8d0d83a34c67ec52a13a7d2523",
+        "members": 3
+      }
+    ],
+    "status": "SUCCESS",
+    "finished_at": "2026-11-11T02:04:13.823100+00:00"
+  },
+  "cloud_backup_upload.json": {
+    "status": "SUCCESS",
+    "directory": "/srv/ti-data/backups/20261111T020125",
+    "objects": [
+      {
+        "object": "backups/20261111T020125/airflow3_auth.tar.gz",
+        "bytes": 347,
+        "sha256": "086c7ce5915956febee91abe3492ecf078fa4ed2d07e47a619ab0fb99d60c61f",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/airflow3_postgres.tar.gz",
+        "bytes": 12314279,
+        "sha256": "a0266bd1cf3587c980d2900dc638adc62c946a2b6d34a27534bf8ee898842933",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/caddy_config.tar.gz",
+        "bytes": 1178,
+        "sha256": "445674e5db742bafb7562c0ea063664757aa5b8d0d83a34c67ec52a13a7d2523",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/caddy_data.tar.gz",
+        "bytes": 5150,
+        "sha256": "6c3b9be8ee1585218f72ad091041443559214b2fa9fc9484a283d034897fec53",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/cassandra_data.tar.gz",
+        "bytes": 191039543,
+        "sha256": "3e9cd225278a9943ada193c57e2903eae9e58e27680a6a308320b53945a40440",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/checkpoint_data.tar.gz",
+        "bytes": 57664372,
+        "sha256": "40619eb9171f194b830bdb9e66e5d22fb23baa825d421b214d1abcae23c8a98c",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/configuration.tar.gz",
+        "bytes": 217414,
+        "sha256": "3551ee599096aabcfc6e615d9340a1e871aeae7dd55bbbc69f806da2552c992d",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/keycloak_postgres.tar.gz",
+        "bytes": 9900080,
+        "sha256": "0187440267577b530fa88bfe9f0040d5b39c950d3ac95ac8fec9e896c90e49f8",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/manifest.json",
+        "bytes": 2339,
+        "sha256": "b9ae8db4faede9c9c8587cdf2ef273964d88d1717a45db17c306485ba959ec14",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/mongodb_data.tar.gz",
+        "bytes": 252133386,
+        "sha256": "445e79db649650446a78ee9444f30011e21c73b45f77e2287fb2c06664830be9",
+        "uploaded": true
+      },
+      {
+        "object": "backups/20261111T020125/neo4j_data.tar.gz",
+        "bytes": 218420566,
+        "sha256": "0a2c7d561ccb9ead6faab7d74e0e0a5b1f0ccbf5a5c49be0d3f7c03c6500f86e",
+        "uploaded": true
+      }
+    ],
+    "retention": "GCS lifecycle7d + soft-delete7d; local preserved",
+    "dag_originally_paused": false
+  },
+  "backup_restore_validation.json": {
+    "at": "2026-11-10T22:09:13.999351+00:00",
+    "status": "SUCCESS",
+    "archive": "/srv/ti-data/backups/20261110T215846/mongodb_data.tar.gz",
+    "sha256_valid": true,
+    "source_volume_untouched": true,
+    "restore_volume": "ti-restore-mongo-20261110t220854",
+    "restore_container": "ti-restore-mongo-20261110t220854",
+    "network": "none",
+    "expected_from_run": "/opt/project/data/staging/16fdee78b694a3ce57e7",
+    "restored": {
+      "records": 174607,
+      "sha256_sum": "1f3fe1f5ed51962dca77b6d039f3d7f77eedd6c0fc8736e5f71883e1ac33facf"
+    },
+    "matches_latest_verify_fingerprint": true
+  },
+  "backup_archive_hash_matches": true,
+  "restore_container_state": "exited",
+  "secret_permissions": {
+    "directory_mode": "0o700",
+    "world_readable_names": [
+      "mcp-oauth-client-secret",
+      "mongodb-writer-uri",
+      "cassandra-writer-password",
+      "airflow3-jwt",
+      "web-password-hash",
+      "postgres-password",
+      "keycloak-realm.json",
+      "keycloak-user-password",
+      "keycloak-db-password",
+      "mongodb-writer-password",
+      "neo4j-password",
+      "neo4j-auth",
+      "cassandra-reader-password",
+      "mongodb-uri",
+      "cassandra-admin-password",
+      "mongodb-reader-uri",
+      "keycloak-admin-password",
+      "airflow3-db-uri",
+      "airflow3-passwords",
+      "public.env",
+      "web-password",
+      "airflow-web-key",
+      "mongodb-root-password",
+      "airflow-admin-password",
+      "airflow-db-uri",
+      "mongodb-reader-password",
+      "airflow-fernet-key"
+    ],
+    "note": "Only permissions inspected; no contents emitted"
+  },
+  "listeners": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nLISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*          \nLISTEN 0      4096         0.0.0.0:5355       0.0.0.0:*          \nLISTEN 0      4096       127.0.0.1:18081      0.0.0.0:*          \nLISTEN 0      4096       127.0.0.1:18000      0.0.0.0:*          \nLISTEN 0      20         127.0.0.1:25         0.0.0.0:*          \nLISTEN 0      4096         0.0.0.0:443        0.0.0.0:*          \nLISTEN 0      128          0.0.0.0:22         0.0.0.0:*          \nLISTEN 0      4096         0.0.0.0:80         0.0.0.0:*          \nLISTEN 0      4096      127.0.0.54:53         0.0.0.0:*          \nLISTEN 0      4096       127.0.0.1:18501      0.0.0.0:*          \nLISTEN 0      20             [::1]:25            [::]:*          \nLISTEN 0      4096            [::]:5355          [::]:*          \nLISTEN 0      4096            [::]:443           [::]:*          \nLISTEN 0      128             [::]:22            [::]:*          \nLISTEN 0      4096            [::]:80            [::]:*          \n",
+  "networks": true,
+  "timers": "NEXT                        LEFT     LAST                        PASSED       UNIT            ACTIVATES\nWed 2026-11-11 05:26:52 UTC 36s left Wed 2026-11-11 05:21:45 UTC 4min 30s ago ti-health.timer ti-health.service\nThu 2026-11-12 02:00:13 UTC 20h left Wed 2026-11-11 02:01:14 UTC 3h 25min ago ti-backup.timer ti-backup.service\n\n2 timers listed.\n",
+  "backup_service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+}

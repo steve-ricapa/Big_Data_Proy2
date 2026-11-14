@@ -1,0 +1,125 @@
+{
+  "at": "2026-11-11T05:39:22.196886+00:00",
+  "counts": {
+    "mongodb": {
+      "records": 174734,
+      "unique": 174734,
+      "duplicate_ids": 0,
+      "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1",
+      "unique_index": true
+    },
+    "cassandra": {
+      "records": 174734,
+      "unique": 174734,
+      "duplicate_ids": 0,
+      "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1"
+    },
+    "neo4j": {
+      "records": 174734,
+      "unique": 174734,
+      "duplicate_ids": 0,
+      "sha256_sum": "5d8d4de4bebf0d1cb4251cc7e7cc8c0e12fa255e13146ac5bd796e28581d02b1",
+      "relationships": 1488730
+    }
+  },
+  "cloud_tests": {
+    "passed": 55,
+    "failed": 0,
+    "skipped": 0,
+    "image": "ti-v2-test:verification"
+  },
+  "local_tests": {
+    "passed": 47,
+    "skipped": 8,
+    "scope": "Windows, integration disabled"
+  },
+  "academic": {
+    "verified": 17,
+    "total": 17,
+    "percent": 100,
+    "scope": "Original functional/documentary criteria; controlled Docker builds, not fresh-VM/bitwise reproduction"
+  },
+  "cloud_checklist": {
+    "verified": 13,
+    "total": 15,
+    "percent": 86.7,
+    "partial": [
+      "Docker native healthchecks 9/13; 4 external probes active",
+      "Billing budget visibility denied 403"
+    ]
+  },
+  "bundle_exclusions_verified": true,
+  "restore_snapshot_records": 174607,
+  "chatgpt_account_connected": false,
+  "infrastructure_recreated": false,
+  "limits": [
+    "No Terraform apply/destroy or VM recreation",
+    "No clean-host or bit-identical rebuild guarantee",
+    "Four native healthchecks deferred to authorized recreation; external probes run now",
+    "ChatGPT owner connection and Billing budget IAM remain external"
+  ],
+  "evidence_sha256": {
+    "browser.json": "162c59c18f2838fb60aefadde2593bfbf52a93c97132ac48e50e95397d26a8b5",
+    "browser.log": "9ea14028ed7c95b613bdbea43fc6996a3dccae62719f9a6f63b41b1b3c8ef893",
+    "build_airflow.log": "0bad21e46f4800b547411c266b2f0da4330cdb74263dd02f6b887086866cd61f",
+    "build_app.log": "443d8a723e99e7a879fa55a6630a5976dac86657096e83998e531ea0c55f846e",
+    "build_mcp.log": "d56618ccd57e5fca97a4ef5515ff468b338976a4bc19a4592823ce8c41ca6493",
+    "build_test.log": "b33a90dcc348ba96aaf9a379ef5d645d18791e2d6e2f4114ff96f8ec90173734",
+    "cloud_regression.log": "3f69ae594cf7e93146ffa21cbaefab6d67c7314fb4523c440a286c1b22c08255",
+    "cloud_regression_rebuilt.log": "83644df8cc1bb46f09c4844f19c27de290a1dd1032576735632d1831a2f71fe4",
+    "cloud_regression_retry.log": "2286e771782e37d1dc7ae1a1f9ad3bed2be16ef12faf598d0dc6df3a1864592a",
+    "cloud_tests.log": "5235f6418f7dac4c53edf24adeba75134de870bd558eadb885d11c589a13cdc8",
+    "cloud_tests.xml": "935aff5234b31e4a9e6cae4e4afd692a7c6c1d54a11f49b0e06916725a1ca837",
+    "component_health.json": "4f4c9e480be135108ff86fde9bc922925da9c349dc8940ded5faa5bd7b0cca96",
+    "component_health.log": "f0665a45afee9b6a19cffea27a7ede2493b469d2babdcf68a0fbf2f9d3ba1754",
+    "component_health_final.log": "1b55a4f66617585c8fcf16accf20f12d67fea927a66ea8ec32d97515118c7e98",
+    "crud.json": "f92e5f7b330010711f70c5bac3d2546b52b69e265c3eecea87596679a0c866f2",
+    "crud.log": "9d5abf05388af69d4610c4946a2c121dc90ff988deabc6e7849e9572ce47ff7c",
+    "dag_after_restore.json": "c51fbb47b306a275d011b1551b3a033b92759bdf088e8c23137b98d67ba59913",
+    "disk_preflight.txt": "b60c3897773bc26822baebc55ec41a7b7aa7b99c0daebe52a50b806e0e4ffbe2",
+    "dockerignore_upload.log": "82c8fd4677aca1bb74a4c263c2553e7d39e93efc84014f7dbb80394f1ee2065b",
+    "docker_version.txt": "9c4a0ee8e74c1457c502043aed5fa3fa85852cb3f6bb6682fa415aa3357f19dc",
+    "final_scripts_upload.log": "034be12e57522c4a018145667018334b4fe29614f0a69db8e7dfa478ff7fe491",
+    "final_state.json": "6b3f3f567ed81a4193a0270db6ba748c9c6484bdeed5eb0f9d728dacb2eb1201",
+    "gcp_inventory.json": "af46dfba5898486a493fe89c804761670fa3d8fba910f19de403636dc1dfd6fc",
+    "gcp_inventory.log": "1f61737579f20f98f6e33862b169cbdeefa5fe2eabb4b3e08a62a3eed66308d8",
+    "health_timer_install.log": "278464e8bda1ec8d3be856b15761778e5b11b58ece2234eff65ebd30df935ddd",
+    "http.json": "2103ff9b5637e706144831e792c075402e3a8e5ae21d7fbab76d2061a8a818c3",
+    "http.log": "4d287845c4c9cfd3a6dae5d0a5f81f334e5bd28ba6bb115322094f419ef5ac25",
+    "input_validation.json": "f11f5ac49c1fbe8e4034ccdcdac641515dbd0713ede9d397f3c0c6d521f0b92d",
+    "input_validation.log": "87622412378b011cec87a6e1c9f23fb987d76cb9e3a7d7e58b47fe2dc2beb31b",
+    "input_validation_retry.log": "eb2b27cb29aab81102490bd99a6f41fb5404f9b81058d59ac6bb0f16b6447df6",
+    "install.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "latest_backup.json": "b9ae8db4faede9c9c8587cdf2ef273964d88d1717a45db17c306485ba959ec14",
+    "local_tests.log": "c041892fd8332b75d46059953964c5ade64b160b4ae605e3ef5c6c1010b8a6fc",
+    "mcp.json": "50cae8baf51171b82947a2bd76ab5005d3ddb5c8fafb5cdebe4e57de1ee2d1b5",
+    "mcp.log": "f340c475405fd1abde585d2bbde39fb2c3a7efbe23c4ab2540a29a95510ded18",
+    "monitoring_live.log": "d068451688a63354b35d1b6a205c7cf4acaff62080f6098e5124a3f75ba99497",
+    "monitor_final_upload.log": "011293cc459afd6ef3208c28818657c3591321e832efa5b045226d456a94cec7",
+    "quality.json": "6343111bad4a534f8de7fdbf437e5294127a6f6972af48f86af522321def5655",
+    "rebuild.json": "25a92b77c2c67175bdf9dcb342921c2ebb0958465a083027a2a72b925ee21f8e",
+    "rebuild.log": "a391473531202a0645d0921fcb460dc1195927becb40a8fa9661471aa93080b8",
+    "rebuild_initial.json": "10f15052b3a290e8b366bd16433b2638a29c90a0ab9d2e7d007c713dac0f23fb",
+    "rebuild_retry.log": "065b90acf0cd6c14090b2a6eb2c2dbe9676994e7294beb04de09a429a2efc36e",
+    "restore_cassandra_startup.log": "edd9eb80d736f7ff22415982b9bc0cee33170a4ec6e4be5720f1442a1dfed692",
+    "restore_diagnostic_containers.txt": "46de4107c4bf25343843b3b3c2879d84237034df50fb8af3e0d4bdbf290ece51",
+    "restore_neo4j_startup.log": "23e05876d14e016e6ee325f22cfe78b089a1244b52ea78e57bba024a15e43114",
+    "restore_three.json": "d1a3e50fb09ffef339c0f3c37045e42aa68ecd8ee3f0a04a4d7575433c149f13",
+    "restore_three.log": "d8e75b734b9d609915f129b39a2ca93c9433ceecc070889ebae6194739d73f20",
+    "restore_three_gcs.log": "dac54efa4d6230d87913141a3128a243342f2bc851b91e47858caf073b461256",
+    "restore_three_initial.json": "250f9d49876e2ed58f9b523049ab5ddbb10c364f130ce9237af5389ef416b357",
+    "restore_three_local.json": "a8d3b77da753d9060780416505f2855bb30ce431ba6603ca44164315659c563a",
+    "restore_three_retry.log": "36fb5cdf4dc3f5ea7ea859581de482df0f9b58e3d5de64a546cf46f8a53757a6",
+    "ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "services.txt": "b1bc15a1aef479488ff367c087bebad9ad621e71e2deee6658e1a206c5458494",
+    "services_during_checks.txt": "d107f2e25d71f478f4a21489721f611f15eebba2944c8894e06be1ae41ffd78e",
+    "source_bundle.json": "492dd667094108c12fabc77acf04367cb487e6edc2d86f4fb17191e2c72e0abd",
+    "source_bundle.log": "0ecb63a57fab4ba7f5d3e75f06b7db59bbc21cd26c8893c83b35778115b0afc9",
+    "terraform_fmt.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "terraform_plan.log": "83eeed1e9cbc84db668a2addd85b38a35ed93bb83214b05eaa4d2564bc45e52b",
+    "terraform_validate.log": "f7997225125835fdd14060ac776d273f394b874f9a481b9e2122c83dc8adc5c1",
+    "update_upload.log": "81606aabeec6906b155cee4e78ad748cab87aa4e0fa9afcf3199d18abba07751",
+    "upload.log": "9b42178131cca7bea25b3143322bf33ab16962c7547f2f2cc1a35b15e6f50a63",
+    "verification-image.json": "c1b680815494a4616d7b421b991965e0c9eb3b35f3d2e50825a271019ab7f2e1"
+  }
+}

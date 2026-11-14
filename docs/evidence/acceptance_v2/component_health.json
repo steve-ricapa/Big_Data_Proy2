@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-11T05:27:14.234682+00:00",
+  "mode": "external-monitor-no-recreation",
+  "checks": {
+    "caddy": "PASS",
+    "keycloak": "PASS",
+    "mcp-remote": "PASS",
+    "airflow3-dag-processor": "PASS"
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-11T17:10:42.747593+00:00",
+  "native_discovery": "PASS_6_OF_6",
+  "native_readonly_tool_call": "PASS",
+  "app_gui_e2e": "PENDING_OWNER_CONFIRMATION",
+  "runtime_version": "codex-cli 0.167.0-alpha.4.1",
+  "other_mcp_configuration_preserved": true,
+  "infrastructure_recreated": false,
+  "user_passwords_changed": false,
+  "documentation_links_and_fences": "PASS",
+  "jwt_patterns_found": 0
+}

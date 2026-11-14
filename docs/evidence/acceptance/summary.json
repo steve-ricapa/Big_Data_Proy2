@@ -1,0 +1,70 @@
+{
+  "at": "2026-11-11T00:34:15.736544+00:00",
+  "tcp_probes": {
+    "443": "reachable",
+    "27017": "not reachable from auditor",
+    "9042": "not reachable from auditor",
+    "7687": "not reachable from auditor",
+    "18081": "not reachable from auditor"
+  },
+  "backup_gcs_metadata_match": true,
+  "backup_gcs_objects": 11,
+  "source_differences": [
+    "services/mcp_server/remote.py",
+    "tests/test_remote_mcp.py"
+  ],
+  "academic_documents": {
+    "docs/report/technical_report.md": {
+      "exists": true,
+      "bytes": 13351,
+      "sha256": "9e2dac1c154ca248386f9a8867cc106bd245ef96445679ad9cd435bbd155a6d0"
+    },
+    "docs/report/demo_script.md": {
+      "exists": true,
+      "bytes": 5904,
+      "sha256": "df963a608b681b296587f2a8b9559805668ef3eeb9c1e3a71b655aa4a2e10bd2"
+    },
+    "docs/architecture/system.md": {
+      "exists": true,
+      "bytes": 2947,
+      "sha256": "90306c127a7306ecd4bbbdde6181c976b8006c1de7c162b946e734d758c021ec"
+    },
+    "docs/architecture/data_flow.md": {
+      "exists": true,
+      "bytes": 2895,
+      "sha256": "f75f76cf1462f09e0e5356685c00cd914b2988107e2c5e20835beed7437ac028"
+    },
+    "docs/architecture/gcp_deployed_architecture.md": {
+      "exists": true,
+      "bytes": 2603,
+      "sha256": "002da726eaa54c7fd90bd7ac8c6130f890e4818fce2f4e4cc94ad17902e8f574"
+    },
+    "docs/implementation/requirements.md": {
+      "exists": true,
+      "bytes": 2643,
+      "sha256": "383fef2654fcb58f87042ea9a19b89d433b0d37549006b1a199477b909249750"
+    },
+    "docs/evidence/crud.json": {
+      "exists": true,
+      "bytes": 455,
+      "sha256": "087cea40fc0337a1aafcffa42a99548aedfc60739e4951774d1b8eb05632b687"
+    },
+    "docs/evidence/screenshot_checklist.md": {
+      "exists": true,
+      "bytes": 5570,
+      "sha256": "6649531c42384892eb80707efd4823738c28091c318b69701fab104fcb4986b5"
+    }
+  },
+  "document_discrepancies": [
+    "system.md says no GCP resources applied",
+    "requirements.md says 42 tests, plan not applied, cloud awaiting authorization",
+    "technical_report.md mixes no automatic download (section 4) with implemented sync (sections 16-19)",
+    "reports claim 7 alert policies and 9 secrets; current API lists 5 and 10"
+  ],
+  "estimated_cost": {
+    "usd_day": 4.0804,
+    "usd_30_days": 122.41,
+    "usd_day_20pct": 4.8965,
+    "basis": "new VM/disks/IP/storage inventory and current official CPU/RAM/pd-balanced SKUs; variable service and egress reserves, not invoice"
+  }
+}

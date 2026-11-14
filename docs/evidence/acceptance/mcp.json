@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-11T00:29:04.662197+00:00",
+  "url": "https://ti-136-114-21-18.sslip.io/mcp",
+  "issuer": "https://ti-136-114-21-18.sslip.io/auth/realms/ti",
+  "transport": "streamable-http",
+  "checks": {
+    "oauth_authorization_code_pkce_s256": "PASS",
+    "explicit_owner_login_consent": "PASS",
+    "authorization_code_replay_rejected": "PASS",
+    "six_readonly_tools": "PASS",
+    "search_vulnerabilities": "PASS",
+    "get_cve_details": "PASS",
+    "get_top_cwes": "PASS",
+    "get_vulnerability_statistics": "PASS",
+    "get_affected_products": "PASS",
+    "explore_cve_relationships": "PASS",
+    "invalid_identifier_rejected": "PASS"
+  },
+  "chatgpt_account_connected": false
+}

@@ -1,0 +1,30 @@
+{
+  "url": "https://ti-136-114-21-18.sslip.io",
+  "views": [
+    {
+      "view": "Overview",
+      "file": "docs\\evidence\\screenshots\\gcp_dashboard_overview.png",
+      "bytes": 79286
+    },
+    {
+      "view": "Vulnerability Explorer",
+      "file": "docs\\evidence\\screenshots\\gcp_dashboard_vulnerability_explorer.png",
+      "bytes": 135610
+    },
+    {
+      "view": "Threat Analytics",
+      "file": "docs\\evidence\\screenshots\\gcp_dashboard_threat_analytics.png",
+      "bytes": 71356
+    },
+    {
+      "view": "Graph Intelligence",
+      "file": "docs\\evidence\\screenshots\\gcp_dashboard_graph_intelligence.png",
+      "bytes": 64070
+    },
+    {
+      "view": "Data Pipeline",
+      "file": "docs\\evidence\\screenshots\\gcp_dashboard_data_pipeline.png",
+      "bytes": 97796
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "threat-intelligence-bigdata"
+version = "0.1.0"
+description = "Proyecto universitario de Big Data sobre vulnerabilidades NIST NVD"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "ijson>=3.3,<4", "pymongo>=4.10,<5", "cassandra-driver>=3.29,<4",
+  "neo4j>=5.26,<6", "pydantic>=2.10,<3", "pydantic-settings>=2.7,<3",
+  "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "streamlit>=1.42,<2",
+  "httpx>=0.28,<1", "tenacity>=9,<10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1", "google-auth>=2,<3"]
+mcp = [
+    "mcp>=1.26,<2",
+]
+
+[project.scripts]
+threat-intelligence = "threat_intelligence.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests", "airflow/tests"]
+markers = ["integration: requires real database engines"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["threat_intelligence*"]
+namespaces = false

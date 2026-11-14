@@ -1,0 +1,22 @@
+[
+  {
+    "address": "136.114.21.18",
+    "addressType": "EXTERNAL",
+    "creationTimestamp": "2026-11-10T10:49:45.775-08:00",
+    "description": "",
+    "id": "8870272075418229158",
+    "kind": "compute#address",
+    "labelFingerprint": "vezUS-42LLM=",
+    "labels": {
+      "goog-terraform-provisioned": "true"
+    },
+    "name": "ti-dev-public",
+    "networkTier": "PREMIUM",
+    "region": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/regions/us-central1",
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/regions/us-central1/addresses/ti-dev-public",
+    "status": "IN_USE",
+    "users": [
+      "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/instances/ti-dev-data"
+    ]
+  }
+]

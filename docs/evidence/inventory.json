@@ -1,0 +1,44 @@
+[
+  {
+    "path": "data/raw/nvd/2024/nvdcve-2.0-2024.json",
+    "bytes": 293745058,
+    "sha256": "777bc4d2eea97ef6bbb0a0597b505c10a6c40968388678a7d22b9f45b70a6682",
+    "count": 39369,
+    "metadata": {
+      "resultsPerPage": 39369,
+      "startIndex": 0,
+      "totalResults": 39369,
+      "format": "NVD_CVE",
+      "version": "2.0",
+      "timestamp": "2026-11-09T03:01:35.3962771"
+    }
+  },
+  {
+    "path": "data/raw/nvd/2025/nvdcve-2.0-2025.json",
+    "bytes": 295852585,
+    "sha256": "17485621d19368646fd12c7681517e96bd1606f001ffe74b4b0567e3f54ba78d",
+    "count": 45482,
+    "metadata": {
+      "resultsPerPage": 45482,
+      "startIndex": 0,
+      "totalResults": 45482,
+      "format": "NVD_CVE",
+      "version": "2.0",
+      "timestamp": "2026-11-09T03:01:04.0633371"
+    }
+  },
+  {
+    "path": "data/raw/nvd/2026/nvdcve-2.0-2026.json",
+    "bytes": 527484894,
+    "sha256": "bbffab4cfabfe5f69adadf5ad056382c89f5953206d57dd504a6ac57d8dba687",
+    "count": 86940,
+    "metadata": {
+      "resultsPerPage": 86940,
+      "startIndex": 0,
+      "totalResults": 86940,
+      "format": "NVD_CVE",
+      "version": "2.0",
+      "timestamp": "2026-11-09T03:00:01.5741499"
+    }
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-11T17:48:44.439578+00:00",
+  "status": "PASS_TECHNICAL_FUNCTIONAL",
+  "native_runtime_version": "codex-cli 0.167.0-alpha.4.1",
+  "app_gui_retest": "PENDING_OWNER_CONFIRMATION",
+  "tools": {
+    "search_vulnerabilities": "PASS",
+    "get_cve_details": "PASS",
+    "get_top_cwes": "PASS",
+    "get_vulnerability_statistics": "PASS",
+    "get_affected_products": "PASS",
+    "explore_cve_relationships": "PASS"
+  },
+  "positive_native_calls": 14,
+  "negative_missing_cve": "PASS_EXPECTED_HTTP404_TOOL_ERROR",
+  "source_exact_match": true,
+  "cvss": {
+    "version": "3.1",
+    "score": 10.0,
+    "severity": "CRITICAL",
+    "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+    "source": "nvd@nist.gov"
+  },
+  "product_count": 145,
+  "cpe_count": 358,
+  "graph_relationships": 559,
+  "graph_response_limit": 250,
+  "search_tests": {
+    "exact_cve": "PASS",
+    "keyword": "PASS",
+    "severity": "PASS",
+    "combined": "PASS",
+    "no_match": "PASS"
+  },
+  "stats_before": 174734,
+  "stats_after": 174735,
+  "full_parity_fingerprint": "0bfda784bc4d093897e0e8423c092723091c6e73aeac0237b31fc02a332b3d64",
+  "delta_matches_last_accepted_baseline_plus_one_source_cve": true,
+  "independent_kpi_checks": {
+    "total_cves": "PASS",
+    "severity": "PASS",
+    "monthly": "PASS",
+    "cvss_by_version": "PASS",
+    "unique_affected_products": "PASS",
+    "top_cwes": "PASS",
+    "top_products": "PASS",
+    "cassandra_snapshot_equals_mongo": "PASS",
+    "graph_counts": "PASS"
+  },
+  "auth_rejection_checks": {
+    "no_authorization": {
+      "status": 401,
+      "result": "PASS"
+    },
+    "invalid_bearer": {
+      "status": 401,
+      "result": "PASS"
+    }
+  },
+  "dag_active_restored": true,
+  "oauth_configuration_changed": false
+}

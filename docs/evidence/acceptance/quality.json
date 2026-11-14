@@ -1,0 +1,52 @@
+{
+  "kpi": {
+    "snapshot_at": "2026-11-10T21:56:52.649755+00:00",
+    "independent_checks": {
+      "total": true,
+      "severity": true,
+      "monthly": true,
+      "rejected": true,
+      "unique_products": true,
+      "modified_30d": true
+    },
+    "total": 174607,
+    "unique_products": 23082
+  },
+  "source_hashes": {
+    "src/threat_intelligence/__init__.py": "8dc4ef02c9c32dc1fd64c3344c9ae6dd1a40e7f673b11f6b4f61b402a5a5fb40",
+    "src/threat_intelligence/crud.py": "3121ae9e233c588b09cb219cf6dc72b832d0fe9b4d1383c9ed7e66dabb13a4e1",
+    "src/threat_intelligence/cli.py": "50da3b3ad212af343dd4fe61197289e844f29ccefed42ea300300f40f9af86be",
+    "src/threat_intelligence/selftest.py": "54fcdbbf112d481a7f3e8d9a856a67ba6339a52223c26e3ce2fb33a67a3cf47c",
+    "src/threat_intelligence/pipeline.py": "73cc1bf99f85eafca6bc410a8d5f4e927f6ae0b810a3874c5de0285749949041",
+    "src/threat_intelligence/incremental/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/threat_intelligence/incremental/state.py": "465bb4344ad9457dd845e44b430a83dad40e06f3af4131d003af59f9a05c8edd",
+    "src/threat_intelligence/analytics/kpis.py": "7993d4dce87a0d6d28c53775487975ba03f69b7231def910a6400e66b98e517e",
+    "src/threat_intelligence/analytics/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/threat_intelligence/analytics/audit.py": "2f979106007b97364ffa24ddc6f19aea92f9552e32b8fad0b22375c6f3368a44",
+    "src/threat_intelligence/databases/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/threat_intelligence/databases/neo4j/__init__.py": "fa0ea6ea7feee0b90df620f56bfad63e263fe11ca43fc51b8c5ed0c21ea9d27a",
+    "src/threat_intelligence/databases/cassandra/__init__.py": "459cc11f4fbdaba5f0583abeaf10f2ce406fb4827e445c0c0b03875883c9dccf",
+    "src/threat_intelligence/databases/mongodb/__init__.py": "549222a16b950c68b0f004efa9f82d4f90c7366ce9aa00e06b35dc9448c08d7b",
+    "src/threat_intelligence/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/threat_intelligence/common/io.py": "5de38ca7d4062e3ca06147ae811d30759ca332183a9125bf406b30925fd3c968",
+    "src/threat_intelligence/common/config.py": "c05b76e4616422be4caff22a4f3ecbd063cd2bbf8ee590371e6aa5900c6b6454",
+    "src/threat_intelligence/ingestion/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/threat_intelligence/ingestion/nvd.py": "96c23ec39e9afdc2fff21325b2297771c436c5ada5fbef6fdfa3340dee7c667d",
+    "src/threat_intelligence/ingestion/sync.py": "d7ebf16d577a52204097ca429391b50accd7bf61428a268756db01a40b45f8a6",
+    "src/threat_intelligence/transformations/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "src/threat_intelligence/transformations/normalize.py": "b5c98fd7a02805981e93e423d8aa4eef874a6aa08429f9aedc1ba57caa4531bc",
+    "services/mcp_server/server.py": "6cad9d7ce0f2a34a7f51617b6bff816ed6c2ce213bd14032bfc34761d410c54e",
+    "services/mcp_server/remote.py": "0b240c28779f06bfe5b8b1ad51225a1517b49b0174fb4efd5fa1c65d9b627c8f",
+    "services/api/app.py": "06048704d78461a526a239e22a994430fecb66bf94e81dd5256e9adceff764b5",
+    "services/dashboard/app.py": "65a563a96f1b4a3901d16612437a88935fcb85c86c69feb6dcb86aa3ee4b79b3",
+    "tests/test_remote_mcp.py": "c96fd8f4fdb41264cdfc567baa71fe186dda585c367c4a6600c9c78475ff13c4",
+    "tests/conftest.py": "8ecbd12ff1c5abc9f4df059059e0f5d4197c239db672e83c01a79ea204c87e6e",
+    "tests/test_sync.py": "4c2c0208af720cc3608bd2c497328d7d5e34dd18079056c4c8c18fb776f60fe4",
+    "tests/test_integration.py": "d0ed2ccf66c4462ddaf0131a04ef97521e5b7d4fc01905bd9428fced9da56ed1",
+    "tests/test_quality.py": "02ea8613eae2fe400ae07ca74768928245633d546ca9aa516e222878fc2e3cdd",
+    "tests/test_pipeline.py": "b9545453e3733aded3c2beb9da6d58f4f7013b8e7281798b81c0b0894c542cf3",
+    "tests/test_mcp.py": "3eacc212249ae723df8b049c8fa136115bfe676c101410cf3d3fdcaec8af5e4a",
+    "tests/test_core.py": "81d86a5f350f2c2f04b0d77c413a250814ffb2a70968cebf7c47cbd5d5178880",
+    "tests/test_api.py": "69749cc49fb07a036223274313d2be966eed8dffe8ae84b811c5fa84910fb1e4"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "started_at": "2026-11-11T05:21:24.986267+00:00",
+  "backup": "/srv/ti-data/backups/20261111T020125",
+  "status": "PASS",
+  "network": "none",
+  "production_volumes_mounted": false,
+  "engines": {
+    "mongodb": {
+      "status": "PASS",
+      "archive_sha256_valid": true,
+      "restored": {
+        "records": 174607,
+        "unique": 174607,
+        "sha256_sum": "1f3fe1f5ed51962dca77b6d039f3d7f77eedd6c0fc8736e5f71883e1ac33facf"
+      },
+      "container": "ti-v2-restore-mongodb-20261111t052136",
+      "scratch_volume": "ti-v2-restore-mongodb-20261111t052136"
+    },
+    "cassandra": {
+      "status": "PASS",
+      "archive_sha256_valid": true,
+      "restored": {
+        "records": 174607,
+        "unique": 174607,
+        "sha256_sum": "1f3fe1f5ed51962dca77b6d039f3d7f77eedd6c0fc8736e5f71883e1ac33facf"
+      },
+      "container": "ti-v2-restore-cassandra-20261111t052136",
+      "scratch_volume": "ti-v2-restore-cassandra-20261111t052136"
+    },
+    "neo4j": {
+      "status": "PASS",
+      "archive_sha256_valid": true,
+      "restored": {
+        "records": 174607,
+        "unique": 174607,
+        "sha256_sum": "1f3fe1f5ed51962dca77b6d039f3d7f77eedd6c0fc8736e5f71883e1ac33facf",
+        "relationships": 1488142
+      },
+      "container": "ti-v2-restore-neo4j-20261111t052136",
+      "scratch_volume": "ti-v2-restore-neo4j-20261111t052136"
+    }
+  },
+  "source": "private-gcs-download",
+  "bucket": "proyectobigdata2-514216-ti-dev-processed",
+  "download_directory": "/srv/ti-data/restore-downloads/20261111T052124",
+  "downloaded": [
+    {
+      "object": "backups/20261111T020125/mongodb_data.tar.gz",
+      "bytes": 252133386,
+      "sha256_valid": true
+    },
+    {
+      "object": "backups/20261111T020125/cassandra_data.tar.gz",
+      "bytes": 191039543,
+      "sha256_valid": true
+    },
+    {
+      "object": "backups/20261111T020125/neo4j_data.tar.gz",
+      "bytes": 218420566,
+      "sha256_valid": true
+    }
+  ],
+  "finished_at": "2026-11-11T05:23:30.545810+00:00"
+}

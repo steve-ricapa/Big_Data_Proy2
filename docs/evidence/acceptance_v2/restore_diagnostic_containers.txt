@@ -1,0 +1,4 @@
+CONTAINER ID   IMAGE                     COMMAND                  CREATED          STATUS                      PORTS     NAMES
+33793734d9b6   neo4j:5.26.12-community   "tini -g -- /startup…"   43 seconds ago   Exited (3) 32 seconds ago             ti-v2-restore-neo4j-20261111t024203
+0f7352e1292a   cassandra:4.1.9           "/bin/bash /secure-e…"   9 minutes ago    Exited (1) 9 minutes ago              ti-v2-restore-cassandra-20261111t024203
+4f3b22239ed7   mongo:8.0.12              "docker-entrypoint.s…"   10 minutes ago   Exited (0) 10 minutes ago             ti-v2-restore-mongodb-20261111t024203

@@ -1,0 +1,91 @@
+{
+  "creationTimestamp": "2026-11-10T10:44:00.734-08:00",
+  "disks": [
+    {
+      "architecture": "X86_64",
+      "autoDelete": false,
+      "boot": true,
+      "deviceName": "ti-boot",
+      "diskSizeGb": "30",
+      "guestOsFeatures": [
+        {
+          "type": "UEFI_COMPATIBLE"
+        },
+        {
+          "type": "VIRTIO_SCSI_MULTIQUEUE"
+        },
+        {
+          "type": "GVNIC"
+        },
+        {
+          "type": "SEV_CAPABLE"
+        },
+        {
+          "type": "SEV_LIVE_MIGRATABLE_V2"
+        },
+        {
+          "type": "SUSPEND_SAFE_FPR"
+        }
+      ],
+      "index": 0,
+      "interface": "SCSI",
+      "kind": "compute#attachedDisk",
+      "licenses": [
+        "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-12-bookworm"
+      ],
+      "mode": "READ_WRITE",
+      "source": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-boot",
+      "type": "PERSISTENT"
+    },
+    {
+      "autoDelete": false,
+      "boot": false,
+      "deviceName": "ti-data",
+      "diskSizeGb": "100",
+      "index": 1,
+      "interface": "SCSI",
+      "kind": "compute#attachedDisk",
+      "mode": "READ_WRITE",
+      "source": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-data",
+      "type": "PERSISTENT"
+    }
+  ],
+  "id": "1074336130240797471",
+  "machineType": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/machineTypes/e2-standard-4",
+  "name": "ti-dev-data",
+  "networkInterfaces": [
+    {
+      "accessConfigs": [
+        {
+          "kind": "compute#accessConfig",
+          "name": "external-nat",
+          "natIP": "136.114.21.18",
+          "networkTier": "PREMIUM",
+          "type": "ONE_TO_ONE_NAT"
+        }
+      ],
+      "fingerprint": "2Zya1uuUmWE=",
+      "kind": "compute#networkInterface",
+      "name": "nic0",
+      "network": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/global/networks/ti-dev-vpc",
+      "networkIP": "10.42.0.2",
+      "stackType": "IPV4_ONLY",
+      "subnetwork": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/regions/us-central1/subnetworks/ti-dev-subnet"
+    }
+  ],
+  "serviceAccounts": [
+    {
+      "email": "ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com",
+      "scopes": [
+        "https://www.googleapis.com/auth/cloud-platform"
+      ]
+    }
+  ],
+  "status": "RUNNING",
+  "tags": {
+    "fingerprint": "XeEW0a2xYMA=",
+    "items": [
+      "ti-dev-data"
+    ]
+  }
+}

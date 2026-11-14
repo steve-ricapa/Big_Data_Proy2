@@ -1,0 +1,78 @@
+{
+  "transport": "operator SDK -> production HTTP; not OAuth E2E",
+  "payloads": {
+    "search_legacy100": {
+      "content_characters": 575798,
+      "result_json_bytes": 1254101,
+      "includes_structured_and_text": true
+    },
+    "search_summary100": {
+      "content_characters": 70365,
+      "result_json_bytes": 147287,
+      "includes_structured_and_text": true
+    },
+    "detail_legacy": {
+      "content_characters": 160876,
+      "result_json_bytes": 340884,
+      "includes_structured_and_text": true
+    },
+    "detail_summary": {
+      "content_characters": 3810,
+      "result_json_bytes": 7952,
+      "includes_structured_and_text": true
+    }
+  },
+  "coverage": {
+    "status": "partial",
+    "is_complete_nvd_history": false,
+    "observed_publication_years": [
+      {
+        "year": 2021,
+        "count": 4,
+        "first_published": "2021-06-14T23:15:07.473000+00:00",
+        "last_published": "2021-12-10T10:15:09.143000+00:00"
+      },
+      {
+        "year": 2022,
+        "count": 9,
+        "first_published": "2022-01-10T14:10:16.537000+00:00",
+        "last_published": "2022-12-16T16:15:25.220000+00:00"
+      },
+      {
+        "year": 2023,
+        "count": 199,
+        "first_published": "2023-02-02T21:22:38.570000+00:00",
+        "last_published": "2023-12-18T19:15:08.720000+00:00"
+      },
+      {
+        "year": 2024,
+        "count": 33121,
+        "first_published": "2024-01-01T08:15:36.087000+00:00",
+        "last_published": "2024-12-31T23:15:41.553000+00:00"
+      },
+      {
+        "year": 2025,
+        "count": 45267,
+        "first_published": "2025-01-01T00:15:07.193000+00:00",
+        "last_published": "2025-12-31T23:15:42.413000+00:00"
+      },
+      {
+        "year": 2026,
+        "count": 96135,
+        "first_published": "2026-01-01T00:15:40.797000+00:00",
+        "last_published": "2026-11-11T01:17:16.420000+00:00"
+      }
+    ],
+    "missing_example": {
+      "cve_id": "CVE-2021-45046",
+      "present": false
+    },
+    "last_verified_ingest": {
+      "started_at": "2026-11-11T17:41:40.047802+00:00",
+      "status": "SUCCESS"
+    },
+    "global_nvd_population": null,
+    "notice": "Observed loaded records, not a claim of complete coverage for these years. No on-read backfill."
+  },
+  "measurement_notice": "Serialized MCP result object only, excluding HTTP/RPC envelope; dual structured+text intentionally duplicates data for compatibility."
+}

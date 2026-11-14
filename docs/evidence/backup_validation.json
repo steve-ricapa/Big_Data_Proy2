@@ -1,0 +1,51 @@
+{
+  "started_at": "2026-11-10T18:14:36.716282+00:00",
+  "type": "coordinated-cold-volumes",
+  "directory": "C:\\Users\\steve\\Desktop\\Big_Data2\\backups\\20261110T181427",
+  "archives": [
+    {
+      "volume": "threat-intelligence_mongodb_data",
+      "file": "mongodb_data.tar.gz",
+      "bytes": 222204229,
+      "sha256": "043ffdd265052bbbb4bde1f933c4318133be114e2e973bd44caeba5af60933db",
+      "members": 147
+    },
+    {
+      "volume": "threat-intelligence_cassandra_data",
+      "file": "cassandra_data.tar.gz",
+      "bytes": 186451692,
+      "sha256": "99c9ab824affd5b82405dce9a83a953f80e1cf23b54c36b5be9c3e524b1da0b1",
+      "members": 546
+    },
+    {
+      "volume": "threat-intelligence_neo4j_data",
+      "file": "neo4j_data.tar.gz",
+      "bytes": 210872098,
+      "sha256": "8ae7af0e99e4de3fc1dcf754d4c1ebde16fe0137730d46f08c0a388d2a936893",
+      "members": 120
+    },
+    {
+      "volume": "threat-intelligence_airflow3_postgres",
+      "file": "airflow3_postgres.tar.gz",
+      "bytes": 9848035,
+      "sha256": "745564c20f231351c14c4a8c169514c6960dbdc67eb80db51ab0ac02c453d1b4",
+      "members": 1628
+    },
+    {
+      "volume": "threat-intelligence_checkpoint_data",
+      "file": "checkpoint_data.tar.gz",
+      "bytes": 56601014,
+      "sha256": "ec90913ad1a8abf3765905af45bc8e837ee4ed2901286f9770d5ab93098887a9",
+      "members": 28
+    },
+    {
+      "volume": "threat-intelligence_airflow3_auth",
+      "file": "airflow3_auth.tar.gz",
+      "bytes": 355,
+      "sha256": "e3c2d02987beb134a9a494d8c8f723fad7305171de45667c7d32937ff2428634",
+      "members": 2
+    }
+  ],
+  "status": "SUCCESS",
+  "finished_at": "2026-11-10T18:19:56.235433+00:00"
+}

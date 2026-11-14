@@ -1,0 +1,292 @@
+{
+  "collected_at": "2026-11-10T17:27:12.562246+00:00",
+  "dataset_inventory": [
+    {
+      "path": "/app/data/raw/nvd/2024/nvdcve-2.0-2024.json",
+      "bytes": 293745058,
+      "sha256": "777bc4d2eea97ef6bbb0a0597b505c10a6c40968388678a7d22b9f45b70a6682",
+      "count": 39369,
+      "metadata": {
+        "resultsPerPage": 39369,
+        "startIndex": 0,
+        "totalResults": 39369,
+        "format": "NVD_CVE",
+        "version": "2.0",
+        "timestamp": "2026-11-09T03:01:35.3962771"
+      }
+    },
+    {
+      "path": "/app/data/raw/nvd/2025/nvdcve-2.0-2025.json",
+      "bytes": 295852585,
+      "sha256": "17485621d19368646fd12c7681517e96bd1606f001ffe74b4b0567e3f54ba78d",
+      "count": 45482,
+      "metadata": {
+        "resultsPerPage": 45482,
+        "startIndex": 0,
+        "totalResults": 45482,
+        "format": "NVD_CVE",
+        "version": "2.0",
+        "timestamp": "2026-11-09T03:01:04.0633371"
+      }
+    },
+    {
+      "path": "/app/data/raw/nvd/2026/nvdcve-2.0-2026.json",
+      "bytes": 527484894,
+      "sha256": "bbffab4cfabfe5f69adadf5ad056382c89f5953206d57dd504a6ac57d8dba687",
+      "count": 86940,
+      "metadata": {
+        "resultsPerPage": 86940,
+        "startIndex": 0,
+        "totalResults": 86940,
+        "format": "NVD_CVE",
+        "version": "2.0",
+        "timestamp": "2026-11-09T03:00:01.5741499"
+      }
+    }
+  ],
+  "engine_verification": {
+    "counts": {
+      "mongodb": 171791,
+      "cassandra": 171791,
+      "neo4j": 171791
+    },
+    "fingerprints": {
+      "mongodb": {
+        "records": 171791,
+        "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+      },
+      "cassandra": {
+        "records": 171791,
+        "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+      },
+      "neo4j": {
+        "records": 171791,
+        "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+      }
+    }
+  },
+  "docker_pytest": {
+    "tests": 42,
+    "passed": 42,
+    "failed": 0,
+    "skipped": 0
+  },
+  "windows_pytest": {
+    "tests": 42,
+    "passed": 35,
+    "failed": 0,
+    "skipped": 7
+  },
+  "airflow": {
+    "version": "3.4.0",
+    "run_id": "migration34_20261110T165908",
+    "limit": 10000,
+    "state": "success",
+    "tasks": [
+      {
+        "task_id": "validate",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "load_neo4j",
+        "state": "success",
+        "try_number": 2
+      },
+      {
+        "task_id": "calculate_kpis",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "extract",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "load_mongodb",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "verify",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "load_cassandra",
+        "state": "success",
+        "try_number": 1
+      }
+    ]
+  },
+  "airflow_audit": {
+    "packages": 145,
+    "known_findings": 0
+  },
+  "app_mcp_audit": {
+    "packages": 63,
+    "known_findings": 0
+  },
+  "incremental": {
+    "synthetic_id": "CVE-2099-206800447491061222",
+    "checks": {
+      "new_and_invalid": "PASS",
+      "unchanged_replay": "PASS",
+      "modified_removes_stale_partitions_and_edges": "PASS",
+      "older_update_rejected": "PASS",
+      "all_engine_content_parity": "PASS"
+    }
+  },
+  "kpis": {
+    "as_of": "2026-11-10T17:20:24.352429+00:00",
+    "total_cves": 171791,
+    "checks": {
+      "total_cves": "PASS",
+      "severity": "PASS",
+      "monthly": "PASS",
+      "cvss_by_version": "PASS",
+      "unique_affected_products": "PASS",
+      "top_cwes": "PASS",
+      "top_products": "PASS",
+      "cassandra_snapshot_equals_mongo": "PASS",
+      "graph_counts": "PASS"
+    }
+  },
+  "mcp": {
+    "at": "2026-11-10T17:25:19.258405+00:00",
+    "transport": "stdio",
+    "cve": "CVE-2024-0001",
+    "checks": {
+      "initialize": "PASS",
+      "list_six_readonly_tools": "PASS",
+      "search_vulnerabilities": "PASS",
+      "get_cve_details": "PASS",
+      "get_top_cwes": "PASS",
+      "get_vulnerability_statistics": "PASS",
+      "get_affected_products": "PASS",
+      "explore_cve_relationships": "PASS",
+      "invalid_identifier_rejected": "PASS"
+    }
+  },
+  "terraform_plan": {
+    "add": 37,
+    "change": 0,
+    "destroy": 0
+  },
+  "cloud_deployed": false,
+  "cloud_apply_executed": false,
+  "limitations": [
+    "No production TLS/HA or remote ChatGPT connector",
+    "No distributed transaction or concurrent pipeline guarantee"
+  ],
+  "airflow_full": {
+    "version": "3.4.0",
+    "run_id": "full34_20261110T170841",
+    "limit": 0,
+    "state": "success",
+    "tasks": [
+      {
+        "task_id": "load_cassandra",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "validate",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "load_neo4j",
+        "state": "success",
+        "try_number": 2
+      },
+      {
+        "task_id": "calculate_kpis",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "load_mongodb",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "extract",
+        "state": "success",
+        "try_number": 1
+      },
+      {
+        "task_id": "verify",
+        "state": "success",
+        "try_number": 1
+      }
+    ],
+    "stages": {
+      "validate": {
+        "seen": 171791,
+        "invalid": 0,
+        "duplicates": 0,
+        "unique_valid": 171791
+      },
+      "mongodb": {
+        "seen": 171791,
+        "new": 0,
+        "modified": 0,
+        "unchanged": 171791,
+        "stale": 0,
+        "written": 0,
+        "batches_committed": 0,
+        "total_in_engine": 171791,
+        "seconds": 135.009
+      },
+      "cassandra": {
+        "seen": 171791,
+        "new": 0,
+        "modified": 0,
+        "unchanged": 171791,
+        "stale": 0,
+        "written": 0,
+        "batches_committed": 0,
+        "total_in_engine": 171791,
+        "seconds": 108.517
+      },
+      "neo4j": {
+        "seen": 171791,
+        "new": 0,
+        "modified": 0,
+        "unchanged": 171791,
+        "stale": 0,
+        "written": 0,
+        "batches_committed": 0,
+        "total_in_engine": 171791,
+        "seconds": 102.191
+      },
+      "kpis": {
+        "total_cves": 171791,
+        "as_of": "2026-11-10T17:20:24.352429+00:00"
+      },
+      "verify": {
+        "counts": {
+          "mongodb": 171791,
+          "cassandra": 171791,
+          "neo4j": 171791
+        },
+        "fingerprints": {
+          "mongodb": {
+            "records": 171791,
+            "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+          },
+          "cassandra": {
+            "records": 171791,
+            "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+          },
+          "neo4j": {
+            "records": 171791,
+            "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+          }
+        }
+      }
+    }
+  }
+}

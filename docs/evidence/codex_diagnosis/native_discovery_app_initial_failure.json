@@ -1,0 +1,8 @@
+{
+  "status": "PROBE_FAILED",
+  "reason": "Probe subprocess decoder defaulted to Windows cp1252; JSON-RPC uses UTF-8",
+  "native_initialize": "PASS",
+  "target_config_loaded": true,
+  "inventory_result": "not captured; reader failed then timed out",
+  "correction": "Explicit UTF-8 subprocess pipes; rerun without server/config changes"
+}

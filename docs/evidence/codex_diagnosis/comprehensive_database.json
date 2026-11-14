@@ -1,0 +1,82 @@
+{
+  "at": "2026-11-11T19:23:41.571059+00:00",
+  "data_writes": false,
+  "mongodb": {
+    "records": 174735,
+    "duplicate_ids": 0,
+    "sha256_sum": "0bfda784bc4d093897e0e8423c092723091c6e73aeac0237b31fc02a332b3d64"
+  },
+  "cassandra": {
+    "records": 174735,
+    "duplicate_ids": 0,
+    "sha256_sum": "0bfda784bc4d093897e0e8423c092723091c6e73aeac0237b31fc02a332b3d64"
+  },
+  "neo4j": {
+    "records": 174735,
+    "duplicate_ids": 0,
+    "sha256_sum": "0bfda784bc4d093897e0e8423c092723091c6e73aeac0237b31fc02a332b3d64"
+  },
+  "control_cvss": {
+    "CVE-2021-44228": {
+      "version": "3.1",
+      "score": 10.0,
+      "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+      "source": "nvd@nist.gov"
+    },
+    "CVE-2024-0001": {
+      "version": "3.1",
+      "score": 9.8,
+      "severity": "CRITICAL",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+      "source": "nvd@nist.gov"
+    }
+  },
+  "independent_catalog": {
+    "total": 23186,
+    "id_count_sha256": "f2bb985fab77046500d8d0cf9d22633b0d6b7bf3d8b91dc0ffe625dcb7fd6720",
+    "method": "Mongo unwind + addToSet(CVE ID), independent from API two-stage group"
+  },
+  "source_volume": {
+    "_id": null,
+    "records": 174735,
+    "raw_bson_bytes": 814256995,
+    "average_raw_bson_bytes": 4659.953615474862,
+    "maximum_raw_bson_bytes": 1137517
+  },
+  "special_keyword_parsed_query": [
+    {
+      "terms": [
+        "'",
+        "_"
+      ],
+      "negatedTerms": [],
+      "phrases": [],
+      "negatedPhrases": []
+    },
+    {
+      "terms": [
+        "'",
+        "_"
+      ],
+      "negatedTerms": [],
+      "phrases": [],
+      "negatedPhrases": []
+    }
+  ],
+  "snapshot": {
+    "as_of": "2026-11-11T17:42:23.986620+00:00",
+    "total_cves": 174735,
+    "unique_affected_products": 23186,
+    "rejected_cves": 4019,
+    "severity": {
+      "CRITICAL": 17895,
+      "HIGH": 64615,
+      "MEDIUM": 74203,
+      "LOW": 10115,
+      "UNKNOWN": 7828,
+      "NONE": 79
+    }
+  },
+  "status": "PASS_READ_ONLY_PARITY_AND_CATALOG"
+}

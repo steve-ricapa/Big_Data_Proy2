@@ -1,0 +1,37 @@
+Name:      quay.io/keycloak/keycloak:26.8.2
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:723b1d6e254c0fc96d5cffec860c7e0744d6a3277822b865bb538cf891575e41
+           
+Manifests: 
+  Name:        quay.io/keycloak/keycloak:26.8.2@sha256:c126f032d43b941ed7c5ccca7d6571596d8eab84d748afd7c86989e48ef07b8f
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/amd64
+               
+  Name:        quay.io/keycloak/keycloak:26.8.2@sha256:22f1cf60e26bed1808e45b838ddeac962075818fe97e0858b542308d2b91e83e
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/arm64
+               
+  Name:        quay.io/keycloak/keycloak:26.8.2@sha256:6e55864104a14348ebdf0e1fe9ea9c7bf3decfd791435cf05bc89953e4edd26f
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/ppc64le
+               
+  Name:        quay.io/keycloak/keycloak:26.8.2@sha256:74fbf42cacf1a80e3ef9129e72eaf710463b3566211332fab2c90ec75d71b9fe
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:c126f032d43b941ed7c5ccca7d6571596d8eab84d748afd7c86989e48ef07b8f
+    vnd.docker.reference.type:   attestation-manifest
+               
+  Name:        quay.io/keycloak/keycloak:26.8.2@sha256:f540c32da98af1e5b6d4f860be31d056c4793fbdfdf812673ff86514cdea9909
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:22f1cf60e26bed1808e45b838ddeac962075818fe97e0858b542308d2b91e83e
+    vnd.docker.reference.type:   attestation-manifest
+               
+  Name:        quay.io/keycloak/keycloak:26.8.2@sha256:53353a040b2bd84da0ea3f06aaa363664c9961c9c5a9720b4cd6d065913e4d87
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:6e55864104a14348ebdf0e1fe9ea9c7bf3decfd791435cf05bc89953e4edd26f
+    vnd.docker.reference.type:   attestation-manifest

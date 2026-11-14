@@ -1,0 +1,37 @@
+{
+  "url": "https://ti-136-114-21-18.sslip.io",
+  "views": [
+    {
+      "view": "Overview",
+      "file": "docs\\evidence\\acceptance_v2\\screenshots\\gcp_dashboard_overview.png",
+      "bytes": 79950
+    },
+    {
+      "view": "Vulnerability Explorer",
+      "file": "docs\\evidence\\acceptance_v2\\screenshots\\gcp_dashboard_vulnerability_explorer.png",
+      "bytes": 135551
+    },
+    {
+      "view": "Threat Analytics",
+      "file": "docs\\evidence\\acceptance_v2\\screenshots\\gcp_dashboard_threat_analytics.png",
+      "bytes": 71230
+    },
+    {
+      "view": "Graph Intelligence",
+      "file": "docs\\evidence\\acceptance_v2\\screenshots\\gcp_dashboard_graph_intelligence.png",
+      "bytes": 83318
+    },
+    {
+      "view": "Data Pipeline",
+      "file": "docs\\evidence\\acceptance_v2\\screenshots\\gcp_dashboard_data_pipeline.png",
+      "bytes": 96686
+    }
+  ],
+  "graph_dom": [
+    {
+      "testid": "stGraphVizChart",
+      "svg": 1,
+      "text": "\n\n\n\n\nCVE-2020-9709\n\nCVE-2020-9709\n\n\n\nhttps://helpx.adobe.com/security/products/photoshop/apsb20-45.html\n\nhttps://helpx.adobe.com/security/products/photoshop/apsb20-45.html\n\n\n\nCVE-2020-9709->https://he"
+    }
+  ]
+}

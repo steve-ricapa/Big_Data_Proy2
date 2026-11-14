@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-11T09:11:09.788412+00:00",
+  "checks": {
+    "unrelated_configuration_preserved": "PASS",
+    "native_config_load": "PASS",
+    "native_preregistered_authorization_without_dcr": "PASS",
+    "discovery_issuer_endpoints_resource_scope_jwks": "PASS",
+    "exact_callback_accepted_login_form": "PASS",
+    "unregistered_callback_rejected": "PASS",
+    "pkce_missing_rejected": "PASS",
+    "pkce_plain_rejected": "PASS",
+    "unauthorized_absent_rejected": "PASS",
+    "unauthorized_invalid_rejected": "PASS",
+    "public_client_invalid_grant_rejected_without_secret": "PASS"
+  },
+  "technical_status": "PENDING_USER_LOGIN",
+  "codex_app_e2e": "PENDING",
+  "checks_status": "PASS",
+  "pending": [
+    "interactive authorization and consent",
+    "valid token issuance and signed validation",
+    "valid refresh and refreshed-token validation",
+    "authenticated initialize/tools-list/six-tools",
+    "Codex App UI confirmation"
+  ]
+}

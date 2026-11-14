@@ -1,0 +1,110 @@
+# Uses one VM, no additional cloud compute services. Pass --env-file secrets/public.env.
+services:
+  mongodb:
+    # Native cloud filesystem + bulk writes need headroom beyond WiredTiger cache.
+    # Increase only the container limit inside the existing16GiB VM, not VM cost.
+    mem_limit: 2g
+  api:
+    group_add: ["0"]
+  keycloak-db:
+    image: postgres:16.10-bookworm
+    profiles: [public]
+    restart: "on-failure:3"
+    mem_limit: 192m
+    environment:
+      POSTGRES_USER: keycloak
+      POSTGRES_DB: keycloak
+      POSTGRES_PASSWORD_FILE: /run/secrets/keycloak_db_password
+    secrets: [keycloak_db_password]
+    volumes: ["keycloak_postgres:/var/lib/postgresql/data"]
+    networks: [identity]
+    healthcheck:
+      test: [CMD, pg_isready, -U, keycloak, -d, keycloak]
+      interval: 10s
+      retries: 12
+      timeout: 5s
+    logging: &public-logging
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.8.2
+    profiles: [public]
+    restart: "on-failure:3"
+    mem_limit: 1g
+    group_add: ["0"]
+    entrypoint: [/bin/bash, /opt/ti/keycloak-entrypoint.sh]
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloak-db/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_HOSTNAME: ${TI_PUBLIC_URL}/auth
+      KC_HTTP_ENABLED: "true"
+      KC_HTTP_RELATIVE_PATH: /auth
+      KC_PROXY_HEADERS: xforwarded
+      KC_HEALTH_ENABLED: "true"
+      KC_BOOTSTRAP_ADMIN_USERNAME: ti-admin
+      JAVA_OPTS_KC_HEAP: -Xms256m -Xmx512m
+    secrets: [keycloak_db_password, keycloak_admin_password]
+    volumes:
+      - ./scripts/keycloak-entrypoint.sh:/opt/ti/keycloak-entrypoint.sh:ro
+      - ./secrets/keycloak-realm.json:/opt/keycloak/data/import/ti-realm.json:ro
+    networks: [identity, edge]
+    depends_on:
+      keycloak-db: {condition: service_healthy}
+    logging: *public-logging
+    healthcheck:
+      test: [CMD, /bin/bash, -c, "exec 3<>/dev/tcp/127.0.0.1/9000; printf 'GET /auth/health/ready HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n' >&3; grep -q 'HTTP/1.[01] 200' <&3"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+  mcp-remote:
+    image: ti-mcp:local
+    profiles: [public]
+    restart: "on-failure:3"
+    command: [uvicorn, services.mcp_server.remote:create_app, --factory, --host, 0.0.0.0, --port, "8001", --no-access-log]
+    environment:
+      API_URL: http://api:8000
+      TI_PUBLIC_URL: ${TI_PUBLIC_URL}
+    mem_limit: 256m
+    networks: [edge]
+    logging: *public-logging
+    healthcheck:
+      test: [CMD, python, -c, "import json,urllib.request; r=json.load(urllib.request.urlopen('http://127.0.0.1:8001/health',timeout=5)); assert r['status']=='ok' and r['auth']=='oidc'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+  caddy:
+    image: caddy:2.10.2-alpine
+    profiles: [public]
+    restart: "on-failure:3"
+    entrypoint: [/bin/sh, /opt/ti/caddy-entrypoint.sh]
+    environment:
+      TI_HOSTNAME: ${TI_HOSTNAME}
+    secrets: [web_password_hash]
+    volumes:
+      - ./infrastructure/docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./scripts/caddy-entrypoint.sh:/opt/ti/caddy-entrypoint.sh:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    ports: ["80:80", "443:443"]
+    mem_limit: 192m
+    networks: [edge]
+    logging: *public-logging
+    healthcheck:
+      test: [CMD, wget, -q, -O, /dev/null, 'http://127.0.0.1:2019/config/']
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+volumes:
+  keycloak_postgres:
+  caddy_data:
+  caddy_config:
+networks:
+  identity: {internal: true}
+secrets:
+  keycloak_db_password: {file: ./secrets/keycloak-db-password}
+  keycloak_admin_password: {file: ./secrets/keycloak-admin-password}
+  web_password_hash: {file: ./secrets/web-password-hash}

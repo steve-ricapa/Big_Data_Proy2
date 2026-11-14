@@ -1,0 +1,15 @@
+threat-intelligence-airflow-scheduler-1 520.6MiB / 1GiB 3.55%
+threat-intelligence-airflow-webserver-1 859.3MiB / 1GiB 0.12%
+threat-intelligence-api-1 119.9MiB / 384MiB 0.25%
+threat-intelligence-dashboard-1 171.4MiB / 512MiB 0.65%
+threat-intelligence-postgres-1 79.12MiB / 512MiB 1.91%
+threat-intelligence-cassandra-1 1.398GiB / 2GiB 3.72%
+threat-intelligence-mongodb-1 582.8MiB / 768MiB 0.64%
+threat-intelligence-neo4j-1 1.056GiB / 1.25GiB 0.84%
+airflow-airflow-worker-1 206.6MiB / 7.467GiB 0.37%
+airflow-airflow-apiserver-1 103.6MiB / 7.467GiB 0.18%
+airflow-airflow-triggerer-1 124.7MiB / 7.467GiB 2.52%
+airflow-airflow-scheduler-1 167.4MiB / 7.467GiB 3.20%
+airflow-airflow-dag-processor-1 171.1MiB / 7.467GiB 101.77%
+airflow-postgres-1 51.83MiB / 7.467GiB 12.99%
+airflow-redis-1 10.16MiB / 7.467GiB 0.27%

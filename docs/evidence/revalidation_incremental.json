@@ -1,0 +1,10 @@
+{
+  "synthetic_id": "CVE-2099-206800447491061222",
+  "checks": {
+    "new_and_invalid": "PASS",
+    "unchanged_replay": "PASS",
+    "modified_removes_stale_partitions_and_edges": "PASS",
+    "older_update_rejected": "PASS",
+    "all_engine_content_parity": "PASS"
+  }
+}

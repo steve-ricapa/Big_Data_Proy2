@@ -1,0 +1,66 @@
+{
+  "at": "2026-11-10T21:13:27.097158+00:00",
+  "base_url": "https://ti-136-114-21-18.sslip.io",
+  "checks": {
+    "unauth:/": "PASS",
+    "unauth:/api/v1/kpis": "PASS",
+    "unauth:/docs": "PASS",
+    "unauth:mcp": "PASS",
+    "private_admin:/auth/admin/": "PASS",
+    "private_admin:/auth/realms/master/": "PASS",
+    "/.well-known/oauth-protected-resource/mcp": "PASS",
+    "/auth/realms/ti/.well-known/openid-configuration": "PASS",
+    "authenticated:/": {
+      "status": "PASS",
+      "seconds": 1.594
+    },
+    "authenticated:/_stcore/health": {
+      "status": "PASS",
+      "seconds": 0.125
+    },
+    "authenticated:/health": {
+      "status": "PASS",
+      "seconds": 0.141
+    },
+    "authenticated:/ready": {
+      "status": "PASS",
+      "seconds": 0.797
+    },
+    "authenticated:/api/v1/kpis": {
+      "status": "PASS",
+      "seconds": 0.14
+    },
+    "authenticated:/api/v1/vulnerabilities?page_size=2": {
+      "status": "PASS",
+      "seconds": 0.219
+    },
+    "authenticated:/api/v1/cwes/top": {
+      "status": "PASS",
+      "seconds": 0.141
+    },
+    "authenticated:/api/v1/products/top": {
+      "status": "PASS",
+      "seconds": 0.14
+    },
+    "authenticated:/api/v1/analytics/cassandra/snapshot": {
+      "status": "PASS",
+      "seconds": 0.406
+    },
+    "authenticated:/api/v1/pipeline/status": {
+      "status": "PASS",
+      "seconds": 0.157
+    },
+    "authenticated:/docs": {
+      "status": "PASS",
+      "seconds": 0.14
+    },
+    "/api/v1/vulnerabilities/CVE-2024-0001": "PASS",
+    "/api/v1/graph/cve/CVE-2024-0001": "PASS"
+  },
+  "tls": {
+    "verified": true,
+    "protocol": "TLSv1.3",
+    "expires": "Feb  8 18:33:35 2027 GMT"
+  },
+  "total_cves": 171791
+}

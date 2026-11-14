@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-11T08:51:55.004672+00:00",
+  "isolated_home": "C:\\Users\\steve\\AppData\\Local\\Temp\\opencode\\codex-mcp-diagnosis",
+  "version": "codex-cli 0.139.0",
+  "exit": 1,
+  "diagnostic_lines": [
+    "",
+    "WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"C:\\\\Users\\\\steve\\\\AppData\\\\Local\\\\Temp\\\\\" (codex_home: AbsolutePathBuf(\"C:\\\\Users\\\\steve\\\\AppData\\\\Local\\\\Temp\\\\opencode\\\\codex-mcp-diagnosis\"))",
+    "Error: Registration failed: Dynamic registration failed: Registration failed: HTTP 403 Forbidden: {\"error\":\"insufficient_scope\",\"error_description\":\"Policy 'Trusted Hosts' rejected request to client-registration service. Details: Host not trusted.\"}"
+  ]
+}

@@ -1,0 +1,50 @@
+# Opt-in security overlay; preserve existing named data volumes.
+services:
+  cassandra:
+    entrypoint: [/bin/bash, /opt/ti/cassandra-secure-entrypoint.sh]
+    command: [cassandra, -f]
+    volumes:
+      - ./scripts/cassandra-secure-entrypoint.sh:/opt/ti/cassandra-secure-entrypoint.sh:ro
+  runner:
+    environment: &cassandra-writer
+      CASSANDRA_USERNAME: ti_pipeline
+      CASSANDRA_PASSWORD_FILE: /run/secrets/cassandra_writer_password
+      CASSANDRA_CREATE_KEYSPACE: "false"
+    secrets: [cassandra_writer_password]
+    networks: [data, edge]
+  tester:
+    environment:
+      <<: *cassandra-writer
+      TI_SECURE_TESTS: "1"
+    secrets: [cassandra_writer_password, cassandra_reader_password]
+  api:
+    environment:
+      CASSANDRA_USERNAME: ti_reader
+      CASSANDRA_PASSWORD_FILE: /run/secrets/cassandra_reader_password
+      CASSANDRA_CREATE_KEYSPACE: "false"
+    secrets: [cassandra_reader_password]
+  airflow3-api:
+    environment: *cassandra-writer
+    secrets: [cassandra_writer_password]
+  airflow3-scheduler:
+    environment: *cassandra-writer
+    secrets: [cassandra_writer_password]
+  airflow3-dag-processor:
+    environment: *cassandra-writer
+    secrets: [cassandra_writer_password]
+  cassandra-init:
+    image: ti-app:local
+    user: "50000:0"
+    profiles: [init]
+    command: [python, /app/scripts/init_cassandra_users.py]
+    environment:
+      TI_ALLOW_DEFAULT_CASSANDRA_BOOTSTRAP: "1"
+    volumes: ["./scripts:/app/scripts:ro"]
+    secrets: [cassandra_admin_password, cassandra_writer_password, cassandra_reader_password]
+    networks: [data]
+  mongo-init:
+    group_add: ["0"]
+secrets:
+  cassandra_admin_password: {file: ./secrets/cassandra-admin-password}
+  cassandra_writer_password: {file: ./secrets/cassandra-writer-password}
+  cassandra_reader_password: {file: ./secrets/cassandra-reader-password}

@@ -1,0 +1,43 @@
+{
+  "version": "3.4.0",
+  "run_id": "full34_20261110T170841",
+  "limit": 0,
+  "state": "success",
+  "tasks": [
+    {
+      "task_id": "load_cassandra",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "validate",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "load_neo4j",
+      "state": "success",
+      "try_number": 2
+    },
+    {
+      "task_id": "calculate_kpis",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "load_mongodb",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "extract",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "verify",
+      "state": "success",
+      "try_number": 1
+    }
+  ]
+}

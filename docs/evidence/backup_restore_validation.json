@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-10T18:23:09.908097+00:00",
+  "status": "SUCCESS",
+  "archive": "C:\\Users\\steve\\Desktop\\Big_Data2\\backups\\20261110T181427\\mongodb_data.tar.gz",
+  "sha256_valid": true,
+  "source_volume_untouched": true,
+  "restore_volume": "ti-restore-mongo-20261110t182022",
+  "restore_container": "ti-restore-mongo-20261110t182022",
+  "network": "none",
+  "restored": {
+    "records": 171791,
+    "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+  },
+  "matches_original_full_fingerprint": true
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-11T02:37:26.942557+00:00",
+  "id": "CVE-2099-187069189812724775",
+  "engines": {
+    "mongodb": {
+      "create": "PASS",
+      "read": "PASS",
+      "update": "PASS",
+      "delete": "PASS"
+    },
+    "cassandra": {
+      "create": "PASS",
+      "read": "PASS",
+      "update": "PASS",
+      "delete": "PASS"
+    },
+    "neo4j": {
+      "create": "PASS",
+      "read": "PASS",
+      "update": "PASS",
+      "delete": "PASS"
+    }
+  },
+  "cleanup_verified": true
+}

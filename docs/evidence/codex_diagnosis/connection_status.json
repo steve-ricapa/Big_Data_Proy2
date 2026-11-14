@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-11T09:11:37.584061+00:00",
+  "configuration": "APPLIED",
+  "noninteractive_checks_passed": 11,
+  "unit_tests_passed": 10,
+  "technical_status": "PENDING_USER_LOGIN",
+  "codex_app_e2e": "PENDING",
+  "authenticated_ti_codex_token_tests_executed": false,
+  "listener_released": true,
+  "documentation_links_fences": "PASS",
+  "jwt_patterns_found": 0,
+  "ti_chatgpt_unchanged": true,
+  "dcr_policies_unchanged": true,
+  "private_backup": "C:/Users/steve/.codex/config.pre-ti-codex-20261111T0904.toml.bak",
+  "final_config_sha256": "9878cade390c80fb2eceecae7a3ac88b56d6d2e904eaf28d2e6a83cf7d1276fd"
+}

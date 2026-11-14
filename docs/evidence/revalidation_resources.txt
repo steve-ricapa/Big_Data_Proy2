@@ -1,0 +1,17 @@
+threat-intelligence-airflow3-scheduler-1 412.6MiB / 1GiB CPU=3.99%
+threat-intelligence-airflow3-dag-processor-1 171.3MiB / 768MiB CPU=1.88%
+threat-intelligence-airflow3-api-1 290.2MiB / 768MiB CPU=0.18%
+threat-intelligence-api-1 131.2MiB / 384MiB CPU=0.32%
+threat-intelligence-dashboard-1 145.2MiB / 512MiB CPU=0.63%
+threat-intelligence-airflow3-postgres-1 73.7MiB / 256MiB CPU=1.83%
+threat-intelligence-postgres-1 33.29MiB / 512MiB CPU=0.00%
+threat-intelligence-mongodb-1 660MiB / 768MiB CPU=53.01%
+threat-intelligence-neo4j-1 916.7MiB / 1.25GiB CPU=0.93%
+threat-intelligence-cassandra-1 1.337GiB / 2GiB CPU=3.35%
+airflow-airflow-worker-1 109.9MiB / 7.467GiB CPU=0.30%
+airflow-airflow-apiserver-1 69.93MiB / 7.467GiB CPU=0.17%
+airflow-airflow-triggerer-1 89.95MiB / 7.467GiB CPU=1.41%
+airflow-airflow-scheduler-1 185.1MiB / 7.467GiB CPU=4.03%
+airflow-airflow-dag-processor-1 106.1MiB / 7.467GiB CPU=1.46%
+airflow-postgres-1 50.25MiB / 7.467GiB CPU=2.30%
+airflow-redis-1 9.176MiB / 7.467GiB CPU=0.23%

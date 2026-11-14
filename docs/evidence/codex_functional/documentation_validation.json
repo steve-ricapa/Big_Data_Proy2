@@ -1,0 +1,17 @@
+{
+  "documentation": "PASS",
+  "report_sha256": "4994ae90babef21efc2b18e8eb70d2db5321bddd9be22c2e709d20a01f4cc79b",
+  "local_tests_passed": 55,
+  "local_tests_skipped": 8,
+  "technical_functional_validation": "PASS_TECHNICAL_FUNCTIONAL",
+  "dag_active": true,
+  "post_deployment_unexpected_error_labels": 0,
+  "jwt_patterns_found": 0,
+  "only_application_containers_refreshed": [
+    "api",
+    "mcp-remote"
+  ],
+  "app_gui_retest": "PENDING_OWNER_CONFIRMATION",
+  "ruff_modified_files": "PASS",
+  "ruff_global": "FAIL_25_FINDINGS_IN_UNMODIFIED_SCRIPTS"
+}

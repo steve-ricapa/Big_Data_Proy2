@@ -1,0 +1,75 @@
+[
+  {
+    "architecture": "X86_64",
+    "creationTimestamp": "2026-11-10T10:43:46.219-08:00",
+    "enableConfidentialCompute": false,
+    "guestOsFeatures": [
+      {
+        "type": "UEFI_COMPATIBLE"
+      },
+      {
+        "type": "VIRTIO_SCSI_MULTIQUEUE"
+      },
+      {
+        "type": "GVNIC"
+      },
+      {
+        "type": "SEV_CAPABLE"
+      },
+      {
+        "type": "SEV_LIVE_MIGRATABLE_V2"
+      },
+      {
+        "type": "SUSPEND_SAFE_FPR"
+      }
+    ],
+    "id": "7323806527114894094",
+    "kind": "compute#disk",
+    "labelFingerprint": "vezUS-42LLM=",
+    "labels": {
+      "goog-terraform-provisioned": "true"
+    },
+    "lastAttachTimestamp": "2026-11-10T10:44:01.346-08:00",
+    "licenseCodes": [
+      "2147286739765738111"
+    ],
+    "licenses": [
+      "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-12-bookworm"
+    ],
+    "name": "ti-dev-boot",
+    "physicalBlockSizeBytes": "4096",
+    "satisfiesPzi": true,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-boot",
+    "sizeGb": "30",
+    "sourceImage": "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-12-bookworm-v20261109",
+    "sourceImageId": "2470586627590700142",
+    "status": "READY",
+    "type": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/diskTypes/pd-balanced",
+    "users": [
+      "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/instances/ti-dev-data"
+    ],
+    "zone": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a"
+  },
+  {
+    "creationTimestamp": "2026-11-10T10:37:36.879-08:00",
+    "enableConfidentialCompute": false,
+    "id": "8526865993876560543",
+    "kind": "compute#disk",
+    "labelFingerprint": "vezUS-42LLM=",
+    "labels": {
+      "goog-terraform-provisioned": "true"
+    },
+    "lastAttachTimestamp": "2026-11-10T10:44:01.355-08:00",
+    "name": "ti-dev-data",
+    "physicalBlockSizeBytes": "4096",
+    "satisfiesPzi": true,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-data",
+    "sizeGb": "100",
+    "status": "READY",
+    "type": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/diskTypes/pd-balanced",
+    "users": [
+      "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/instances/ti-dev-data"
+    ],
+    "zone": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a"
+  }
+]

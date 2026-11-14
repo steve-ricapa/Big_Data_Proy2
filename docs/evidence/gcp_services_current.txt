@@ -1,0 +1,15 @@
+NAME                                           IMAGE                              COMMAND                  SERVICE                  CREATED          STATUS                        PORTS
+threat-intelligence-airflow3-api-1             ti-airflow:3.4-local               "/bin/bash /opt/proj…"   airflow3-api             5 minutes ago    Up About a minute (healthy)   127.0.0.1:18081->8080/tcp
+threat-intelligence-airflow3-dag-processor-1   ti-airflow:3.4-local               "/bin/bash /opt/proj…"   airflow3-dag-processor   5 minutes ago    Up About a minute             8080/tcp
+threat-intelligence-airflow3-postgres-1        postgres:16.10-bookworm            "docker-entrypoint.s…"   airflow3-postgres        41 minutes ago   Up 41 minutes (healthy)       5432/tcp
+threat-intelligence-airflow3-scheduler-1       ti-airflow:3.4-local               "/bin/bash /opt/proj…"   airflow3-scheduler       5 minutes ago    Up About a minute (healthy)   8080/tcp
+threat-intelligence-api-1                      ti-app:local                       "uvicorn services.ap…"   api                      5 minutes ago    Up 5 minutes (healthy)        127.0.0.1:18000->8000/tcp
+threat-intelligence-caddy-1                    caddy:2.10.2-alpine                "/bin/sh /opt/ti/cad…"   caddy                    5 minutes ago    Up About a minute             0.0.0.0:80->80/tcp, [::]:80->80/tcp, 0.0.0.0:443->443/tcp, [::]:443->443/tcp, 443/udp, 2019/tcp
+threat-intelligence-cassandra-1                cassandra:4.1.9                    "/bin/bash /opt/ti/c…"   cassandra                41 minutes ago   Up 41 minutes (healthy)       7000-7001/tcp, 7199/tcp, 9042/tcp, 9160/tcp
+threat-intelligence-dashboard-1                ti-app:local                       "streamlit run servi…"   dashboard                5 minutes ago    Up 5 minutes (healthy)        127.0.0.1:18501->8501/tcp
+threat-intelligence-keycloak-1                 quay.io/keycloak/keycloak:26.8.2   "/bin/bash /opt/ti/k…"   keycloak                 5 minutes ago    Up 4 minutes                  8080/tcp, 8443/tcp, 9000/tcp
+threat-intelligence-keycloak-db-1              postgres:16.10-bookworm            "docker-entrypoint.s…"   keycloak-db              5 minutes ago    Up 5 minutes (healthy)        5432/tcp
+threat-intelligence-mcp-remote-1               ti-mcp:local                       "uvicorn services.mc…"   mcp-remote               5 minutes ago    Up 5 minutes                  
+threat-intelligence-mongodb-1                  mongo:8.0.12                       "docker-entrypoint.s…"   mongodb                  41 minutes ago   Up 8 minutes (healthy)        27017/tcp
+threat-intelligence-neo4j-1                    neo4j:5.26.12-community            "tini -g -- /startup…"   neo4j                    41 minutes ago   Up 8 minutes (healthy)        7473-7474/tcp, 7687/tcp
+threat-intelligence-runner-run-a7841913d01c    ti-app:local                       "python -m threat_in…"   runner                   6 minutes ago    Up 6 minutes                  

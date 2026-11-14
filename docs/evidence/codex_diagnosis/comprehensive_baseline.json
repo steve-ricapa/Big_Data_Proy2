@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-11T18:49:17.632041+00:00",
+  "probe": "separate native app-server process; NOT the already running App process",
+  "binary": "C:\\Users\\steve\\AppData\\Local\\OpenAI\\Codex\\bin\\9e1da79431da526b\\codex.exe",
+  "version": "codex-cli 0.167.0-alpha.4.1",
+  "CODEX_HOME": "C:\\Users\\steve\\.codex",
+  "persistent_config_modified": false,
+  "native_initialize": "PASS",
+  "effective_target_config": {
+    "url": "https://ti-136-114-21-18.sslip.io/mcp",
+    "enabled": true,
+    "scopes": [
+      "openid",
+      "ti:read"
+    ],
+    "startup_timeout_sec": 30.0,
+    "required": true,
+    "environment_id": "local"
+  },
+  "effective_client_id": "ti-codex",
+  "unscoped_inventory": [
+    {
+      "name": "big_data_ii_-_threat_intelligence",
+      "authStatus": "notLoggedIn",
+      "tool_count": 0
+    }
+  ],
+  "rpc_errors": [
+    {
+      "method": "thread/start",
+      "code": -32603
+    }
+  ],
+  "status": "PROBE_FAILED",
+  "exception_type": "RuntimeError",
+  "stderr_error_labels": [
+    [
+      "Token expired"
+    ]
+  ]
+}

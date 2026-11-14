@@ -1,0 +1,101 @@
+{
+  "at": "2026-11-11T16:59:54.968230+00:00",
+  "probe": "separate native app-server process; NOT the already running App process",
+  "binary": "C:\\Users\\steve\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+  "version": "codex-cli 0.139.0",
+  "CODEX_HOME": "C:\\Users\\steve\\.codex",
+  "persistent_config_modified": false,
+  "native_initialize": "PASS",
+  "effective_target_config": {
+    "url": "https://ti-136-114-21-18.sslip.io/mcp",
+    "enabled": true,
+    "scopes": [
+      "openid",
+      "ti:read"
+    ],
+    "environment_id": "local"
+  },
+  "effective_client_id": "ti-codex",
+  "unscoped_inventory": [
+    {
+      "name": "big_data_ii_-_threat_intelligence",
+      "authStatus": "unsupported",
+      "tool_count": 0
+    }
+  ],
+  "ephemeral_thread_started": true,
+  "target_present": true,
+  "target": {
+    "name": "big_data_ii_-_threat_intelligence",
+    "authStatus": "unsupported",
+    "tool_count": 0,
+    "tool_names": [],
+    "resource_count": 0,
+    "resource_template_count": 0,
+    "serverInfo": null
+  },
+  "status": "NOT_SIX",
+  "stderr_error_labels": [
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "404",
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ],
+    [
+      "AuthRequired",
+      "AuthRequired",
+      "invalid_token"
+    ]
+  ]
+}

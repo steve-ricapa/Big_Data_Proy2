@@ -1,0 +1,5 @@
+2026-11-10T23:43:45.241260Z [warning  ] Could not import graphviz. Rendering graph to the graphical format will not be possible. 
+You might need to install the graphviz package and necessary system packages.
+Run `pip install graphviz` to attempt to install it. [py.warnings] category=UserWarning filename=/home/airflow/.local/lib/python3.11/site-packages/airflow/cli/commands/dag_command.py lineno=57
+dag_id                   fileloc                            owners       is_paused    bundle_name    bundle_version
+nvd_threat_intelligence  /opt/airflow/dags/nvd_pipeline.py  ['bigdata']  False        dags-folder

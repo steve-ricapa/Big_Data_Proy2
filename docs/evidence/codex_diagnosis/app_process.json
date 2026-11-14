@@ -1,0 +1,139 @@
+{
+  "at": "2026-11-11T16:55:39.552715+00:00",
+  "processes": [
+    {
+      "ProcessId": 16532,
+      "ParentProcessId": 15544,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe",
+      "environment": {
+        "inspection": "read_only_allowlist",
+        "CODEX_HOME": null,
+        "HOME": null,
+        "USERPROFILE": "C:\\Users\\steve",
+        "LOCALAPPDATA": "C:\\Users\\steve\\AppData\\Local"
+      },
+      "app_server": false,
+      "config_override_keys": [],
+      "safe_overrides": {}
+    },
+    {
+      "ProcessId": 1796,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 24728,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 4584,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 12144,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 26468,
+      "ParentProcessId": 16532,
+      "Name": "codex.exe",
+      "ExecutablePath": "C:\\Users\\steve\\AppData\\Local\\OpenAI\\Codex\\bin\\9e1da79431da526b\\codex.exe",
+      "environment": {
+        "inspection": "read_only_allowlist",
+        "CODEX_HOME": null,
+        "HOME": null,
+        "USERPROFILE": "C:\\Users\\steve",
+        "LOCALAPPDATA": "C:\\Users\\steve\\AppData\\Local"
+      },
+      "app_server": true,
+      "config_override_keys": [
+        "features.code_mode_host",
+        "plugins.codex-app-tools@openai-bundled.mcp_servers.codex_app.enabled"
+      ],
+      "safe_overrides": {}
+    },
+    {
+      "ProcessId": 16788,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 25432,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 2568,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 7404,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 21316,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 24824,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 23020,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 18380,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    },
+    {
+      "ProcessId": 21412,
+      "ParentProcessId": 16532,
+      "Name": "codex.exe",
+      "ExecutablePath": "C:\\Users\\steve\\AppData\\Local\\OpenAI\\Codex\\bin\\9e1da79431da526b\\codex.exe",
+      "environment": {
+        "inspection": "read_only_allowlist",
+        "CODEX_HOME": null,
+        "HOME": null,
+        "USERPROFILE": "C:\\Users\\steve",
+        "LOCALAPPDATA": "C:\\Users\\steve\\AppData\\Local"
+      },
+      "app_server": false,
+      "config_override_keys": [
+        "forced_login_method"
+      ],
+      "safe_overrides": {},
+      "remote_transport": "https",
+      "remote_loopback": false
+    },
+    {
+      "ProcessId": 504,
+      "ParentProcessId": 16532,
+      "Name": "ChatGPT.exe",
+      "ExecutablePath": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1106.6628.0_x64__2p2nqsd0c76g0\\app\\ChatGPT.exe"
+    }
+  ],
+  "self_environment_check": true
+}

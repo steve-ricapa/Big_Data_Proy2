@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "document_links_and_fences": true,
+  "dcr_failure_reproduced": true,
+  "callback_rejection_reproduced": true,
+  "jwt_patterns_found": 0,
+  "oauth_changes_applied": false,
+  "codex_connected": false
+}

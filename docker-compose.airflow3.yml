@@ -1,0 +1,104 @@
+# Opt-in migration: combine with root compose. Airflow 2 metadata stays untouched.
+x-airflow3: &airflow3
+  image: ti-airflow:3.4-local
+  build: {context: ., dockerfile: infrastructure/docker/airflow3.Dockerfile}
+  profiles: [migration]
+  user: "50000:0"
+  mem_limit: 768m
+  restart: "on-failure:3"
+  entrypoint: [/bin/bash, /opt/project/scripts/airflow3-entrypoint.sh]
+  environment: &airflow3-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__PARALLELISM: "1"
+    AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: "1"
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow3-api:8080/execution/
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: admin:admin
+    AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_PASSWORDS_FILE: /opt/airflow/auth/passwords.json
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN_CMD: cat /run/secrets/airflow3_db_uri
+    AIRFLOW__CORE__FERNET_KEY_CMD: cat /run/secrets/airflow_fernet_key
+    AIRFLOW__API_AUTH__JWT_SECRET_CMD: cat /run/secrets/airflow3_jwt
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+    AIRFLOW__DAG_PROCESSOR__MIN_FILE_PROCESS_INTERVAL: "30"
+    PYTHONPATH: /opt/project/src
+    MONGODB_URI_FILE: /run/secrets/mongodb_writer_uri
+    NEO4J_PASSWORD_FILE: /run/secrets/neo4j_password
+    NEO4J_URI: bolt://neo4j:7687
+    CASSANDRA_CONTACT_POINTS: cassandra
+    NVD_RAW_DIR: /opt/project/data/raw/nvd
+    STAGING_DIR: /opt/project/data/staging
+    STATE_DIR: /opt/airflow/checkpoints
+  secrets: [airflow3_db_uri, airflow_fernet_key, airflow3_jwt, airflow3_passwords, mongodb_writer_uri, neo4j_password]
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags:ro
+    - ./src:/opt/project/src:ro
+    - ./scripts:/opt/project/scripts:ro
+    - ./docs/evidence:/opt/project/evidence
+    - ./data:/opt/project/data
+    - checkpoint_data:/opt/airflow/checkpoints
+    - airflow3_logs:/opt/airflow/logs
+    - airflow3_auth:/opt/airflow/auth
+  networks: [data]
+  depends_on:
+    airflow3-postgres: {condition: service_healthy}
+services:
+  airflow3-postgres:
+    image: postgres:16.10-bookworm
+    profiles: [migration]
+    mem_limit: 256m
+    environment:
+      POSTGRES_USER: airflow3
+      POSTGRES_DB: airflow3
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets: [postgres_password]
+    volumes: ["airflow3_postgres:/var/lib/postgresql/data"]
+    networks: [data]
+    healthcheck:
+      test: [CMD, pg_isready, -U, airflow3, -d, airflow3]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  airflow3-init:
+    <<: *airflow3
+    restart: "no"
+    command: [airflow, db, migrate]
+  airflow3-api:
+    <<: *airflow3
+    command: [airflow, api-server, --workers, "1"]
+    networks: [data, edge]
+    ports: ["127.0.0.1:18081:8080"]
+    healthcheck:
+      test: [CMD-SHELL, "curl --fail http://localhost:8080/api/v2/monitor/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+  airflow3-scheduler:
+    <<: *airflow3
+    command: scheduler
+    networks: [data, edge]
+    mem_limit: 1024m
+    healthcheck:
+      test: [CMD-SHELL, "curl --fail http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+  airflow3-dag-processor:
+    <<: *airflow3
+    command: dag-processor
+    healthcheck:
+      test: [CMD, python, -c, "import json,urllib.request; r=json.load(urllib.request.urlopen('http://airflow3-api:8080/api/v2/monitor/health',timeout=5)); assert r['dag_processor']['status']=='healthy'"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+volumes:
+  airflow3_logs:
+  airflow3_postgres:
+  airflow3_auth:
+secrets:
+  airflow3_db_uri: {file: ./secrets/airflow3-db-uri}
+  airflow3_jwt: {file: ./secrets/airflow3-jwt}
+  airflow3_passwords: {file: ./secrets/airflow3-passwords}

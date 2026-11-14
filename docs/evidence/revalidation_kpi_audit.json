@@ -1,0 +1,15 @@
+{
+  "as_of": "2026-11-10T17:20:24.352429+00:00",
+  "total_cves": 171791,
+  "checks": {
+    "total_cves": "PASS",
+    "severity": "PASS",
+    "monthly": "PASS",
+    "cvss_by_version": "PASS",
+    "unique_affected_products": "PASS",
+    "top_cwes": "PASS",
+    "top_products": "PASS",
+    "cassandra_snapshot_equals_mongo": "PASS",
+    "graph_counts": "PASS"
+  }
+}

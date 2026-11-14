@@ -1,0 +1,8 @@
+{
+  "status": "FAILED_BEFORE_RESET",
+  "delivery_id": "20261111T163551",
+  "reason": "ti-app:local lacks cryptography; module import failed before password generation or reset",
+  "encrypted_envelope_exists": false,
+  "reset_attempted": false,
+  "correction": "Use existing ti-mcp:local image with cryptography; no image builds or production changes"
+}

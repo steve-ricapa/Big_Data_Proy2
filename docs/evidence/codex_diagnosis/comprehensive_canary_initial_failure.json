@@ -1,0 +1,9 @@
+{
+  "status": "INSTRUMENTATION_FAILURE",
+  "production_activated": false,
+  "canary_api_ready": true,
+  "suite_result": "No JSON result; suite launched outside /app without /app on PYTHONPATH",
+  "candidate_import_with_working_directory": "PASS (separate no-network import check)",
+  "correction": "Set PYTHONPATH=/app:/app/src in the disposable SDK test container only",
+  "canary_process_stopped": true
+}

@@ -1,0 +1,6 @@
+{
+  "guestCpus": 4,
+  "memoryMb": 16384,
+  "name": "e2-standard-4",
+  "zone": "us-central1-a"
+}

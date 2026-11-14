@@ -1,0 +1,76 @@
+{
+  "run_dir": "/opt/project/data/staging/13ba370f3deacdbad7e8",
+  "sources": [
+    "/opt/project/data/raw/nvd/2024/nvdcve-2.0-2024.json",
+    "/opt/project/data/raw/nvd/2025/nvdcve-2.0-2025.json",
+    "/opt/project/data/raw/nvd/2026/nvdcve-2.0-2026.json"
+  ],
+  "limit": 0,
+  "started_at": "2026-11-10T17:08:58.575296+00:00",
+  "stages": {
+    "validate": {
+      "seen": 171791,
+      "invalid": 0,
+      "duplicates": 0,
+      "unique_valid": 171791
+    },
+    "mongodb": {
+      "seen": 171791,
+      "new": 0,
+      "modified": 0,
+      "unchanged": 171791,
+      "stale": 0,
+      "written": 0,
+      "batches_committed": 0,
+      "total_in_engine": 171791,
+      "seconds": 135.009
+    },
+    "cassandra": {
+      "seen": 171791,
+      "new": 0,
+      "modified": 0,
+      "unchanged": 171791,
+      "stale": 0,
+      "written": 0,
+      "batches_committed": 0,
+      "total_in_engine": 171791,
+      "seconds": 108.517
+    },
+    "neo4j": {
+      "seen": 171791,
+      "new": 0,
+      "modified": 0,
+      "unchanged": 171791,
+      "stale": 0,
+      "written": 0,
+      "batches_committed": 0,
+      "total_in_engine": 171791,
+      "seconds": 102.191
+    },
+    "kpis": {
+      "total_cves": 171791,
+      "as_of": "2026-11-10T17:20:24.352429+00:00"
+    },
+    "verify": {
+      "counts": {
+        "mongodb": 171791,
+        "cassandra": 171791,
+        "neo4j": 171791
+      },
+      "fingerprints": {
+        "mongodb": {
+          "records": 171791,
+          "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+        },
+        "cassandra": {
+          "records": 171791,
+          "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+        },
+        "neo4j": {
+          "records": 171791,
+          "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+        }
+      }
+    }
+  }
+}

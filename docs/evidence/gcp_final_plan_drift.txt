@@ -1,0 +1,56 @@
+[0m[1mmodule.secrets.google_secret_manager_secret.main["cassandra-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-cassandra-password][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["airflow-db-uri"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-airflow-db-uri][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["runtime-bootstrap"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-runtime-bootstrap][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["mongodb-root-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-mongodb-root-password][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["mcp-token"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-mcp-token][0m
+[0m[1mmodule.registry.google_artifact_registry_repository.images: Refreshing state... [id=projects/proyectobigdata2-514216/locations/us-central1/repositories/ti-dev-images][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["postgres-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-postgres-password][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["neo4j-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-neo4j-password][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["airflow-fernet-key"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-airflow-fernet-key][0m
+[0m[1mmodule.compute.google_compute_disk.data: Refreshing state... [id=projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-data][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["airflow-web-key"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-airflow-web-key][0m
+[0m[1mmodule.secrets.google_secret_manager_secret.main["mongodb-uri"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-mongodb-uri][0m
+[0m[1mmodule.network.google_compute_network.main: Refreshing state... [id=projects/proyectobigdata2-514216/global/networks/ti-dev-vpc][0m
+[0m[1mmodule.iam.google_service_account.web["api"]: Refreshing state... [id=projects/proyectobigdata2-514216/serviceAccounts/ti-dev-api@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.compute.google_compute_disk.boot: Refreshing state... [id=projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-boot][0m
+[0m[1mmodule.iam.google_service_account.web["dashboard"]: Refreshing state... [id=projects/proyectobigdata2-514216/serviceAccounts/ti-dev-dashboard@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.iam.google_service_account.web["mcp"]: Refreshing state... [id=projects/proyectobigdata2-514216/serviceAccounts/ti-dev-mcp@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.observability.google_logging_metric.errors: Refreshing state... [id=ti-dev-run-errors][0m
+[0m[1mmodule.storage.google_storage_bucket.data["processed"]: Refreshing state... [id=proyectobigdata2-514216-ti-dev-processed][0m
+[0m[1mmodule.storage.google_storage_bucket.data["raw"]: Refreshing state... [id=proyectobigdata2-514216-ti-dev-raw][0m
+[0m[1mmodule.iam.google_service_account.vm: Refreshing state... [id=projects/proyectobigdata2-514216/serviceAccounts/ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.observability.google_monitoring_notification_channel.operator[0]: Refreshing state... [id=projects/proyectobigdata2-514216/notificationChannels/15206287567660692756][0m
+[0m[1mmodule.compute.google_compute_address.public[0]: Refreshing state... [id=projects/proyectobigdata2-514216/regions/us-central1/addresses/ti-dev-public][0m
+[0m[1mmodule.network.google_compute_firewall.iap: Refreshing state... [id=projects/proyectobigdata2-514216/global/firewalls/ti-dev-iap-ssh][0m
+[0m[1mmodule.network.google_compute_firewall.database: Refreshing state... [id=projects/proyectobigdata2-514216/global/firewalls/ti-dev-web-to-data][0m
+[0m[1mmodule.network.google_compute_subnetwork.main: Refreshing state... [id=projects/proyectobigdata2-514216/regions/us-central1/subnetworks/ti-dev-subnet][0m
+[0m[1mmodule.network.google_compute_firewall.https[0]: Refreshing state... [id=projects/proyectobigdata2-514216/global/firewalls/ti-dev-https][0m
+[0m[1mmodule.observability.google_monitoring_alert_policy.health["memory_used_percent"]: Refreshing state... [id=projects/proyectobigdata2-514216/alertPolicies/13137324337180825486][0m
+[0m[1mmodule.observability.google_monitoring_alert_policy.cpu: Refreshing state... [id=projects/proyectobigdata2-514216/alertPolicies/11580792887361368591][0m
+[0m[1mmodule.observability.google_monitoring_alert_policy.health["disk_used_percent"]: Refreshing state... [id=projects/proyectobigdata2-514216/alertPolicies/3183146935931915333][0m
+[0m[1mmodule.observability.google_monitoring_alert_policy.health["nvd_sync_age_hours"]: Refreshing state... [id=projects/proyectobigdata2-514216/alertPolicies/10153346897065680418][0m
+[0m[1mmodule.observability.google_monitoring_alert_policy.health["unhealthy_containers"]: Refreshing state... [id=projects/proyectobigdata2-514216/alertPolicies/876202249658255910][0m
+[0m[1mmodule.iam.google_project_iam_member.telemetry["roles/logging.logWriter"]: Refreshing state... [id=proyectobigdata2-514216/roles/logging.logWriter/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.iam.google_project_iam_member.telemetry["roles/monitoring.metricWriter"]: Refreshing state... [id=proyectobigdata2-514216/roles/monitoring.metricWriter/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mgoogle_service_account_iam_member.operator[0]: Refreshing state... [id=projects/proyectobigdata2-514216/serviceAccounts/ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com/roles/iam.serviceAccountUser/user:steve.ricapa@gmail.com][0m
+[0m[1mmodule.registry.google_artifact_registry_repository_iam_member.reader: Refreshing state... [id=projects/proyectobigdata2-514216/locations/us-central1/repositories/ti-dev-images/roles/artifactregistry.reader/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["runtime-bootstrap"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-runtime-bootstrap/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["cassandra-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-cassandra-password/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["postgres-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-postgres-password/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["airflow-db-uri"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-airflow-db-uri/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["airflow-fernet-key"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-airflow-fernet-key/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["neo4j-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-neo4j-password/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["mongodb-root-password"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-mongodb-root-password/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["mongodb-uri"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-mongodb-uri/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.secrets.google_secret_manager_secret_iam_member.vm["airflow-web-key"]: Refreshing state... [id=projects/proyectobigdata2-514216/secrets/ti-dev-airflow-web-key/roles/secretmanager.secretAccessor/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.storage.google_storage_bucket_iam_member.vm["processed"]: Refreshing state... [id=b/proyectobigdata2-514216-ti-dev-processed/roles/storage.objectUser/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.storage.google_storage_bucket_iam_member.vm["raw"]: Refreshing state... [id=b/proyectobigdata2-514216-ti-dev-raw/roles/storage.objectViewer/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.registry.google_artifact_registry_repository_iam_member.writer: Refreshing state... [id=projects/proyectobigdata2-514216/locations/us-central1/repositories/ti-dev-images/roles/artifactregistry.writer/serviceAccount:ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com][0m
+[0m[1mmodule.compute.google_compute_instance.main: Refreshing state... [id=projects/proyectobigdata2-514216/zones/us-central1-a/instances/ti-dev-data][0m
+[0m[1mgoogle_compute_instance_iam_member.operator[0]: Refreshing state... [id=projects/proyectobigdata2-514216/zones/us-central1-a/instances/ti-dev-data/roles/compute.osAdminLogin/user:steve.ricapa@gmail.com][0m
+[0m[1mgoogle_iap_tunnel_instance_iam_member.operator[0]: Refreshing state... [id=projects/proyectobigdata2-514216/iap_tunnel/zones/us-central1-a/instances/ti-dev-data/roles/iap.tunnelResourceAccessor/user:steve.ricapa@gmail.com][0m
+
+[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+
+[0mTerraform has compared your real infrastructure against your configuration
+and found no differences, so no changes are needed.

@@ -1,0 +1,1341 @@
+{
+  "at": "2026-11-11T19:19:05.257735+00:00",
+  "transport": "FastMCP SDK -> real HTTP API -> production read-only DB identities",
+  "oauth_e2e": "NOT_TESTED_IN_THIS_SUITE",
+  "data_writes": false,
+  "cases": [
+    {
+      "id": "contract_six_closed_input_and_typed_output",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X01_full_input_schema",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X02_products_schema",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "statistics_and_definitions",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "coverage_not_complete",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "coverage_year_count_reconciliation",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X01_keyword",
+      "status": "PASS",
+      "observation": {
+        "total": 10
+      }
+    },
+    {
+      "id": "X01_severity",
+      "status": "PASS",
+      "observation": {
+        "total": 17895
+      }
+    },
+    {
+      "id": "X01_combined",
+      "status": "PASS",
+      "observation": {
+        "total": 2
+      }
+    },
+    {
+      "id": "X01_exact",
+      "status": "PASS",
+      "observation": {
+        "total": 1
+      }
+    },
+    {
+      "id": "X03_search_unknown",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X03_detail_unknown",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X03_products_limit",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X03_graph_limit",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X03_cwes_limit",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X03_cwes_bad_limit",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X03_statistics_unknown",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "page_zero",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "page_bool",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "page_float",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "page_bad_string",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "page_string_bound",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "page_size_bound",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "invalid_severity",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "empty_fields",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "unknown_projection",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W02_documented_numeric_string",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W01_text_semantics",
+      "status": "PASS",
+      "observation": {
+        "total": 1630
+      }
+    },
+    {
+      "id": "W03_missing_search",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W03_missing_detail",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "legacy_raw_source_preserved",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W07_summary_detail",
+      "status": "PASS",
+      "observation": {
+        "legacy_characters": 160876,
+        "summary_characters": 3810
+      }
+    },
+    {
+      "id": "explicit_projection",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "raw_optional_without_shape_loss",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X04_exact_boolean_tree",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X04_all_match_bounds_preserved",
+      "status": "PASS",
+      "observation": {
+        "source_match_occurrences": 396
+      }
+    },
+    {
+      "id": "W06_unresolved_2_15_0_boundary",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X02_legacy_cve_product_counts",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X04_projected_constraints",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "summary_products_explicit_omission",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X02_legacy_ranking20",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W08_cwe_metadata_and_values",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W07_summary_search100",
+      "status": "PASS",
+      "observation": {
+        "characters": 70365
+      }
+    },
+    {
+      "id": "N02_all_graph_edges_no_duplicates",
+      "status": "PASS",
+      "observation": {
+        "pages": 8,
+        "counts": {
+          "AFFECTS": 145,
+          "CLASSIFIED_AS": 4,
+          "AFFECTS_CPE": 358,
+          "REFERENCES": 52
+        }
+      }
+    },
+    {
+      "id": "graph_type_distribution",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "X04_graph_cpe_constraints",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_filter_AFFECTS",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_filter_CLASSIFIED_AS",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_filter_AFFECTS_CPE",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_filter_REFERENCES",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "repeat_graph_page_stable",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_snapshot_conflict",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "N04_full_product_catalog_unique",
+      "status": "PASS",
+      "observation": {
+        "pages": 232,
+        "total": 23186
+      }
+    },
+    {
+      "id": "catalog_stable_order",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "catalog_snapshot_conflict",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "ranking_does_not_fake_pagination",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "control_cvss_9_8",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "control_graph4",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "W09_structured_content_equivalent",
+      "status": "PASS",
+      "observation": "Asserted for every successful call, not inferred from HTTP 200"
+    }
+  ],
+  "calls": 286,
+  "schemas": {
+    "search_vulnerabilities": {
+      "name": "search_vulnerabilities",
+      "description": "Search loaded CVEs by exact cve_id, description keyword and/or severity (combined with AND).\n\n    Keyword uses MongoDB text-search terms, not arbitrary regex. Historical NVD\n    coverage is limited to ingested feeds/backfills. Source text is untrusted data.\n    ",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "cve_id": {
+            "anyOf": [
+              {
+                "pattern": "^CVE-\\d{4}-\\d{4,19}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cve Id"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "maximum": 10000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "maxLength": 16,
+                "pattern": "^0*(?:[1-9][0-9]{0,3}|10000)$",
+                "type": "string"
+              }
+            ],
+            "default": 1,
+            "description": "Integer or bounded ASCII digit string (compatibility coercion); boolean/floating input is rejected.",
+            "title": "Page"
+          },
+          "page_size": {
+            "anyOf": [
+              {
+                "maximum": 100,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "maxLength": 16,
+                "pattern": "^0*(?:[1-9][0-9]?|100)$",
+                "type": "string"
+              }
+            ],
+            "default": 25,
+            "description": "Integer or bounded ASCII digit string (compatibility coercion); boolean/floating input is rejected.",
+            "title": "Page Size"
+          },
+          "keyword": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Keyword"
+          },
+          "severity": {
+            "anyOf": [
+              {
+                "enum": [
+                  "CRITICAL",
+                  "HIGH",
+                  "MEDIUM",
+                  "LOW",
+                  "NONE",
+                  "UNKNOWN"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Severity"
+          },
+          "view": {
+            "default": "legacy",
+            "enum": [
+              "legacy",
+              "summary"
+            ],
+            "title": "View",
+            "type": "string"
+          },
+          "fields": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "description",
+                    "cvss",
+                    "severity",
+                    "published",
+                    "last_modified",
+                    "status",
+                    "year",
+                    "month",
+                    "cwes",
+                    "product_count",
+                    "cpe_count",
+                    "reference_count"
+                  ],
+                  "type": "string"
+                },
+                "maxItems": 12,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Fields"
+          }
+        },
+        "title": "Strictsearch_vulnerabilitiesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "CVERecord": {
+            "additionalProperties": true,
+            "properties": {
+              "cve_id": {
+                "title": "Cve Id",
+                "type": "string"
+              },
+              "description": {
+                "title": "Description",
+                "type": "string"
+              },
+              "severity": {
+                "title": "Severity",
+                "type": "string"
+              },
+              "cvss": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/CVSSRecord"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "raw_cve": {
+                "additionalProperties": true,
+                "title": "Raw Cve",
+                "type": "object"
+              },
+              "products": {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "title": "Products",
+                "type": "array"
+              },
+              "cpes": {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "title": "Cpes",
+                "type": "array"
+              },
+              "applicability": {
+                "additionalProperties": true,
+                "title": "Applicability",
+                "type": "object"
+              },
+              "metadata": {
+                "additionalProperties": true,
+                "title": "Metadata",
+                "type": "object"
+              }
+            },
+            "required": [
+              "cve_id"
+            ],
+            "title": "CVERecord",
+            "type": "object"
+          },
+          "CVSSRecord": {
+            "additionalProperties": true,
+            "properties": {
+              "version": {
+                "title": "Version",
+                "type": "string"
+              },
+              "score": {
+                "title": "Score",
+                "type": "number"
+              },
+              "severity": {
+                "title": "Severity",
+                "type": "string"
+              },
+              "vector": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Vector"
+              },
+              "source": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source"
+              }
+            },
+            "required": [
+              "version",
+              "score",
+              "severity",
+              "vector",
+              "source"
+            ],
+            "title": "CVSSRecord",
+            "type": "object"
+          }
+        },
+        "additionalProperties": true,
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/$defs/CVERecord"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          },
+          "page": {
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_size": {
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "items",
+          "total",
+          "page",
+          "page_size"
+        ],
+        "title": "AdditiveSearchResponse",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    "get_cve_details": {
+      "name": "get_cve_details",
+      "description": "Exact CVE. Prefer view=summary for small payloads; legacy retains raw_cve by default.\n\n    include_raw explicitly controls original NVD data. include_applicability exposes\n    full configuration logic and each version bound without interpreting the ranges.\n    fields is only valid with view=summary. A CVE does not imply an observed attack.\n    ",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "cve_id": {
+            "pattern": "^CVE-\\d{4}-\\d{4,19}$",
+            "title": "Cve Id",
+            "type": "string"
+          },
+          "view": {
+            "default": "legacy",
+            "enum": [
+              "legacy",
+              "summary"
+            ],
+            "title": "View",
+            "type": "string"
+          },
+          "include_raw": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Include Raw"
+          },
+          "include_applicability": {
+            "default": false,
+            "title": "Include Applicability",
+            "type": "boolean"
+          },
+          "fields": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "description",
+                    "cvss",
+                    "severity",
+                    "published",
+                    "last_modified",
+                    "status",
+                    "year",
+                    "month",
+                    "cwes",
+                    "product_count",
+                    "cpe_count",
+                    "reference_count"
+                  ],
+                  "type": "string"
+                },
+                "maxItems": 12,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Fields"
+          }
+        },
+        "required": [
+          "cve_id"
+        ],
+        "title": "Strictget_cve_detailsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "CVSSRecord": {
+            "additionalProperties": true,
+            "properties": {
+              "version": {
+                "title": "Version",
+                "type": "string"
+              },
+              "score": {
+                "title": "Score",
+                "type": "number"
+              },
+              "severity": {
+                "title": "Severity",
+                "type": "string"
+              },
+              "vector": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Vector"
+              },
+              "source": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source"
+              }
+            },
+            "required": [
+              "version",
+              "score",
+              "severity",
+              "vector",
+              "source"
+            ],
+            "title": "CVSSRecord",
+            "type": "object"
+          }
+        },
+        "additionalProperties": true,
+        "properties": {
+          "cve_id": {
+            "title": "Cve Id",
+            "type": "string"
+          },
+          "description": {
+            "default": null,
+            "title": "Description",
+            "type": "string"
+          },
+          "severity": {
+            "default": null,
+            "title": "Severity",
+            "type": "string"
+          },
+          "cvss": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/CVSSRecord"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null
+          },
+          "raw_cve": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Raw Cve",
+            "type": "object"
+          },
+          "products": {
+            "default": null,
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Products",
+            "type": "array"
+          },
+          "cpes": {
+            "default": null,
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Cpes",
+            "type": "array"
+          },
+          "applicability": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Applicability",
+            "type": "object"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "cve_id"
+        ],
+        "title": "AdditiveCVERecord",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    "get_top_cwes": {
+      "name": "get_top_cwes",
+      "description": "Top weaknesses from the last successful KPI snapshot, not live incident counts.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {},
+        "title": "Strictget_top_cwesArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "properties": {
+          "items": {
+            "items": {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "AdditiveRankingResponse",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    "get_vulnerability_statistics": {
+      "name": "get_vulnerability_statistics",
+      "description": "Snapshot statistics including as_of and CVSS averages separated by version.",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {},
+        "title": "Strictget_vulnerability_statisticsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "properties": {
+          "total_cves": {
+            "title": "Total Cves",
+            "type": "integer"
+          },
+          "as_of": {
+            "title": "As Of",
+            "type": "string"
+          },
+          "severity": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Severity",
+            "type": "object"
+          },
+          "rejected_cves": {
+            "title": "Rejected Cves",
+            "type": "integer"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "total_cves",
+          "as_of",
+          "severity",
+          "rejected_cves"
+        ],
+        "title": "AdditiveStatisticsResponse",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    "get_affected_products": {
+      "name": "get_affected_products",
+      "description": "Affected products/CPEs for an exact CVE; without cve_id return the snapshot's top products.\n\n    CPE associations are source data, not proof that a particular asset is vulnerable.\n    No ID defaults to ranking20 (not the full catalog). mode=catalog enables\n    stable cve_count DESC/id ASC pagination, page_size<=100. page/page_size are\n    only valid for the global catalog. A cve_id selects the existing per-CVE mode.\n    CPE constraints retain version bounds and logical context. view=summary omits\n    CPEs unless include_cpes=true. No unsupported limit argument is accepted.\n    ",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "cve_id": {
+            "anyOf": [
+              {
+                "pattern": "^CVE-\\d{4}-\\d{4,19}$",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Cve Id"
+          },
+          "mode": {
+            "default": "ranking",
+            "enum": [
+              "ranking",
+              "catalog"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "maximum": 10000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "maxLength": 16,
+                "pattern": "^0*(?:[1-9][0-9]{0,3}|10000)$",
+                "type": "string"
+              }
+            ],
+            "default": 1,
+            "description": "Integer or bounded ASCII digit string (compatibility coercion); boolean/floating input is rejected.",
+            "title": "Page"
+          },
+          "page_size": {
+            "anyOf": [
+              {
+                "anyOf": [
+                  {
+                    "maximum": 100,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  {
+                    "maxLength": 16,
+                    "pattern": "^0*(?:[1-9][0-9]?|100)$",
+                    "type": "string"
+                  }
+                ],
+                "description": "Integer or bounded ASCII digit string (compatibility coercion); boolean/floating input is rejected."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Page Size"
+          },
+          "view": {
+            "default": "legacy",
+            "enum": [
+              "legacy",
+              "summary"
+            ],
+            "title": "View",
+            "type": "string"
+          },
+          "include_cpes": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Include Cpes"
+          },
+          "expected_as_of": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expected As Of"
+          }
+        },
+        "title": "Strictget_affected_productsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "CPEItem": {
+            "additionalProperties": true,
+            "properties": {
+              "criteria": {
+                "title": "Criteria",
+                "type": "string"
+              },
+              "product_id": {
+                "title": "Product Id",
+                "type": "string"
+              },
+              "constraints": {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "title": "Constraints",
+                "type": "array"
+              },
+              "identity_is_not_version_assertion": {
+                "title": "Identity Is Not Version Assertion",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "criteria",
+              "product_id"
+            ],
+            "title": "CPEItem",
+            "type": "object"
+          },
+          "ProductItem": {
+            "additionalProperties": true,
+            "properties": {
+              "id": {
+                "title": "Id",
+                "type": "string"
+              },
+              "part": {
+                "title": "Part",
+                "type": "string"
+              },
+              "vendor": {
+                "title": "Vendor",
+                "type": "string"
+              },
+              "product": {
+                "title": "Product",
+                "type": "string"
+              },
+              "cve_count": {
+                "title": "Cve Count",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "part",
+              "vendor",
+              "product"
+            ],
+            "title": "ProductItem",
+            "type": "object"
+          }
+        },
+        "additionalProperties": true,
+        "properties": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/ProductItem"
+                },
+                {
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "integer"
+                    }
+                  ],
+                  "type": "array"
+                }
+              ]
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "cve_id": {
+            "default": null,
+            "title": "Cve Id",
+            "type": "string"
+          },
+          "cpes": {
+            "default": null,
+            "items": {
+              "$ref": "#/$defs/CPEItem"
+            },
+            "title": "Cpes",
+            "type": "array"
+          },
+          "mode": {
+            "default": null,
+            "enum": [
+              "ranking",
+              "catalog",
+              "per_cve"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "total": {
+            "default": null,
+            "title": "Total",
+            "type": "integer"
+          },
+          "page": {
+            "default": null,
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_size": {
+            "default": null,
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "items"
+        ],
+        "title": "AdditiveProductsResponse",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    "explore_cve_relationships": {
+      "name": "explore_cve_relationships",
+      "description": "Outgoing Neo4j edges, stable order with unique relationship_key; max250 per page.\n\n    Follow next_page until has_more=false. Filter by relationship_type. Reuse\n    metadata.as_of as expected_as_of to detect a changed dataset snapshot.\n    Order and edge keys are stable within the live database, not across restores.\n    ",
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "cve_id": {
+            "pattern": "^CVE-\\d{4}-\\d{4,19}$",
+            "title": "Cve Id",
+            "type": "string"
+          },
+          "page": {
+            "anyOf": [
+              {
+                "maximum": 10000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "maxLength": 16,
+                "pattern": "^0*(?:[1-9][0-9]{0,3}|10000)$",
+                "type": "string"
+              }
+            ],
+            "default": 1,
+            "description": "Integer or bounded ASCII digit string (compatibility coercion); boolean/floating input is rejected.",
+            "title": "Page"
+          },
+          "page_size": {
+            "anyOf": [
+              {
+                "maximum": 250,
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "maxLength": 16,
+                "pattern": "^0*(?:[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|250)$",
+                "type": "string"
+              }
+            ],
+            "default": 250,
+            "description": "Integer or bounded ASCII digit string (compatibility coercion); boolean/floating input is rejected.",
+            "title": "Page Size"
+          },
+          "relationship_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "AFFECTS",
+                  "AFFECTS_CPE",
+                  "CLASSIFIED_AS",
+                  "REFERENCES"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Relationship Type"
+          },
+          "expected_as_of": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Expected As Of"
+          }
+        },
+        "required": [
+          "cve_id"
+        ],
+        "title": "Strictexplore_cve_relationshipsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": true,
+        "properties": {
+          "items": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "title": "Items",
+            "type": "array"
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer"
+          },
+          "total_relationships": {
+            "title": "Total Relationships",
+            "type": "integer"
+          },
+          "truncated": {
+            "title": "Truncated",
+            "type": "boolean"
+          },
+          "total": {
+            "default": null,
+            "title": "Total",
+            "type": "integer"
+          },
+          "page": {
+            "default": null,
+            "title": "Page",
+            "type": "integer"
+          },
+          "page_size": {
+            "default": null,
+            "title": "Page Size",
+            "type": "integer"
+          },
+          "metadata": {
+            "additionalProperties": true,
+            "default": null,
+            "title": "Metadata",
+            "type": "object"
+          }
+        },
+        "required": [
+          "items",
+          "limit",
+          "total_relationships",
+          "truncated"
+        ],
+        "title": "AdditiveGraphResponse",
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    }
+  },
+  "snapshot": {
+    "as_of": "2026-11-11T17:42:23.986620+00:00",
+    "total_cves": 174735,
+    "severity": {
+      "CRITICAL": 17895,
+      "HIGH": 64615,
+      "MEDIUM": 74203,
+      "LOW": 10115,
+      "UNKNOWN": 7828,
+      "NONE": 79
+    },
+    "rejected_cves": 4019
+  },
+  "catalog_reference": {
+    "total": 23186,
+    "id_count_sha256": "f2bb985fab77046500d8d0cf9d22633b0d6b7bf3d8b91dc0ffe625dcb7fd6720"
+  },
+  "status": "PASS_INTEGRATION_NOT_OAUTH_E2E"
+}

@@ -1,0 +1,51 @@
+{
+  "dag_id": "nvd_threat_intelligence",
+  "run_id": "resilience_20261110T085141",
+  "state": "success",
+  "limit": 10000,
+  "injected_fault": "Neo4j closed port once",
+  "tasks": [
+    {
+      "task_id": "load_mongodb",
+      "state": "success",
+      "try_number": 1,
+      "attempts": 1
+    },
+    {
+      "task_id": "load_cassandra",
+      "state": "success",
+      "try_number": 1,
+      "attempts": 1
+    },
+    {
+      "task_id": "calculate_kpis",
+      "state": "success",
+      "try_number": 1,
+      "attempts": 1
+    },
+    {
+      "task_id": "extract",
+      "state": "success",
+      "try_number": 1,
+      "attempts": 1
+    },
+    {
+      "task_id": "load_neo4j",
+      "state": "success",
+      "try_number": 2,
+      "attempts": 2
+    },
+    {
+      "task_id": "validate",
+      "state": "success",
+      "try_number": 1,
+      "attempts": 1
+    },
+    {
+      "task_id": "verify",
+      "state": "success",
+      "try_number": 1,
+      "attempts": 1
+    }
+  ]
+}

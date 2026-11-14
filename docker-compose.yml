@@ -1,0 +1,245 @@
+# SOLO LOCAL: no publicar bases. GCP requiere TLS y overlay revisado (ver guía).
+name: threat-intelligence
+x-airflow: &airflow
+  image: ti-airflow:local
+  build: {context: ., dockerfile: infrastructure/docker/airflow.Dockerfile}
+  user: "50000:0"
+  restart: "on-failure:3"
+  mem_limit: 1024m
+  environment: &airflow-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__CORE__PARALLELISM: "2"
+    AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: "2"
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN_CMD: "cat /run/secrets/airflow_db_uri"
+    AIRFLOW__CORE__FERNET_KEY_CMD: "cat /run/secrets/airflow_fernet_key"
+    AIRFLOW__WEBSERVER__SECRET_KEY_CMD: "cat /run/secrets/airflow_web_key"
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
+    PYTHONPATH: /opt/project/src
+    MONGODB_URI_FILE: /run/secrets/mongodb_writer_uri
+    NEO4J_PASSWORD_FILE: /run/secrets/neo4j_password
+    NEO4J_URI: bolt://neo4j:7687
+    CASSANDRA_CONTACT_POINTS: cassandra
+    NVD_RAW_DIR: /opt/project/data/raw/nvd
+    STAGING_DIR: /opt/project/data/staging
+    STATE_DIR: /opt/airflow/checkpoints
+  secrets: [airflow_db_uri, airflow_fernet_key, airflow_web_key, mongodb_writer_uri, neo4j_password, airflow_admin_password]
+  volumes:
+    - ./airflow/dags:/opt/airflow/dags:ro
+    - ./airflow/tests:/opt/project/airflow_tests:ro
+    - ./src:/opt/project/src:ro
+    - ./scripts:/opt/project/scripts:ro
+    - ./docs/evidence:/opt/project/evidence
+    - ./data:/opt/project/data
+    - checkpoint_data:/opt/airflow/checkpoints
+    - airflow_logs:/opt/airflow/logs
+  networks: [data]
+  logging: &logging
+    driver: json-file
+    options: {max-size: "10m", max-file: "3"}
+  depends_on:
+    postgres: {condition: service_healthy}
+services:
+  mongodb:
+    image: mongo:8.0.12
+    restart: "on-failure:3"
+    mem_limit: 768m
+    command: [mongod, --wiredTigerCacheSizeGB, "0.5", --auth, --bind_ip_all]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ti_admin
+      MONGO_INITDB_ROOT_PASSWORD_FILE: /run/secrets/mongodb_root_password
+    secrets: [mongodb_root_password]
+    volumes: ["mongodb_data:/data/db"]
+    networks: [data]
+    logging: *logging
+    healthcheck:
+      test: [CMD, mongosh, --quiet, --eval, "quit(db.adminCommand('ping').ok ? 0 : 1)"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+  cassandra:
+    image: cassandra:4.1.9
+    restart: "on-failure:3"
+    mem_limit: 2g
+    environment:
+      CASSANDRA_CLUSTER_NAME: ti-dev-single-node
+      CASSANDRA_DC: dc1
+      CASSANDRA_RACK: rack1
+      CASSANDRA_ENDPOINT_SNITCH: GossipingPropertyFileSnitch
+      MAX_HEAP_SIZE: 768M
+      HEAP_NEWSIZE: 128M
+    volumes: ["cassandra_data:/var/lib/cassandra"]
+    networks: [data]
+    logging: *logging
+    healthcheck:
+      test: [CMD-SHELL, "nodetool status | grep -q '^UN'"]
+      interval: 30s
+      timeout: 20s
+      retries: 20
+      start_period: 180s
+  neo4j:
+    image: neo4j:5.26.12-community
+    restart: "on-failure:3"
+    mem_limit: 1280m
+    environment:
+      NEO4J_AUTH_FILE: /run/secrets/neo4j_auth
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 512m
+      NEO4J_server_memory_pagecache_size: 512m
+    secrets: [neo4j_auth]
+    volumes: ["neo4j_data:/data", "neo4j_logs:/logs"]
+    networks: [data]
+    logging: *logging
+    healthcheck:
+      test: [CMD-SHELL, "wget -q --spider http://localhost:7474 || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 90s
+  postgres:
+    image: postgres:16.10-bookworm
+    restart: "on-failure:3"
+    mem_limit: 512m
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_DB: airflow
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets: [postgres_password]
+    volumes: ["postgres_data:/var/lib/postgresql/data"]
+    networks: [data]
+    logging: *logging
+    healthcheck:
+      test: [CMD, pg_isready, -U, airflow, -d, airflow]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  airflow-init:
+    <<: *airflow
+    profiles: [init]
+    restart: "no"
+    command: [airflow, db, migrate]
+  airflow-scheduler:
+    <<: *airflow
+    profiles: [orchestration]
+    command: scheduler
+    healthcheck:
+      test: [CMD-SHELL, "curl --fail http://localhost:8974/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+  airflow-webserver:
+    <<: *airflow
+    profiles: [orchestration]
+    command: webserver
+    networks: [data, edge]
+    ports: ["127.0.0.1:18080:8080"]
+    healthcheck:
+      test: [CMD-SHELL, "curl --fail http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+  runner:
+    image: ti-app:local
+    build: {context: ., dockerfile: infrastructure/docker/python.Dockerfile, target: runtime}
+    profiles: [tools]
+    user: "50000:0"
+    mem_limit: 768m
+    environment: &app-env
+      MONGODB_URI_FILE: /run/secrets/mongodb_writer_uri
+      NEO4J_PASSWORD_FILE: /run/secrets/neo4j_password
+      NEO4J_URI: bolt://neo4j:7687
+      CASSANDRA_CONTACT_POINTS: cassandra
+      NVD_RAW_DIR: /app/data/raw/nvd
+      STATE_DIR: /app/checkpoints
+    secrets: [mongodb_writer_uri, neo4j_password]
+    volumes: ["./data:/app/data", "./docs/evidence:/app/docs/evidence", "checkpoint_data:/app/checkpoints"]
+    networks: [data]
+    entrypoint: [python, -m, threat_intelligence.cli]
+  api:
+    image: ti-app:local
+    build: {context: ., dockerfile: infrastructure/docker/python.Dockerfile, target: runtime}
+    profiles: [web]
+    environment:
+      <<: *app-env
+      MONGODB_URI_FILE: /run/secrets/mongodb_reader_uri
+    secrets: [mongodb_reader_uri, neo4j_password]
+    volumes: ["./data/staging:/app/data/staging:ro"]
+    networks: [data, edge]
+    ports: ["127.0.0.1:18000:8000"]
+    command: [uvicorn, services.api.app:app, --host, 0.0.0.0, --port, "8000"]
+    mem_limit: 384m
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+  dashboard:
+    image: ti-app:local
+    profiles: [web]
+    environment:
+      API_URL: http://api:8000
+    networks: [edge]
+    ports: ["127.0.0.1:18501:8501"]
+    command: [streamlit, run, services/dashboard/app.py, --server.address=0.0.0.0, --server.port=8501, --browser.gatherUsageStats=false]
+    mem_limit: 512m
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://localhost:8501/_stcore/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+  tester:
+    image: ti-test:local
+    build: {context: ., dockerfile: infrastructure/docker/python.Dockerfile, target: test}
+    profiles: [tools]
+    mem_limit: 768m
+    environment:
+      <<: *app-env
+      TI_INTEGRATION: "1"
+    secrets: [mongodb_writer_uri, mongodb_reader_uri, neo4j_password]
+    volumes: ["./docs/evidence:/app/docs/evidence"]
+    networks: [data]
+  mcp:
+    image: ti-mcp:local
+    build: {context: ., dockerfile: infrastructure/docker/python.Dockerfile, target: mcp}
+    profiles: [mcp]
+    environment:
+      API_URL: http://api:8000
+    command: [python, -m, services.mcp_server.server]
+    stdin_open: true
+    mem_limit: 256m
+    networks: [edge]
+  mongo-init:
+    image: ti-app:local
+    profiles: [init]
+    command: [python, /app/scripts/init_mongo_users.py]
+    volumes: ["./scripts:/app/scripts:ro"]
+    secrets: [mongodb_uri, mongodb_writer_password, mongodb_reader_password]
+    networks: [data]
+networks:
+  data: {internal: true}
+  edge: {driver: bridge}
+volumes:
+  mongodb_data:
+  cassandra_data:
+  neo4j_data:
+  neo4j_logs:
+  postgres_data:
+  airflow_logs:
+  checkpoint_data:
+secrets:
+  mongodb_root_password: {file: "./secrets/mongodb-root-password"}
+  neo4j_auth: {file: "./secrets/neo4j-auth"}
+  postgres_password: {file: "./secrets/postgres-password"}
+  airflow_db_uri: {file: "./secrets/airflow-db-uri"}
+  airflow_fernet_key: {file: "./secrets/airflow-fernet-key"}
+  airflow_web_key: {file: "./secrets/airflow-web-key"}
+  mongodb_uri: {file: "./secrets/mongodb-uri"}
+  mongodb_writer_uri: {file: "./secrets/mongodb-writer-uri"}
+  mongodb_reader_uri: {file: "./secrets/mongodb-reader-uri"}
+  mongodb_writer_password: {file: "./secrets/mongodb-writer-password"}
+  mongodb_reader_password: {file: "./secrets/mongodb-reader-password"}
+  neo4j_password: {file: "./secrets/neo4j-password"}
+  airflow_admin_password: {file: "./secrets/airflow-admin-password"}

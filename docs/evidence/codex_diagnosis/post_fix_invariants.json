@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "only_client_change": "ti-codex optional offline_access assignment",
+  "ti_chatgpt_config_scopes_mappers_unchanged": true,
+  "ti_codex_security_settings_unchanged": true,
+  "user_roles_unchanged": true,
+  "offline_role_gate_and_realm_limits_unchanged": true,
+  "dcr_policies_unchanged": true,
+  "only_local_change": "target required=true, startup_timeout_sec=30",
+  "other_local_configuration_unchanged": true
+}

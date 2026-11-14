@@ -1,0 +1,7 @@
+{
+  "status": "APPLIED_WITH_POSTCONDITION_FAILURE",
+  "mutation": "Assign existing offline_access optional client scope to ti-codex",
+  "cause": "Whole-client digest included optionalClientScopes, so the intentional scope change made the unchanged-client assertion fail",
+  "followup": "Did not repeat PUT. Read-only scope inspection confirmed assignment; real App binary discovered six tools. Additional read-only invariants checked separately.",
+  "source_corrected_for_future_review": true
+}

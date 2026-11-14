@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-11T17:08:25.833630+00:00",
+  "database": "C:\\Users\\steve\\.codex\\logs_2.sqlite",
+  "read_only": true,
+  "raw_messages_saved": false,
+  "events": [
+    {
+      "at": "2026-11-11T16:42:09+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "initialize_requires_authentication",
+      "desktop_client_span": true
+    },
+    {
+      "at": "2026-11-11T16:45:52+00:00",
+      "level": "TRACE",
+      "target": "codex_mcp::connection_manager::tool_catalog",
+      "event": "target_omitted_from_pending_optional_catalog",
+      "desktop_client_span": true
+    },
+    {
+      "at": "2026-11-11T16:57:03+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:01+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:03+00:00",
+      "level": "TRACE",
+      "target": "codex_mcp::connection_manager::tool_catalog",
+      "event": "target_omitted_from_pending_optional_catalog",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:03+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:04+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:08+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:13+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:17+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:20+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:24+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:28+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:32+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    },
+    {
+      "at": "2026-11-11T16:59:36+00:00",
+      "level": "WARN",
+      "target": "codex_mcp::rmcp_client",
+      "event": "refresh_rejected_invalid_scope_openid_ti_read_offline_access",
+      "desktop_client_span": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[Unit]
+Description=Threat Intelligence coordinated cold backup and private GCS upload
+Requires=docker.service
+After=docker.service
+RequiresMountsFor=/srv/ti-data
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/threat-intelligence
+ExecStart=/usr/bin/python3 /opt/threat-intelligence/scripts/cloud_backup.py
+User=root
+UMask=0077
+TimeoutStartSec=3600

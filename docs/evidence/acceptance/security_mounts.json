@@ -1,0 +1,190 @@
+{
+  "mounts": [
+    {
+      "service": "mcp-remote",
+      "secret_mounts": []
+    },
+    {
+      "service": "mongodb",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/mongodb_root_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "keycloak",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/keycloak_admin_password",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/keycloak_db_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "keycloak-db",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/keycloak_db_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "airflow3-scheduler",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/airflow3_db_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow3_jwt",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow3_passwords",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow_fernet_key",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/cassandra_writer_password",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/mongodb_writer_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/neo4j_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "airflow3-api",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/airflow3_db_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow3_jwt",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow3_passwords",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow_fernet_key",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/cassandra_writer_password",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/mongodb_writer_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/neo4j_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "caddy",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/web_password_hash",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "api",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/cassandra_reader_password",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/mongodb_reader_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/neo4j_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "dashboard",
+      "secret_mounts": []
+    },
+    {
+      "service": "airflow3-dag-processor",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/airflow3_db_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow3_jwt",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow3_passwords",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/airflow_fernet_key",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/cassandra_writer_password",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/mongodb_writer_uri",
+          "read_write": false
+        },
+        {
+          "destination": "/run/secrets/neo4j_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "airflow3-postgres",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/postgres_password",
+          "read_write": false
+        }
+      ]
+    },
+    {
+      "service": "cassandra",
+      "secret_mounts": []
+    },
+    {
+      "service": "neo4j",
+      "secret_mounts": [
+        {
+          "destination": "/run/secrets/neo4j_auth",
+          "read_write": false
+        }
+      ]
+    }
+  ]
+}

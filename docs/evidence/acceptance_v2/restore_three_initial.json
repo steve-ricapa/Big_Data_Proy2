@@ -1,0 +1,33 @@
+{
+  "started_at": "2026-11-11T02:42:03.474408+00:00",
+  "backup": "/srv/ti-data/backups/20261111T020125",
+  "status": "PARTIAL",
+  "network": "none",
+  "production_volumes_mounted": false,
+  "engines": {
+    "mongodb": {
+      "status": "PASS",
+      "archive_sha256_valid": true,
+      "restored": {
+        "records": 174607,
+        "unique": 174607,
+        "sha256_sum": "1f3fe1f5ed51962dca77b6d039f3d7f77eedd6c0fc8736e5f71883e1ac33facf"
+      },
+      "container": "ti-v2-restore-mongodb-20261111t024203",
+      "scratch_volume": "ti-v2-restore-mongodb-20261111t024203"
+    },
+    "cassandra": {
+      "status": "FAIL",
+      "error_type": "RuntimeError",
+      "container": "ti-v2-restore-cassandra-20261111t024203",
+      "scratch_volume": "ti-v2-restore-cassandra-20261111t024203"
+    },
+    "neo4j": {
+      "status": "FAIL",
+      "error_type": "RuntimeError",
+      "container": "ti-v2-restore-neo4j-20261111t024203",
+      "scratch_volume": "ti-v2-restore-neo4j-20261111t024203"
+    }
+  },
+  "finished_at": "2026-11-11T03:00:41.929702+00:00"
+}

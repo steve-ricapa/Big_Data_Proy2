@@ -1,0 +1,39 @@
+[
+  {
+    "filters": {
+      "year": 2024
+    },
+    "status": 200,
+    "seconds": 0.359,
+    "total": 33119,
+    "checks": "PASS"
+  },
+  {
+    "filters": {
+      "severity": "CRITICAL"
+    },
+    "status": 200,
+    "seconds": 0.047,
+    "total": 17707,
+    "checks": "PASS"
+  },
+  {
+    "filters": {
+      "cwe": "CWE-79"
+    },
+    "status": 200,
+    "seconds": 0.203,
+    "total": 22742,
+    "checks": "PASS"
+  },
+  {
+    "filters": {
+      "published_from": "2024-01-01",
+      "published_to": "2024-12-31"
+    },
+    "status": 200,
+    "seconds": 0.078,
+    "total": 33119,
+    "checks": "PASS"
+  }
+]

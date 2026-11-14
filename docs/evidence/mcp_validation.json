@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-10T17:25:19.258405+00:00",
+  "transport": "stdio",
+  "cve": "CVE-2024-0001",
+  "checks": {
+    "initialize": "PASS",
+    "list_six_readonly_tools": "PASS",
+    "search_vulnerabilities": "PASS",
+    "get_cve_details": "PASS",
+    "get_top_cwes": "PASS",
+    "get_vulnerability_statistics": "PASS",
+    "get_affected_products": "PASS",
+    "explore_cve_relationships": "PASS",
+    "invalid_identifier_rejected": "PASS"
+  }
+}

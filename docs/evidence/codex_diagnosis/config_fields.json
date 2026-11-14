@@ -1,0 +1,44 @@
+{
+  "client_id": {
+    "exit": 1,
+    "type_rejected": true,
+    "diagnostics": [
+      "    0: C:\\Users\\steve\\AppData\\Local\\Temp\\opencode\\codex-mcp-field-check\\config.toml:4:11: invalid type: integer `123`, expected a string",
+      "    1: invalid type: integer `123`, expected a string",
+      "       in `mcp_servers.probe.oauth.client_id`"
+    ]
+  },
+  "client_secret": {
+    "exit": 0,
+    "type_rejected": false,
+    "diagnostics": []
+  },
+  "callback_url": {
+    "exit": 0,
+    "type_rejected": false,
+    "diagnostics": []
+  },
+  "callback_port": {
+    "exit": 0,
+    "type_rejected": false,
+    "diagnostics": []
+  },
+  "mcp_oauth_callback_url": {
+    "exit": 1,
+    "type_rejected": true,
+    "diagnostics": [
+      "    0: C:\\Users\\steve\\AppData\\Local\\Temp\\opencode\\codex-mcp-field-check\\config.toml:1:24: invalid type: integer `123`, expected a string",
+      "    1: invalid type: integer `123`, expected a string",
+      "       in `mcp_oauth_callback_url`"
+    ]
+  },
+  "mcp_oauth_callback_port": {
+    "exit": 1,
+    "type_rejected": true,
+    "diagnostics": [
+      "    0: C:\\Users\\steve\\AppData\\Local\\Temp\\opencode\\codex-mcp-field-check\\config.toml:1:25: invalid type: string \"invalid-port\", expected u16",
+      "    1: invalid type: string \"invalid-port\", expected u16",
+      "       in `mcp_oauth_callback_port`"
+    ]
+  }
+}

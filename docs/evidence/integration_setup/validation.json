@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-11T07:47:11.314094+00:00",
+  "status": "PASS",
+  "six_tools_executed": true,
+  "refresh_post_and_basic": true,
+  "chatgpt_account_connected": false,
+  "private_values_found": 0,
+  "documents": {
+    "docs\\integrations\\chatgpt_mcp_setup.md": {
+      "lines": 290,
+      "words": 2336,
+      "sha256": "fe73f9f488ab83f3718ad2e762a01a8fea7510c1f49e630443d123c486093617"
+    },
+    "docs\\report\\PROJECT_E2E_COMPLETE.md": {
+      "lines": 1232,
+      "words": 8143,
+      "sha256": "c3d0daabda6b57342db132750c6b7c37f1003eef3affc76670ccef8bab8410d8"
+    }
+  },
+  "e2e_sections": 16
+}

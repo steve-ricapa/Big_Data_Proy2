@@ -1,0 +1,65 @@
+{
+  "collected_at": "2026-11-10T09:05:12.790016+00:00",
+  "dataset": {
+    "seen": 171791,
+    "invalid": 0,
+    "duplicates": 0,
+    "unique_valid": 171791
+  },
+  "counts": {
+    "mongodb": 171791,
+    "cassandra": 171791,
+    "neo4j": 171791
+  },
+  "fingerprints": {
+    "mongodb": {
+      "records": 171791,
+      "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+    },
+    "cassandra": {
+      "records": 171791,
+      "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+    },
+    "neo4j": {
+      "records": 171791,
+      "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+    }
+  },
+  "pytest_local": {
+    "tests": 37,
+    "passed": 31,
+    "failed": 0,
+    "skipped": 6
+  },
+  "pytest_docker_including_real_engines": {
+    "tests": 37,
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0
+  },
+  "pytest_note": "Docker suite repeats unit tests; do not sum both runs as distinct tests.",
+  "kpi_checks": {
+    "as_of": "2026-11-10T08:54:46.594581+00:00",
+    "total_cves": 171791,
+    "checks": {
+      "total_cves": "PASS",
+      "severity": "PASS",
+      "monthly": "PASS",
+      "cvss_by_version": "PASS",
+      "unique_affected_products": "PASS",
+      "top_cwes": "PASS",
+      "top_products": "PASS",
+      "cassandra_snapshot_equals_mongo": "PASS",
+      "graph_counts": "PASS"
+    }
+  },
+  "scheduler_retry_run": "resilience_20261110T085141",
+  "terraform": {
+    "validate": "PASS",
+    "plan_add": 37,
+    "plan_change": 0,
+    "plan_destroy": 0,
+    "applied": false
+  },
+  "cloud_application_deployed": false
+}

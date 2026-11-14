@@ -1,0 +1,6 @@
+{
+  "status": "INSTRUMENTATION_FAILURE_BEFORE_QUERIES",
+  "reason": "Inner Python volume aggregation literal had a missing closing brace; SyntaxError before imports/queries",
+  "production_data_writes": false,
+  "correction": "Factor BSON-size expression and group dictionary; compile inner script before rerun"
+}

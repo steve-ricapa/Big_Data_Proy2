@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-11T02:44:04.605476+00:00",
+  "compose_config": "PASS",
+  "images": {
+    "app": {
+      "status": "PASS",
+      "tag": "ti-v2-app:verification",
+      "image_id": "sha256:79505acc506b12cddd8277d05c60bfc052f55674ea2c9f5417ed145f6a3c2c7a"
+    },
+    "test": {
+      "status": "PASS",
+      "tag": "ti-v2-test:verification",
+      "image_id": "sha256:216f0f5c8717ff313039bb02c65e8db9faddd195cedb1e44a313cbfa890917fa"
+    },
+    "mcp": {
+      "status": "PASS",
+      "tag": "ti-v2-mcp:verification",
+      "image_id": "sha256:a19907aa7f443157f46421197ec0aeb97d97caa91415bf488adb114d37586712"
+    },
+    "airflow": {
+      "status": "PASS",
+      "tag": "ti-v2-airflow:verification",
+      "image_id": "sha256:d58d12515f0db268e756ebb6a78d5de5b9e8eda00b749d9b57e162d76c11cf51"
+    }
+  },
+  "existing_tags_replaced": false,
+  "infrastructure_recreated": false,
+  "production_container_ids_before": [
+    "0ed361c1bcec066c9b5d800544fec745817854bcc872d6850f82181857cc810a",
+    "1862be92c4b785983e2c09bf18a618ce12d3addf02e0d445ece6c909a32fe770",
+    "1bd674b6e997d034776ff0abae5f5afeb3e174c5a4e848eaab28ac83a6b79a4d",
+    "2ebe0fab5277de1e999f874c49dbb56a7a31af85b0a03c4b6b8dee87ebd9aae0",
+    "304900bfaf5b5d9b502158ed565238fa42b461563486f00f40c4483f2ac5e1e4",
+    "403c14617ab637c09644a6e3bb1837b1d11d7d19c7fb19dfae0110b79764b5cc",
+    "4b8df2eeee8e1a96f605a83d2d23ea87fc11655da86b6844b4bf61ff3b72ba5b",
+    "57a0be61aeade165ee0148ed4d7c4e1cf2d4c8e3e24ba8f4068a429c1297b01f",
+    "8042f3feb8e23a61baa49e9f39c64de56b8dfeba054eebd88feb1376e34be20d",
+    "818a3c7de901e17e1c3cc3a30304b5521e0f93a12ad5365ffd9cb79edacb3b13",
+    "977d0005d8f9506cf06eff56af6954fbad3377e2642074acf9f4645396b148f1",
+    "98ad8b7bca0b2a862edb9bfd20fd1ce242b9a86cba4269fd27d7499cf129e86c",
+    "bb00c6d94aba541eb6de623ac6101d58dfb18c59edc800d789713f110a8a7694",
+    "fb1b007f83a69728010a13f767de1a7006abbd3a5ca54da94cdc89b9091b3828"
+  ]
+}

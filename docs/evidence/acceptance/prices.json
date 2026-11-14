@@ -1,0 +1,219 @@
+{
+  "checked_at": "2026-11-11T00:30:54.000211+00:00",
+  "source": "Google Cloud Billing Catalog API",
+  "region": "us-central1",
+  "currency": "USD",
+  "pages_read": 7,
+  "skus": [
+    {
+      "name": "services/6F81-5844-456A/skus/0FE3-CAB9-E7E3",
+      "skuId": "0FE3-CAB9-E7E3",
+      "description": "Regional Balanced PD Capacity",
+      "category": {
+        "serviceDisplayName": "Compute Engine",
+        "resourceFamily": "Storage",
+        "resourceGroup": "SSD",
+        "usageType": "OnDemand"
+      },
+      "serviceRegions": [
+        "us-central1",
+        "us-central2",
+        "us-east1",
+        "us-west1",
+        "asia-east1",
+        "europe-west1"
+      ],
+      "pricingInfo": [
+        {
+          "summary": "",
+          "pricingExpression": {
+            "usageUnit": "GiBy.mo",
+            "displayQuantity": 1,
+            "tieredRates": [
+              {
+                "startUsageAmount": 0,
+                "unitPrice": {
+                  "currencyCode": "USD",
+                  "units": "0",
+                  "nanos": 200000000
+                }
+              }
+            ],
+            "usageUnitDescription": "gibibyte month",
+            "baseUnit": "By.s",
+            "baseUnitDescription": "byte second",
+            "baseUnitConversionFactor": 2787004278374400.0
+          },
+          "currencyConversionRate": 1,
+          "effectiveTime": "2026-11-10T08:00:00Z"
+        }
+      ],
+      "serviceProviderName": "Google",
+      "geoTaxonomy": {
+        "type": "MULTI_REGIONAL",
+        "regions": [
+          "asia-east1",
+          "europe-west1",
+          "us-central1",
+          "us-east1",
+          "us-west1"
+        ]
+      }
+    },
+    {
+      "name": "services/6F81-5844-456A/skus/6AE1-525F-8B80",
+      "skuId": "6AE1-525F-8B80",
+      "description": "Balanced PD Capacity",
+      "category": {
+        "serviceDisplayName": "Compute Engine",
+        "resourceFamily": "Storage",
+        "resourceGroup": "SSD",
+        "usageType": "OnDemand"
+      },
+      "serviceRegions": [
+        "us-central1",
+        "us-central2",
+        "us-east1",
+        "us-west1",
+        "asia-east1",
+        "europe-west1"
+      ],
+      "pricingInfo": [
+        {
+          "summary": "",
+          "pricingExpression": {
+            "usageUnit": "GiBy.mo",
+            "displayQuantity": 1,
+            "tieredRates": [
+              {
+                "startUsageAmount": 0,
+                "unitPrice": {
+                  "currencyCode": "USD",
+                  "units": "0",
+                  "nanos": 100000000
+                }
+              }
+            ],
+            "usageUnitDescription": "gibibyte month",
+            "baseUnit": "By.s",
+            "baseUnitDescription": "byte second",
+            "baseUnitConversionFactor": 2787004278374400.0
+          },
+          "currencyConversionRate": 1,
+          "effectiveTime": "2026-11-10T08:00:00Z"
+        }
+      ],
+      "serviceProviderName": "Google",
+      "geoTaxonomy": {
+        "type": "MULTI_REGIONAL",
+        "regions": [
+          "asia-east1",
+          "europe-west1",
+          "us-central1",
+          "us-east1",
+          "us-west1"
+        ]
+      }
+    },
+    {
+      "name": "services/6F81-5844-456A/skus/CF4E-A0C7-E3BF",
+      "skuId": "CF4E-A0C7-E3BF",
+      "description": "E2 Instance Core running in Americas",
+      "category": {
+        "serviceDisplayName": "Compute Engine",
+        "resourceFamily": "Compute",
+        "resourceGroup": "CPU",
+        "usageType": "OnDemand"
+      },
+      "serviceRegions": [
+        "us-central1",
+        "us-east1",
+        "us-west1"
+      ],
+      "pricingInfo": [
+        {
+          "summary": "",
+          "pricingExpression": {
+            "usageUnit": "h",
+            "displayQuantity": 1,
+            "tieredRates": [
+              {
+                "startUsageAmount": 0,
+                "unitPrice": {
+                  "currencyCode": "USD",
+                  "units": "0",
+                  "nanos": 21811590
+                }
+              }
+            ],
+            "usageUnitDescription": "hour",
+            "baseUnit": "s",
+            "baseUnitDescription": "second",
+            "baseUnitConversionFactor": 3600
+          },
+          "currencyConversionRate": 1,
+          "effectiveTime": "2026-11-10T08:00:00Z"
+        }
+      ],
+      "serviceProviderName": "Google",
+      "geoTaxonomy": {
+        "type": "MULTI_REGIONAL",
+        "regions": [
+          "us-central1",
+          "us-east1",
+          "us-west1"
+        ]
+      }
+    },
+    {
+      "name": "services/6F81-5844-456A/skus/F449-33EC-A5EF",
+      "skuId": "F449-33EC-A5EF",
+      "description": "E2 Instance Ram running in Americas",
+      "category": {
+        "serviceDisplayName": "Compute Engine",
+        "resourceFamily": "Compute",
+        "resourceGroup": "RAM",
+        "usageType": "OnDemand"
+      },
+      "serviceRegions": [
+        "us-central1",
+        "us-east1",
+        "us-west1"
+      ],
+      "pricingInfo": [
+        {
+          "summary": "",
+          "pricingExpression": {
+            "usageUnit": "GiBy.h",
+            "displayQuantity": 1,
+            "tieredRates": [
+              {
+                "startUsageAmount": 0,
+                "unitPrice": {
+                  "currencyCode": "USD",
+                  "units": "0",
+                  "nanos": 2923530
+                }
+              }
+            ],
+            "usageUnitDescription": "gibibyte hour",
+            "baseUnit": "By.s",
+            "baseUnitDescription": "byte second",
+            "baseUnitConversionFactor": 3865470566400
+          },
+          "currencyConversionRate": 1,
+          "effectiveTime": "2026-11-10T08:00:00Z"
+        }
+      ],
+      "serviceProviderName": "Google",
+      "geoTaxonomy": {
+        "type": "MULTI_REGIONAL",
+        "regions": [
+          "us-central1",
+          "us-east1",
+          "us-west1"
+        ]
+      }
+    }
+  ]
+}

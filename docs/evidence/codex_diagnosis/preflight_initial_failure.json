@@ -1,0 +1,8 @@
+{
+  "status": "FAIL_TEST_EXPECTATION",
+  "stage": "negative PKCE check",
+  "initial_expectation": "HTTP 400 HTML error",
+  "observed": "HTTP 302 to validated callback with error=invalid_request, no login form",
+  "correction": "Assert registered callback and OAuth invalid_request redirect; retain security rejection requirement",
+  "production_security_change": false
+}

@@ -1,0 +1,212 @@
+[
+ {
+  "run_id": "scheduled__2026-11-11T03:00:00+00:00",
+  "state": "success",
+  "queued": "2026-11-11T03:00:46.385460+00:00",
+  "tasks": [
+   {
+    "task_id": "calculate_kpis",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "extract",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "verify",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "validate",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_mongodb",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_cassandra",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_neo4j",
+    "state": "success",
+    "try": 1
+   }
+  ]
+ },
+ {
+  "run_id": "sync34_20261110T215555",
+  "state": "success",
+  "queued": "2026-11-10T21:56:07.563433+00:00",
+  "tasks": [
+   {
+    "task_id": "extract",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "validate",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_mongodb",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_cassandra",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_neo4j",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "verify",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "calculate_kpis",
+    "state": "success",
+    "try": 1
+   }
+  ]
+ },
+ {
+  "run_id": "full34_20261110T212506",
+  "state": "success",
+  "queued": "2026-11-10T21:25:19.653782+00:00",
+  "tasks": [
+   {
+    "task_id": "validate",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "extract",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_mongodb",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_cassandra",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_neo4j",
+    "state": "success",
+    "try": 2
+   },
+   {
+    "task_id": "calculate_kpis",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "verify",
+    "state": "success",
+    "try": 1
+   }
+  ]
+ },
+ {
+  "run_id": "full34_20261110T211553",
+  "state": "success",
+  "queued": "2026-11-10T21:16:04.479659+00:00",
+  "tasks": [
+   {
+    "task_id": "load_cassandra",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "extract",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "calculate_kpis",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "verify",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "validate",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_mongodb",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_neo4j",
+    "state": "success",
+    "try": 2
+   }
+  ]
+ },
+ {
+  "run_id": "scheduled__2026-11-10T03:00:00+00:00",
+  "state": "success",
+  "queued": "2026-11-10T21:16:00.011485+00:00",
+  "tasks": [
+   {
+    "task_id": "verify",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "extract",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "validate",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_mongodb",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_cassandra",
+    "state": "success",
+    "try": 1
+   },
+   {
+    "task_id": "load_neo4j",
+    "state": "success",
+    "try": 2
+   },
+   {
+    "task_id": "calculate_kpis",
+    "state": "success",
+    "try": 1
+   }
+  ]
+ }
+]

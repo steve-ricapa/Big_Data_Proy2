@@ -1,0 +1,13 @@
+{
+  "bundle": "C:\\Users\\steve\\AppData\\Local\\Temp\\opencode\\ti-cloud-source.tar.gz",
+  "bytes": 450977,
+  "sha256": "d9d98affae648416683725c7d65f4ef94c1a966c6892d8e41786fa988d1420d1",
+  "excluded": [
+    "secrets",
+    "data",
+    "terraform state/plans",
+    "backups",
+    "local volumes",
+    "credentials"
+  ]
+}

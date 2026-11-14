@@ -1,0 +1,6 @@
+{
+  "architecture": "X86_64",
+  "name": "debian-12-bookworm-v20261109",
+  "selfLink": "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/images/debian-12-bookworm-v20261109",
+  "status": "READY"
+}

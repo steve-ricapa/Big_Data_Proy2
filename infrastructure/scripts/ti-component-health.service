@@ -1,0 +1,11 @@
+[Unit]
+Description=Non-disruptive functional health probes for TI gateway identity MCP and DAG processor
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/threat-intelligence/scripts/cloud_component_health.py
+User=root
+UMask=0077
+TimeoutStartSec=100

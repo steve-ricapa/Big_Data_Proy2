@@ -1,0 +1,2 @@
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdb         98G  4.3G   89G   5% /srv/ti-data

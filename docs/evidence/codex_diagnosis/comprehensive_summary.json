@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-11T20:04:19.115247+00:00",
+  "status": "APPLIED_ACCEPTANCE_PENDING",
+  "reported_audit": {
+    "inventoried": 100,
+    "executed": 96,
+    "pass": 77,
+    "fail": 4,
+    "warning": 15,
+    "not_tested_additional": 4
+  },
+  "original_96_replay": "Only supplied scenarios reproduced; no fabricated one-to-one replay",
+  "local_tests": {
+    "pass": 90,
+    "skipped": 8,
+    "fail": 0
+  },
+  "candidate": {
+    "checks_pass": 59,
+    "sdk_calls": 286
+  },
+  "production": {
+    "checks_pass": 63,
+    "sdk_calls": 291,
+    "transport": "SDK -> real HTTP API -> databases, not authenticated public MCP E2E"
+  },
+  "three_engine_consistency": {
+    "records": 174735,
+    "duplicate_ids": 0,
+    "sha256_sum": "0bfda784bc4d093897e0e8423c092723091c6e73aeac0237b31fc02a332b3d64"
+  },
+  "catalog": {
+    "total": 23186,
+    "id_count_sha256": "f2bb985fab77046500d8d0cf9d22633b0d6b7bf3d8b91dc0ffe625dcb7fd6720",
+    "method": "Mongo unwind + addToSet(CVE ID), independent from API two-stage group"
+  },
+  "original_not_tested": {
+    "N01": "Original/final SDK schemas inspected; native reception pending login",
+    "N02": "PASS_559_UNIQUE_EDGES",
+    "N03": "PASS_THREE_ENGINES",
+    "N04": "PASS_23186_PRODUCTS_RECONCILED"
+  },
+  "native_oauth": "PENDING_USER_LOGIN",
+  "app_gui": "PENDING_OWNER_CONFIRMATION",
+  "payload_defaults": "LEGACY_PRESERVED_SUMMARY_DEFAULT_REQUIRES_APPROVAL",
+  "backfill": "DESIGN_ONLY_NOT_EXECUTED",
+  "historical_data_rewritten": false,
+  "credentials_changed": false,
+  "keycloak_changed": false,
+  "changed_containers": [
+    "api",
+    "mcp-remote"
+  ],
+  "other_container_ids_unchanged": true,
+  "oauth_security_ast_unchanged": true,
+  "dag_active": true,
+  "modified_files_ruff": "PASS",
+  "jwt_pattern_scan": "PASS",
+  "report_sha256": "4d118c0868cab3184612f569ffc1b5e9affba707b8c787d212c7631c72afe512"
+}

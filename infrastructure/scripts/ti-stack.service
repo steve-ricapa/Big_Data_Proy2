@@ -1,0 +1,18 @@
+[Unit]
+Description=Threat Intelligence academic cloud containers
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+RequiresMountsFor=/srv/ti-data
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+WorkingDirectory=/opt/threat-intelligence
+ExecStart=/usr/bin/docker compose --env-file secrets/public.env -f docker-compose.yml -f docker-compose.airflow3.yml -f docker-compose.secure.yml -f docker-compose.public.yml up -d mongodb cassandra neo4j airflow3-postgres api dashboard airflow3-api airflow3-scheduler airflow3-dag-processor keycloak-db keycloak mcp-remote caddy
+ExecStop=/usr/bin/docker compose --env-file secrets/public.env -f docker-compose.yml -f docker-compose.airflow3.yml -f docker-compose.secure.yml -f docker-compose.public.yml stop --timeout 120 mongodb cassandra neo4j airflow3-postgres api dashboard airflow3-api airflow3-scheduler airflow3-dag-processor keycloak-db keycloak mcp-remote caddy
+TimeoutStartSec=600
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

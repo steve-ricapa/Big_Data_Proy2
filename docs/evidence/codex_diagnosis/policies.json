@@ -1,0 +1,220 @@
+{
+  "eventsEnabled": true,
+  "eventsListeners": [
+    "jboss-logging"
+  ],
+  "registration_policies": [
+    {
+      "name": "Consent Required",
+      "providerId": "consent-required",
+      "subType": "anonymous",
+      "config": {}
+    },
+    {
+      "name": "Max Clients Limit",
+      "providerId": "max-clients",
+      "subType": "anonymous",
+      "config": {
+        "max-clients": [
+          "200"
+        ]
+      }
+    },
+    {
+      "name": "Allowed Client Scopes",
+      "providerId": "allowed-client-templates",
+      "subType": "authenticated",
+      "config": {}
+    },
+    {
+      "name": "Allowed Protocol Mapper Types",
+      "providerId": "allowed-protocol-mappers",
+      "subType": "anonymous",
+      "config": {}
+    },
+    {
+      "name": "Full Scope Disabled",
+      "providerId": "scope",
+      "subType": "anonymous",
+      "config": {}
+    },
+    {
+      "name": "Trusted Hosts",
+      "providerId": "trusted-hosts",
+      "subType": "anonymous",
+      "config": {
+        "host-sending-registration-request-must-match": [
+          "true"
+        ],
+        "client-uris-must-match": [
+          "true"
+        ]
+      }
+    },
+    {
+      "name": "Allowed Registration Web Origins",
+      "providerId": "registration-web-origins",
+      "subType": "anonymous",
+      "config": {}
+    },
+    {
+      "name": "Full Scope Disabled",
+      "providerId": "scope",
+      "subType": "authenticated",
+      "config": {}
+    },
+    {
+      "name": "Default Roles Disabled",
+      "providerId": "default-roles",
+      "subType": "authenticated",
+      "config": {}
+    },
+    {
+      "name": "Allowed Protocol Mapper Types",
+      "providerId": "allowed-protocol-mappers",
+      "subType": "authenticated",
+      "config": {}
+    },
+    {
+      "name": "Default Roles Disabled",
+      "providerId": "default-roles",
+      "subType": "anonymous",
+      "config": {}
+    },
+    {
+      "name": "Allowed Client Scopes",
+      "providerId": "allowed-client-templates",
+      "subType": "anonymous",
+      "config": {}
+    },
+    {
+      "name": "Allowed Registration Web Origins",
+      "providerId": "registration-web-origins",
+      "subType": "authenticated",
+      "config": {}
+    }
+  ],
+  "events_status": 200,
+  "events": [
+    {
+      "time": 1794387081290,
+      "type": "CLIENT_REGISTER_ERROR",
+      "error": "not_allowed",
+      "clientId": null,
+      "details": {}
+    },
+    {
+      "time": 1794386726338,
+      "type": "CLIENT_REGISTER_ERROR",
+      "error": "not_allowed",
+      "clientId": null,
+      "details": {}
+    },
+    {
+      "time": 1794386711359,
+      "type": "CLIENT_REGISTER_ERROR",
+      "error": "not_allowed",
+      "clientId": null,
+      "details": {}
+    },
+    {
+      "time": 1794381511611,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794381315305,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794381224939,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794374740767,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794365271783,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794356941793,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794341213197,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794341031324,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794340786195,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794340750945,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    },
+    {
+      "time": 1794340673115,
+      "type": "CODE_TO_TOKEN_ERROR",
+      "error": "invalid_code",
+      "clientId": "ti-chatgpt",
+      "details": {
+        "client_auth_method": "client-secret"
+      }
+    }
+  ]
+}

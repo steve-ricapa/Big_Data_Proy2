@@ -1,0 +1,10 @@
+[Unit]
+Description=Check TI components without recreating application containers
+
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=60s
+Unit=ti-component-health.service
+
+[Install]
+WantedBy=timers.target

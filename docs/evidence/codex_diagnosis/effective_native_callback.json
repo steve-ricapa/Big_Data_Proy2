@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-11T09:05:26.205632+00:00",
+  "version": "codex-cli 0.139.0",
+  "isolated_home": "C:\\Users\\steve\\.codex",
+  "credentials_submitted": false,
+  "authorization_endpoint": "https://ti-136-114-21-18.sslip.io/auth/realms/ti/protocol/openid-connect/auth",
+  "request": {
+    "client_id": "ti-codex",
+    "redirect_uri": "http://127.0.0.1:43219/callback/GnTeVrGD9Hed",
+    "scope": "openid ti:read",
+    "response_type": "code",
+    "code_challenge_method": "S256",
+    "resource": "https://ti-136-114-21-18.sslip.io/mcp"
+  },
+  "pkce_challenge_present": true,
+  "state_present": true,
+  "status": "PASS"
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-11T08:48:27.358250+00:00",
+  "config": [
+    {
+      "file": "C:\\Users\\steve\\.codex\\config.toml",
+      "name": "big_data_ii_-_threat_intelligence",
+      "url": "https://ti-136-114-21-18.sslip.io/mcp",
+      "enabled": true,
+      "auth": null,
+      "scopes": null,
+      "http_header_names": [],
+      "bearer_env_var_configured": false,
+      "oauth": {},
+      "oauth_client_secret_present": false,
+      "global_callback_port": null,
+      "global_callback_url": null
+    }
+  ],
+  "extensions": [],
+  "log_matches": []
+}

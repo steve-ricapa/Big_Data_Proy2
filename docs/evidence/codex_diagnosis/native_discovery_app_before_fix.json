@@ -1,0 +1,12 @@
+{
+  "at": "2026-11-11T16:58:57.550991+00:00",
+  "probe": "Separate native app-server process, same CODEX_HOME; ephemeral thread, no model turn",
+  "version": "codex-cli 0.167.0-alpha.4.1",
+  "authStatus": "oAuth",
+  "effective_client_id": "ti-codex",
+  "target_enabled": true,
+  "tool_count": 0,
+  "serverInfo": null,
+  "status": "NOT_SIX",
+  "correlated_sqlite_error": "OAuth token refresh failed: invalid_scope: Invalid scopes: openid ti:read offline_access"
+}

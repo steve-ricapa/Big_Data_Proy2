@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-11T09:04:19.453737+00:00",
+  "status": "PASS",
+  "created": true,
+  "client": {
+    "clientId": "ti-codex",
+    "name": "Codex native MCP",
+    "enabled": true,
+    "protocol": "openid-connect",
+    "publicClient": true,
+    "standardFlowEnabled": true,
+    "implicitFlowEnabled": false,
+    "directAccessGrantsEnabled": false,
+    "serviceAccountsEnabled": false,
+    "consentRequired": true,
+    "fullScopeAllowed": false,
+    "redirectUris": [
+      "http://127.0.0.1:43219/callback/GnTeVrGD9Hed"
+    ],
+    "webOrigins": [],
+    "attributes": {
+      "realm_client": "false",
+      "backchannel.logout.session.required": "true",
+      "oauth2.device.authorization.grant.enabled": "false",
+      "pkce.code.challenge.method": "S256",
+      "backchannel.logout.revoke.offline.tokens": "false"
+    }
+  },
+  "scopes": {
+    "default": [
+      "ti:read"
+    ],
+    "optional": []
+  },
+  "subject_mapper_present": true,
+  "audience_mapping_verified": true,
+  "ti_chatgpt_unchanged": true,
+  "dcr_policies_unchanged": true,
+  "realm_token_settings": {
+    "accessTokenLifespan": 600,
+    "revokeRefreshToken": true,
+    "refreshTokenMaxReuse": 0
+  }
+}

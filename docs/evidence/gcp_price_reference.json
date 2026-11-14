@@ -1,0 +1,9 @@
+{
+  "url": "https://cloud.google.com/products/compute/pricing/general-purpose",
+  "extracted_at": "2026-11-10T08:30:39.519587+00:00",
+  "rows": [
+    "   e2-standard-4    4    16 GiB   $0.13402284 / 1 hour  $0.096496452 / 1 hour  $0.072372332 / 1 hour  $0.084434392 / 1 hour  $0.060310288 / 1 hour  ",
+    "   e2-standard-8    8    32 GiB   $0.26804568 / 1 hour  $0.192992904 / 1 hour  $0.144744664 / 1 hour  $0.168868784 / 1 hour  $0.120620576 / 1 hour  "
+  ],
+  "limitation": "Dynamic regional selector; reconfirm selected region/SKU before any deployment approval."
+}

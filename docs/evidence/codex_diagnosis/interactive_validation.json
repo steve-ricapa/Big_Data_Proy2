@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-11T16:28:55.036313+00:00",
+  "client": "ti-codex",
+  "test_client": "Python OAuth + MCP SDK (not Codex App)",
+  "status": "PENDING_USER_LOGIN",
+  "codex_app_e2e": "PENDING",
+  "checks": {
+    "discovery": "PASS"
+  },
+  "stopped_at": "consent_denied_or_login_timeout"
+}

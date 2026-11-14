@@ -1,0 +1,20 @@
+{
+  "exit": 0,
+  "config_parse_warnings": "WARNING: proceeding, even though we could not create PATH aliases: Refusing to create helper binaries under temporary dir \"C:\\\\Users\\\\steve\\\\AppData\\\\Local\\\\Temp\\\\\" (codex_home: AbsolutePathBuf(\"C:\\\\Users\\\\steve\\\\AppData\\\\Local\\\\Temp\\\\opencode\\\\codex-mcp-config-compatibility\"))\n",
+  "get": {
+    "name": "ti_diagnosis",
+    "enabled": true,
+    "disabled_reason": null,
+    "transport": {
+      "type": "streamable_http",
+      "url": "https://ti-136-114-21-18.sslip.io/mcp",
+      "bearer_token_env_var": null,
+      "http_headers": null,
+      "env_http_headers": null
+    },
+    "enabled_tools": null,
+    "disabled_tools": null,
+    "startup_timeout_sec": null,
+    "tool_timeout_sec": null
+  }
+}

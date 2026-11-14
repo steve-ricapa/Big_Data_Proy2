@@ -1,0 +1,89 @@
+{
+  "run_dir": "/opt/project/data/staging/ca38fc47ae226a78ef32",
+  "sources": [
+    "/opt/project/data/staging/ca38fc47ae226a78ef32/nvd_sync/window-00000-page-00000000.json",
+    "/opt/project/data/staging/ca38fc47ae226a78ef32/nvd_sync/window-00000-page-00002000.json",
+    "/opt/project/data/staging/ca38fc47ae226a78ef32/nvd_sync/window-00000-page-00004000.json"
+  ],
+  "limit": 0,
+  "started_at": "2026-11-10T21:16:34.559119+00:00",
+  "stages": {
+    "nvd_sync": {
+      "from": "2026-11-08T21:11:09.015240+00:00",
+      "through": "2026-11-10T21:11:09.015240+00:00",
+      "pages": [
+        "window-00000-page-00000000.json",
+        "window-00000-page-00002000.json",
+        "window-00000-page-00004000.json"
+      ],
+      "records": 5343,
+      "requests": 3,
+      "retries": 0,
+      "complete": true
+    },
+    "validate": {
+      "seen": 5343,
+      "invalid": 0,
+      "duplicates": 0,
+      "unique_valid": 5343
+    },
+    "mongodb": {
+      "seen": 5343,
+      "new": 2696,
+      "modified": 2618,
+      "unchanged": 29,
+      "stale": 0,
+      "written": 5314,
+      "batches_committed": 27,
+      "total_in_engine": 174487,
+      "seconds": 8.879
+    },
+    "cassandra": {
+      "seen": 5343,
+      "new": 2696,
+      "modified": 2618,
+      "unchanged": 29,
+      "stale": 0,
+      "written": 5314,
+      "batches_committed": 27,
+      "total_in_engine": 174487,
+      "seconds": 21.065
+    },
+    "neo4j": {
+      "seen": 5343,
+      "new": 1120,
+      "modified": 1213,
+      "unchanged": 3010,
+      "stale": 0,
+      "written": 2333,
+      "batches_committed": 12,
+      "total_in_engine": 174487,
+      "seconds": 17.892
+    },
+    "kpis": {
+      "total_cves": 174487,
+      "as_of": "2026-11-10T21:19:16.831941+00:00"
+    },
+    "verify": {
+      "counts": {
+        "mongodb": 174487,
+        "cassandra": 174487,
+        "neo4j": 174487
+      },
+      "fingerprints": {
+        "mongodb": {
+          "records": 174487,
+          "sha256_sum": "b1e91d5db6d56ab776b1deaa60a6751afa2483657ab92be225165ac791c6a335"
+        },
+        "cassandra": {
+          "records": 174487,
+          "sha256_sum": "b1e91d5db6d56ab776b1deaa60a6751afa2483657ab92be225165ac791c6a335"
+        },
+        "neo4j": {
+          "records": 174487,
+          "sha256_sum": "b1e91d5db6d56ab776b1deaa60a6751afa2483657ab92be225165ac791c6a335"
+        }
+      }
+    }
+  }
+}

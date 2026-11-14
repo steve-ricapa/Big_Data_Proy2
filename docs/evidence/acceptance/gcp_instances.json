@@ -1,0 +1,150 @@
+[
+  {
+    "canIpForward": false,
+    "cpuPlatform": "Intel Broadwell",
+    "creationTimestamp": "2026-11-10T10:44:00.734-08:00",
+    "deletionProtection": true,
+    "disks": [
+      {
+        "architecture": "X86_64",
+        "autoDelete": false,
+        "boot": true,
+        "deviceName": "ti-boot",
+        "diskSizeGb": "30",
+        "guestOsFeatures": [
+          {
+            "type": "UEFI_COMPATIBLE"
+          },
+          {
+            "type": "VIRTIO_SCSI_MULTIQUEUE"
+          },
+          {
+            "type": "GVNIC"
+          },
+          {
+            "type": "SEV_CAPABLE"
+          },
+          {
+            "type": "SEV_LIVE_MIGRATABLE_V2"
+          },
+          {
+            "type": "SUSPEND_SAFE_FPR"
+          }
+        ],
+        "index": 0,
+        "interface": "SCSI",
+        "kind": "compute#attachedDisk",
+        "licenses": [
+          "https://www.googleapis.com/compute/v1/projects/debian-cloud/global/licenses/debian-12-bookworm"
+        ],
+        "mode": "READ_WRITE",
+        "source": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-boot",
+        "type": "PERSISTENT"
+      },
+      {
+        "autoDelete": false,
+        "boot": false,
+        "deviceName": "ti-data",
+        "diskSizeGb": "100",
+        "index": 1,
+        "interface": "SCSI",
+        "kind": "compute#attachedDisk",
+        "mode": "READ_WRITE",
+        "source": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/disks/ti-dev-data",
+        "type": "PERSISTENT"
+      }
+    ],
+    "fingerprint": "K8uyiuigphs=",
+    "id": "1074336130240797471",
+    "kind": "compute#instance",
+    "labelFingerprint": "vezUS-42LLM=",
+    "labels": {
+      "goog-terraform-provisioned": "true"
+    },
+    "lastStartTimestamp": "2026-11-10T10:44:11.240-08:00",
+    "machineType": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/machineTypes/e2-standard-4",
+    "metadata": {
+      "fingerprint": "1LF3fdCNbUE=",
+      "items": [
+        {
+          "key": "block-project-ssh-keys",
+          "value": "TRUE"
+        },
+        {
+          "key": "disable-legacy-endpoints",
+          "value": "TRUE"
+        },
+        {
+          "key": "enable-oslogin",
+          "value": "TRUE"
+        },
+        {
+          "key": "startup-script",
+          "value": "#!/usr/bin/env bash\n# Ejecutado solo al desplegar una VM autorizada. No inicia contenedores.\nset -euo pipefail\nDISK=/dev/disk/by-id/google-ti-data\ntest -b \"$DISK\"\nmkdir -p /srv/ti-data /opt/threat-intelligence\n# No formatear autom?ticamente: evita destruir datos de un disco existente.\nif ! blkid \"$DISK\" >/dev/null 2>&1; then\n  echo 'Disco sin filesystem. Revisar y formatear manualmente antes de continuar.'\n  exit 1\nfi\nUUID=$(blkid -s UUID -o value \"$DISK\")\ngrep -q \"UUID=$UUID \" /etc/fstab || echo \"UUID=$UUID /srv/ti-data ext4 defaults,nofail 0 2\" >> /etc/fstab\nmountpoint -q /srv/ti-data || mount /srv/ti-data\n# Requiere salida a Internet aprobada. Versionar imagen base de VM antes de producci?n.\napt-get update\napt-get install -y ca-certificates curl gnupg\ninstall -m 0755 -d /etc/apt/keyrings\ncurl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc\nchmod a+r /etc/apt/keyrings/docker.asc\necho \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable\" > /etc/apt/sources.list.d/docker.list\napt-get update\napt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin\nsystemctl enable --now docker\necho 'Bootstrap completo. Configurar secretos, TLS y Compose antes de iniciar servicios.'\n"
+        }
+      ],
+      "kind": "compute#metadata"
+    },
+    "name": "ti-dev-data",
+    "networkInterfaces": [
+      {
+        "accessConfigs": [
+          {
+            "kind": "compute#accessConfig",
+            "name": "external-nat",
+            "natIP": "136.114.21.18",
+            "networkTier": "PREMIUM",
+            "type": "ONE_TO_ONE_NAT"
+          }
+        ],
+        "fingerprint": "2Zya1uuUmWE=",
+        "kind": "compute#networkInterface",
+        "name": "nic0",
+        "network": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/global/networks/ti-dev-vpc",
+        "networkIP": "10.42.0.2",
+        "stackType": "IPV4_ONLY",
+        "subnetwork": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/regions/us-central1/subnetworks/ti-dev-subnet"
+      }
+    ],
+    "resourceStatus": {
+      "effectiveInstanceMetadata": {
+        "blockProjectSshKeysMetadataValue": true,
+        "enableOsloginMetadataValue": true,
+        "vmDnsSettingMetadataValue": "ZonalOnly"
+      }
+    },
+    "satisfiesPzi": true,
+    "scheduling": {
+      "automaticRestart": true,
+      "onHostMaintenance": "MIGRATE",
+      "preemptible": false,
+      "provisioningModel": "STANDARD"
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a/instances/ti-dev-data",
+    "serviceAccounts": [
+      {
+        "email": "ti-dev-data@proyectobigdata2-514216.iam.gserviceaccount.com",
+        "scopes": [
+          "https://www.googleapis.com/auth/cloud-platform"
+        ]
+      }
+    ],
+    "shieldedInstanceConfig": {
+      "enableIntegrityMonitoring": true,
+      "enableSecureBoot": true,
+      "enableVtpm": true
+    },
+    "shieldedInstanceIntegrityPolicy": {
+      "updateAutoLearnPolicy": true
+    },
+    "startRestricted": false,
+    "status": "RUNNING",
+    "tags": {
+      "fingerprint": "XeEW0a2xYMA=",
+      "items": [
+        "ti-dev-data"
+      ]
+    },
+    "zone": "https://www.googleapis.com/compute/v1/projects/proyectobigdata2-514216/zones/us-central1-a"
+  }
+]

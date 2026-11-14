@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-11-10T21:58:51.027305+00:00",
+  "type": "coordinated-cold-volumes",
+  "directory": "/srv/ti-data/backups/20261110T215846",
+  "archives": [
+    {
+      "volume": "threat-intelligence_mongodb_data",
+      "file": "mongodb_data.tar.gz",
+      "bytes": 275636706,
+      "sha256": "1ff83ba65ff9290545b99919ab21786ec4f620d4c5d8680c2846b4072f15944f",
+      "members": 148
+    },
+    {
+      "volume": "threat-intelligence_cassandra_data",
+      "file": "cassandra_data.tar.gz",
+      "bytes": 191500484,
+      "sha256": "e94f8f88ea7728aa2cac807a087eb042f41fecd043569baed07bf6dd8eccdca4",
+      "members": 536
+    },
+    {
+      "volume": "threat-intelligence_neo4j_data",
+      "file": "neo4j_data.tar.gz",
+      "bytes": 218413689,
+      "sha256": "5c0377e959eec22840f7893de163eb88d077c4b6f99263302742510c2bd19660",
+      "members": 120
+    },
+    {
+      "volume": "threat-intelligence_airflow3_postgres",
+      "file": "airflow3_postgres.tar.gz",
+      "bytes": 10222378,
+      "sha256": "965da97b5ea0ea60d7eb30dc74f3be2b60dd3cef99e36b3c4f695e33ab021dba",
+      "members": 1628
+    },
+    {
+      "volume": "threat-intelligence_checkpoint_data",
+      "file": "checkpoint_data.tar.gz",
+      "bytes": 57664372,
+      "sha256": "392f1b890a253628ad2d323c0849dc13d5ed93e220443237cb661bcea47f5159",
+      "members": 3
+    },
+    {
+      "volume": "threat-intelligence_airflow3_auth",
+      "file": "airflow3_auth.tar.gz",
+      "bytes": 347,
+      "sha256": "bd9e3f4982d52de718513e507747f066a7ca754419db63730770aa1d449fa6a4",
+      "members": 2
+    },
+    {
+      "volume": "threat-intelligence_keycloak_postgres",
+      "file": "keycloak_postgres.tar.gz",
+      "bytes": 9760894,
+      "sha256": "9a2fd790ca4aaf47c3c391251dc287712e26a04870f61ded93ff422b9d315409",
+      "members": 1800
+    },
+    {
+      "volume": "threat-intelligence_caddy_data",
+      "file": "caddy_data.tar.gz",
+      "bytes": 5139,
+      "sha256": "4d5e177c75ab0bd70b10b7e483598a29e01eb992833a6ecb767ea3bb37f570c6",
+      "members": 18
+    },
+    {
+      "volume": "threat-intelligence_caddy_config",
+      "file": "caddy_config.tar.gz",
+      "bytes": 1178,
+      "sha256": "b130e7028a2ec754e8c6f285098f700373cabe055fd186ea3ed2fe43fa3e4ce6",
+      "members": 3
+    }
+  ],
+  "status": "SUCCESS",
+  "finished_at": "2026-11-10T22:01:50.785718+00:00"
+}

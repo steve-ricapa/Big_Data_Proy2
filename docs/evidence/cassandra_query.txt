@@ -1,0 +1,10 @@
+
+ cve_id         | severity | score
+----------------+----------+-------
+  CVE-2024-1009 | CRITICAL |   9.8
+ CVE-2024-23827 | CRITICAL |   9.8
+ CVE-2024-23822 | CRITICAL |   9.8
+  CVE-2024-1015 | CRITICAL |   9.8
+  CVE-2024-1001 | CRITICAL |   9.8
+
+(5 rows)

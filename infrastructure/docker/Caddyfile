@@ -1,0 +1,43 @@
+{$TI_HOSTNAME} {
+    encode zstd gzip
+    header {
+        Strict-Transport-Security "max-age=31536000"
+        X-Content-Type-Options nosniff
+        Referrer-Policy no-referrer
+    }
+    # No public Keycloak administration or master realm.
+    @admin path /auth/admin* /auth/realms/master* /auth/management*
+    @oauth path /auth/*
+    # Preserve security-handler order before the more general /auth proxy.
+    route {
+    respond @admin 404
+    log_skip @oauth
+    # RFC8414 discovery mapping for the OIDC issuer, without changing issuer URLs.
+    handle /.well-known/oauth-authorization-server/auth/realms/ti {
+        rewrite * /auth/realms/ti/.well-known/openid-configuration
+        reverse_proxy keycloak:8080
+    }
+    handle /auth/* {
+        reverse_proxy keycloak:8080
+    }
+    handle /.well-known/oauth-protected-resource* {
+        reverse_proxy mcp-remote:8001
+    }
+    handle /mcp* {
+        reverse_proxy mcp-remote:8001
+    }
+    handle {
+        basic_auth {
+            ti-demo {$TI_WEB_PASSWORD_HASH}
+        }
+        @api path /api/* /health /ready /docs /openapi.json /redoc
+        reverse_proxy @api api:8000
+        reverse_proxy dashboard:8501
+    }
+    }
+    log {
+        output stdout
+        format json
+        # Caddy redacts sensitive headers by default. No query/body/token logging customization.
+    }
+}

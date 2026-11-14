@@ -1,0 +1,74 @@
+{
+  "run_dir": "/app/data/staging/full_optimized",
+  "sources": [
+    "/app/data/raw/nvd/2024/nvdcve-2.0-2024.json",
+    "/app/data/raw/nvd/2025/nvdcve-2.0-2025.json",
+    "/app/data/raw/nvd/2026/nvdcve-2.0-2026.json"
+  ],
+  "limit": 0,
+  "started_at": "2026-11-10T08:20:55.560179+00:00",
+  "stages": {
+    "validate": {
+      "seen": 171791,
+      "invalid": 0,
+      "duplicates": 0,
+      "unique_valid": 171791
+    },
+    "mongodb": {
+      "seen": 171791,
+      "new": 170791,
+      "modified": 0,
+      "unchanged": 1000,
+      "stale": 0,
+      "total_in_engine": 171791,
+      "seconds": 159.686
+    },
+    "cassandra": {
+      "seen": 171791,
+      "new": 0,
+      "modified": 0,
+      "unchanged": 171791,
+      "stale": 0,
+      "written": 0,
+      "batches_committed": 0,
+      "total_in_engine": 171791,
+      "seconds": 100.27
+    },
+    "neo4j": {
+      "seen": 171791,
+      "new": 170791,
+      "modified": 0,
+      "unchanged": 1000,
+      "stale": 0,
+      "written": 170791,
+      "batches_committed": 859,
+      "total_in_engine": 171791,
+      "seconds": 304.868
+    },
+    "kpis": {
+      "total_cves": 171791,
+      "as_of": "2026-11-10T08:48:37.781042+00:00"
+    },
+    "verify": {
+      "counts": {
+        "mongodb": 171791,
+        "cassandra": 171791,
+        "neo4j": 171791
+      },
+      "fingerprints": {
+        "mongodb": {
+          "records": 171791,
+          "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+        },
+        "cassandra": {
+          "records": 171791,
+          "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+        },
+        "neo4j": {
+          "records": 171791,
+          "sha256_sum": "1a60346f5dcdbe7ee928bc7a8cf22779abeeb2bdf23efa1f39f7c7c1c3c9fcd2"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "from": "2026-11-10T18:00:50.793637+00:00",
+  "through": "2026-11-10T18:01:50.793637+00:00",
+  "pages": [
+    "window-00000-page-00000000.json"
+  ],
+  "records": 0,
+  "requests": 1,
+  "retries": 0,
+  "complete": true
+}

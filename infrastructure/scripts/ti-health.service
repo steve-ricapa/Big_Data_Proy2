@@ -1,0 +1,10 @@
+[Unit]
+Description=Threat Intelligence bounded VM health telemetry
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/threat-intelligence/scripts/cloud_observe.py
+User=root
+NoNewPrivileges=true
+PrivateTmp=true

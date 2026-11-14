@@ -1,0 +1,85 @@
+{
+  "client": {
+    "clientId": "ti-chatgpt",
+    "enabled": true,
+    "protocol": "openid-connect",
+    "publicClient": false,
+    "clientAuthenticatorType": "client-secret",
+    "standardFlowEnabled": true,
+    "implicitFlowEnabled": false,
+    "directAccessGrantsEnabled": false,
+    "serviceAccountsEnabled": false,
+    "consentRequired": true,
+    "redirectUris": [
+      "https://chatgpt.com/connector_platform_oauth_redirect",
+      "https://chatgpt.com/connector/oauth/*",
+      "https://localhost/callback"
+    ],
+    "webOrigins": [
+      "https://chatgpt.com"
+    ],
+    "attributes": {
+      "oauth2.device.authorization.grant.enabled": "false",
+      "pkce.code.challenge.method": "S256"
+    }
+  },
+  "default_client_scopes": [
+    "ti:read"
+  ],
+  "optional_client_scopes": [
+    "offline_access"
+  ],
+  "realm": {
+    "realm": "ti",
+    "enabled": true,
+    "sslRequired": "external",
+    "registrationAllowed": false,
+    "bruteForceProtected": true,
+    "accessTokenLifespan": 600,
+    "revokeRefreshToken": true,
+    "refreshTokenMaxReuse": 0
+  },
+  "keycloak_version": "26.8.2",
+  "client_mappers": [
+    {
+      "name": "subject",
+      "protocolMapper": "oidc-sub-mapper",
+      "config": {
+        "access.token.claim": "true",
+        "introspection.token.claim": "true"
+      }
+    }
+  ],
+  "realm_client_scope_names": [
+    "kc-admin-api",
+    "ti:read",
+    "offline_access"
+  ],
+  "ti_read_mappers": [
+    {
+      "name": "mcp-audience",
+      "protocolMapper": "oidc-audience-mapper",
+      "config": {
+        "id.token.claim": "false",
+        "access.token.claim": "true",
+        "introspection.token.claim": "true",
+        "included.custom.audience": "https://ti-136-114-21-18.sslip.io/mcp"
+      }
+    }
+  ],
+  "mcp_runtime": {
+    "packages": {
+      "mcp": "1.30.0",
+      "uvicorn": "0.54.0",
+      "PyJWT": "2.15.1"
+    },
+    "supported_protocol_versions": [
+      "2024-11-05",
+      "2025-03-26",
+      "2025-06-18",
+      "2025-11-25"
+    ]
+  },
+  "at": "2026-11-11T07:13:59.942631+00:00",
+  "config_modified": false
+}

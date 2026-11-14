@@ -1,0 +1,326 @@
+{
+  "add": 41,
+  "change": 0,
+  "destroy": 0,
+  "one_vm_e2_standard_4": true,
+  "no_gpu_gke_nat_load_balancer_cloud_run": true,
+  "public_ingress_only_http_https": true,
+  "no_public_iam_binding": true,
+  "resources": [
+    {
+      "address": "google_compute_instance_iam_member.operator[0]",
+      "type": "google_compute_instance_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "google_iap_tunnel_instance_iam_member.operator[0]",
+      "type": "google_iap_tunnel_instance_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "google_service_account_iam_member.operator[0]",
+      "type": "google_service_account_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.compute.google_compute_disk.data",
+      "type": "google_compute_disk",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.compute.google_compute_instance.main",
+      "type": "google_compute_instance",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.iam.google_project_iam_member.telemetry[\"roles/logging.logWriter\"]",
+      "type": "google_project_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.iam.google_project_iam_member.telemetry[\"roles/monitoring.metricWriter\"]",
+      "type": "google_project_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.iam.google_service_account.vm",
+      "type": "google_service_account",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.iam.google_service_account.web[\"api\"]",
+      "type": "google_service_account",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.iam.google_service_account.web[\"dashboard\"]",
+      "type": "google_service_account",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.iam.google_service_account.web[\"mcp\"]",
+      "type": "google_service_account",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.network.google_compute_firewall.database",
+      "type": "google_compute_firewall",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.network.google_compute_firewall.https[0]",
+      "type": "google_compute_firewall",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.network.google_compute_firewall.iap",
+      "type": "google_compute_firewall",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.network.google_compute_network.main",
+      "type": "google_compute_network",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.network.google_compute_subnetwork.main",
+      "type": "google_compute_subnetwork",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.observability.google_logging_metric.errors",
+      "type": "google_logging_metric",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.observability.google_monitoring_alert_policy.cpu",
+      "type": "google_monitoring_alert_policy",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.registry.google_artifact_registry_repository.images",
+      "type": "google_artifact_registry_repository",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.registry.google_artifact_registry_repository_iam_member.reader",
+      "type": "google_artifact_registry_repository_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"airflow-db-uri\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"airflow-fernet-key\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"airflow-web-key\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"cassandra-password\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"mcp-token\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"mongodb-root-password\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"mongodb-uri\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"neo4j-password\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret.main[\"postgres-password\"]",
+      "type": "google_secret_manager_secret",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"airflow-db-uri\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"airflow-fernet-key\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"airflow-web-key\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"cassandra-password\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"mongodb-root-password\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"mongodb-uri\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"neo4j-password\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.secrets.google_secret_manager_secret_iam_member.vm[\"postgres-password\"]",
+      "type": "google_secret_manager_secret_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.storage.google_storage_bucket.data[\"processed\"]",
+      "type": "google_storage_bucket",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.storage.google_storage_bucket.data[\"raw\"]",
+      "type": "google_storage_bucket",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.storage.google_storage_bucket_iam_member.vm[\"processed\"]",
+      "type": "google_storage_bucket_iam_member",
+      "actions": [
+        "create"
+      ]
+    },
+    {
+      "address": "module.storage.google_storage_bucket_iam_member.vm[\"raw\"]",
+      "type": "google_storage_bucket_iam_member",
+      "actions": [
+        "create"
+      ]
+    }
+  ],
+  "cost_gate": {
+    "region": "us-central1",
+    "machine_type": "e2-standard-4",
+    "vm_hourly_official": 0.13402284,
+    "daily_items_usd": {
+      "vm_24h": 3.21655,
+      "130GiB_zonal_pd_balanced": 0.4274,
+      "external_IPv4_24h": 0.12,
+      "gcs_raw_processed_backups_allowance": 0.05,
+      "artifact_registry_5GB": 0.01644,
+      "secret_manager_allowance": 0.03,
+      "logging_monitoring_allowance": 0.1,
+      "egress_1GB_per_day_allowance": 0.12
+    },
+    "daily_estimate_usd": 4.0804,
+    "contingency_percent": 20,
+    "daily_with_contingency_usd": 4.8965,
+    "target_daily_usd": 5,
+    "within_target": true,
+    "assumptions": [
+      "No Cloud Run, NAT, load balancer, GPU or additional VM",
+      "130GiB zonal disks; do not use regional replicated disk SKU",
+      "Low-traffic academic use, up to 1GB/day internet egress",
+      "Backups <=30GiB including soft-delete retention",
+      "Not a guaranteed spending cap; public access needs authentication and bounded requests"
+    ],
+    "source": "docs/evidence/gcp_official_skus.json and official network/storage/secret pricing pages"
+  }
+}

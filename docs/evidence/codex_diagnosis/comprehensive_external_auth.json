@@ -1,0 +1,8 @@
+{
+  "protected_resource_discovery": 200,
+  "oidc_discovery": 200,
+  "public_jwks": 200,
+  "no_bearer": 401,
+  "invalid_bearer": 401,
+  "valid_user_oauth_e2e": "PENDING_EXPIRED_SESSION"
+}

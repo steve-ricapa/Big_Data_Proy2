@@ -1,0 +1,18 @@
+{
+  "basis": "17 criterios de docs/implementation/requirements.md; solo verificación completa en esta auditoría cuenta para el numerador",
+  "verified": [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 13, 15, 16],
+  "not_fully_verified": {
+    "7": "CRUD: evidencia histórica local 12 PASS; no repetir escrituras en producción",
+    "11": "Stack operativo y contenedor de tests ejecutados; reconstrucción reproducible de imágenes no ensayada",
+    "14": "Informe existente, pero contiene afirmaciones contradictorias sobre sincronización automática y resultados vigentes",
+    "17": "Matriz de trazabilidad y diagrama system.md desactualizados respecto del despliegue real"
+  },
+  "academic_verified": 13,
+  "academic_total": 17,
+  "academic_percent": 76.5,
+  "cloud_basis": "Las 15 filas de final_acceptance_audit.md; solo PASS, sin fracciones por PARTIAL",
+  "cloud_pass_rows": [1, 3, 4, 5, 6, 7, 8, 9, 10, 12],
+  "cloud_verified": 10,
+  "cloud_total": 15,
+  "cloud_percent": 66.7
+}

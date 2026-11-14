@@ -1,0 +1,604 @@
+{
+  "at": "2026-11-11T08:52:26.519052+00:00",
+  "window": "last 3h, bounded 2500 lines per service",
+  "services": {
+    "caddy": {
+      "docker_logs_exit": 0,
+      "matches": [
+        {
+          "ts": 1794381211.025455,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.053086225,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381211.165,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource",
+          "status": 404,
+          "duration": 0.002712659,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381211.326409,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.023419448,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381211.7023814,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.00424806,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381297.43121,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.002970311,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381297.5776103,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource",
+          "status": 404,
+          "duration": 0.001258589,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381297.7214942,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.005187113,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381298.003193,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001292946,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381311.7779953,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.057435846,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381311.931409,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 202,
+          "duration": 0.005611124,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381312.3864448,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.006942931,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381312.6723723,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.138926161,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381312.8701272,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.049637105,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381313.0651205,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.047137715,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381313.2631016,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.050518011,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381313.4660223,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.054931461,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381313.7435493,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.129642444,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381313.896514,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.005610169,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381493.5794163,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.002679887,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381493.7212732,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource",
+          "status": 404,
+          "duration": 0.001357999,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381493.8700755,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.010094274,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381494.157832,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.002538971,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381508.5145845,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.006636514,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381508.66829,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 202,
+          "duration": 0.004030945,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381509.1177502,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.005599468,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381509.358412,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.091154047,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381509.5510905,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.045266001,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381509.7540157,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.052764444,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381509.9485703,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.049101024,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381510.1377318,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.042975683,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381510.3364866,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.052509594,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381510.4900067,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 200,
+          "duration": 0.005595969,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381556.9519417,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.002877917,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381557.155632,
+          "method": "GET",
+          "path": "/auth/admin/",
+          "status": 404,
+          "duration": 4.8128e-05,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381557.2970524,
+          "method": "GET",
+          "path": "/auth/realms/master/",
+          "status": 404,
+          "duration": 3.3544e-05,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794381557.4368567,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.002553031,
+          "ua_family": "python-httpx"
+        },
+        {
+          "ts": 1794386698.3399827,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.012357274,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386698.4904258,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.009079441,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386698.7119977,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.082096923,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386698.8617241,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001902629,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386698.944451,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001160758,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386699.118992,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.001598322,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386699.272789,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.008096882,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386699.4287674,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001532527,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386702.28492,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.00162108,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386702.4259827,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.001588713,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386702.5768323,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.00801124,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386702.7219088,
+          "method": "POST",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001767043,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386709.3056746,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.003386198,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386709.4531054,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.004471183,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386709.6094646,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.015195881,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386709.7575963,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001986698,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386709.8994396,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.002118836,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386710.0466967,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.008041265,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386725.0209239,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.003104947,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386725.1794677,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.020166455,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386725.3256605,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.008391156,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386725.465867,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.001546233,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386725.6068132,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.001525801,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794386725.7546432,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.008059897,
+          "ua_family": "codex"
+        },
+        {
+          "ts": 1794387080.6265593,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.003347442,
+          "ua_family": "other"
+        },
+        {
+          "ts": 1794387080.7669454,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.002688053,
+          "ua_family": "other"
+        },
+        {
+          "ts": 1794387080.9549692,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.012514072,
+          "ua_family": "other"
+        },
+        {
+          "ts": 1794387116.4140787,
+          "method": "GET",
+          "path": "/mcp",
+          "status": 401,
+          "duration": 0.002475444,
+          "ua_family": "other"
+        },
+        {
+          "ts": 1794387116.552986,
+          "method": "GET",
+          "path": "/.well-known/oauth-protected-resource/mcp",
+          "status": 200,
+          "duration": 0.002630743,
+          "ua_family": "other"
+        },
+        {
+          "ts": 1794387116.6962836,
+          "method": "GET",
+          "path": "/.well-known/oauth-authorization-server/auth/realms/ti",
+          "status": 200,
+          "duration": 0.006343416,
+          "ua_family": "other"
+        }
+      ]
+    },
+    "keycloak": {
+      "docker_logs_exit": 0,
+      "matches": [
+        {
+          "time": "2026-11-11 08:45:11,358",
+          "labels": [
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:45:11,373",
+          "labels": [
+            "REGISTER_ERROR",
+            "not_allowed",
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:45:26,337",
+          "labels": [
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:45:26,345",
+          "labels": [
+            "REGISTER_ERROR",
+            "not_allowed",
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:51:21,289",
+          "labels": [
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:51:21,296",
+          "labels": [
+            "REGISTER_ERROR",
+            "not_allowed",
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:51:56,992",
+          "labels": [
+            "registration"
+          ]
+        },
+        {
+          "time": "2026-11-11 08:51:56,996",
+          "labels": [
+            "REGISTER_ERROR",
+            "not_allowed",
+            "registration"
+          ]
+        }
+      ]
+    },
+    "mcp-remote": {
+      "docker_logs_exit": 0,
+      "matches": []
+    }
+  }
+}

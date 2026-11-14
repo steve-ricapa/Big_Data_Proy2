@@ -1,0 +1,726 @@
+{
+  "search_vulnerabilities": {
+    "arguments": {
+      "page_size": 1
+    },
+    "result": {
+      "items": [
+        {
+          "cve_id": "CVE-2020-9709",
+          "published": "2026-11-05T16:17:04.180000+00:00",
+          "last_modified": "2026-11-10T19:17:36.013000+00:00",
+          "month": "2026-11",
+          "year": 2026,
+          "status": "Awaiting Analysis",
+          "description": "Adobe Photoshop versions Photoshop CC 2019, and Photoshop 2020 have a security bypass vulnerability. Successful exploitation could lead to privilege escalation.",
+          "cvss": {
+            "version": "3.1",
+            "score": 8.8,
+            "severity": "HIGH",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0"
+          },
+          "severity": "HIGH",
+          "cwes": [
+            "CWE-269"
+          ],
+          "products": [],
+          "cpes": [],
+          "references": [
+            "https://helpx.adobe.com/security/products/photoshop/apsb20-45.html"
+          ],
+          "content_hash": "1475b5fbd4fc2077ee3c0e1a935963f17ef90febd2b7d16f16985b689f01d30d"
+        }
+      ],
+      "total": 174734,
+      "page": 1,
+      "page_size": 1
+    },
+    "status": "PASS"
+  },
+  "get_cve_details": {
+    "arguments": {
+      "cve_id": "CVE-2020-9709"
+    },
+    "result": {
+      "cve_id": "CVE-2020-9709",
+      "published": "2026-11-05T16:17:04.180000+00:00",
+      "last_modified": "2026-11-10T19:17:36.013000+00:00",
+      "month": "2026-11",
+      "year": 2026,
+      "status": "Awaiting Analysis",
+      "description": "Adobe Photoshop versions Photoshop CC 2019, and Photoshop 2020 have a security bypass vulnerability. Successful exploitation could lead to privilege escalation.",
+      "cvss": {
+        "version": "3.1",
+        "score": 8.8,
+        "severity": "HIGH",
+        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+        "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0"
+      },
+      "severity": "HIGH",
+      "cwes": [
+        "CWE-269"
+      ],
+      "products": [],
+      "cpes": [],
+      "references": [
+        "https://helpx.adobe.com/security/products/photoshop/apsb20-45.html"
+      ],
+      "raw_cve": {
+        "id": "CVE-2020-9709",
+        "sourceIdentifier": "psirt@adobe.com",
+        "published": "2026-11-05T16:17:04.180",
+        "lastModified": "2026-11-10T19:17:36.013",
+        "vulnStatus": "Awaiting Analysis",
+        "cveTags": [],
+        "descriptions": [
+          {
+            "lang": "en",
+            "value": "Adobe Photoshop versions Photoshop CC 2019, and Photoshop 2020 have a security bypass vulnerability. Successful exploitation could lead to privilege escalation."
+          }
+        ],
+        "affected": [
+          {
+            "source": "psirt@adobe.com",
+            "affectedData": [
+              {
+                "vendor": "Adobe",
+                "product": "Adobe Photoshop",
+                "versions": [
+                  {
+                    "version": "Photoshop CC  2019, and Photoshop 2020 versions",
+                    "status": "affected"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "metrics": {
+          "cvssMetricV31": [
+            {
+              "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+              "type": "Secondary",
+              "cvssData": {
+                "version": "3.1",
+                "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                "baseScore": 8.8,
+                "baseSeverity": "HIGH",
+                "attackVector": "NETWORK",
+                "attackComplexity": "LOW",
+                "privilegesRequired": "NONE",
+                "userInteraction": "REQUIRED",
+                "scope": "UNCHANGED",
+                "confidentialityImpact": "HIGH",
+                "integrityImpact": "HIGH",
+                "availabilityImpact": "HIGH"
+              },
+              "exploitabilityScore": 2.8,
+              "impactScore": 5.9
+            }
+          ],
+          "ssvcV203": [
+            {
+              "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+              "ssvcData": {
+                "timestamp": "2026-11-10T18:25:23.998828Z",
+                "id": "CVE-2020-9709",
+                "options": [
+                  {
+                    "exploitation": "none"
+                  },
+                  {
+                    "automatable": "no"
+                  },
+                  {
+                    "technicalImpact": "total"
+                  }
+                ],
+                "role": "CISA Coordinator",
+                "version": "2.0.3"
+              }
+            }
+          ]
+        },
+        "weaknesses": [
+          {
+            "source": "134c704f-9b21-4f2e-91b3-4a467353bcc0",
+            "type": "Secondary",
+            "description": [
+              {
+                "lang": "en",
+                "value": "CWE-269"
+              }
+            ]
+          }
+        ],
+        "references": [
+          {
+            "url": "https://helpx.adobe.com/security/products/photoshop/apsb20-45.html",
+            "source": "psirt@adobe.com"
+          }
+        ]
+      },
+      "content_hash": "1475b5fbd4fc2077ee3c0e1a935963f17ef90febd2b7d16f16985b689f01d30d"
+    },
+    "status": "PASS"
+  },
+  "get_top_cwes": {
+    "arguments": {},
+    "result": {
+      "items": [
+        [
+          "CWE-79",
+          22861
+        ],
+        [
+          "CWE-89",
+          10249
+        ],
+        [
+          "CWE-862",
+          8869
+        ],
+        [
+          "CWE-284",
+          6476
+        ],
+        [
+          "CWE-416",
+          5321
+        ],
+        [
+          "CWE-22",
+          5044
+        ],
+        [
+          "CWE-74",
+          4814
+        ],
+        [
+          "CWE-787",
+          4750
+        ],
+        [
+          "CWE-125",
+          4537
+        ],
+        [
+          "CWE-352",
+          4276
+        ],
+        [
+          "CWE-94",
+          4142
+        ],
+        [
+          "CWE-200",
+          4003
+        ],
+        [
+          "CWE-78",
+          3665
+        ],
+        [
+          "CWE-863",
+          3378
+        ],
+        [
+          "CWE-20",
+          3358
+        ],
+        [
+          "CWE-122",
+          3218
+        ],
+        [
+          "CWE-918",
+          3154
+        ],
+        [
+          "CWE-639",
+          2964
+        ],
+        [
+          "CWE-121",
+          2908
+        ],
+        [
+          "CWE-476",
+          2844
+        ]
+      ]
+    },
+    "status": "PASS"
+  },
+  "get_vulnerability_statistics": {
+    "arguments": {},
+    "result": {
+      "as_of": "2026-11-11T03:01:47.586892+00:00",
+      "total_cves": 174734,
+      "rejected_cves": 4019,
+      "severity": {
+        "CRITICAL": 17894,
+        "HIGH": 64615,
+        "MEDIUM": 74203,
+        "LOW": 10115,
+        "UNKNOWN": 7828,
+        "NONE": 79
+      },
+      "severity_percent": {
+        "CRITICAL": 10.2407,
+        "HIGH": 36.9791,
+        "MEDIUM": 42.4663,
+        "LOW": 5.7888,
+        "UNKNOWN": 4.48,
+        "NONE": 0.0452
+      },
+      "monthly": {
+        "2021-06": 1,
+        "2021-09": 1,
+        "2021-10": 1,
+        "2022-01": 2,
+        "2022-03": 1,
+        "2022-04": 4,
+        "2022-08": 1,
+        "2022-12": 1,
+        "2023-02": 10,
+        "2023-03": 11,
+        "2023-04": 5,
+        "2023-05": 4,
+        "2023-06": 2,
+        "2023-07": 47,
+        "2023-08": 108,
+        "2023-10": 9,
+        "2023-11": 2,
+        "2023-12": 1,
+        "2024-01": 1143,
+        "2024-02": 1759,
+        "2024-03": 2640,
+        "2024-04": 3240,
+        "2024-05": 3386,
+        "2024-06": 2752,
+        "2024-07": 2894,
+        "2024-08": 2708,
+        "2024-09": 2420,
+        "2024-10": 3378,
+        "2024-11": 3776,
+        "2024-12": 3025,
+        "2025-01": 4150,
+        "2025-02": 2960,
+        "2025-03": 3953,
+        "2025-04": 4062,
+        "2025-05": 3759,
+        "2025-06": 3441,
+        "2025-07": 3846,
+        "2025-08": 3559,
+        "2025-09": 3916,
+        "2025-10": 3828,
+        "2025-11": 3076,
+        "2025-12": 4717,
+        "2026-01": 4691,
+        "2026-02": 4402,
+        "2026-03": 5976,
+        "2026-04": 5685,
+        "2026-05": 6731,
+        "2026-06": 7808,
+        "2026-07": 9905,
+        "2026-08": 12481,
+        "2026-09": 15012,
+        "2026-10": 17385,
+        "2026-11": 6059
+      },
+      "top_cwes": [
+        [
+          "CWE-79",
+          22861
+        ],
+        [
+          "CWE-89",
+          10249
+        ],
+        [
+          "CWE-862",
+          8869
+        ],
+        [
+          "CWE-284",
+          6476
+        ],
+        [
+          "CWE-416",
+          5321
+        ],
+        [
+          "CWE-22",
+          5044
+        ],
+        [
+          "CWE-74",
+          4814
+        ],
+        [
+          "CWE-787",
+          4750
+        ],
+        [
+          "CWE-125",
+          4537
+        ],
+        [
+          "CWE-352",
+          4276
+        ],
+        [
+          "CWE-94",
+          4142
+        ],
+        [
+          "CWE-200",
+          4003
+        ],
+        [
+          "CWE-78",
+          3665
+        ],
+        [
+          "CWE-863",
+          3378
+        ],
+        [
+          "CWE-20",
+          3358
+        ],
+        [
+          "CWE-122",
+          3218
+        ],
+        [
+          "CWE-918",
+          3154
+        ],
+        [
+          "CWE-639",
+          2964
+        ],
+        [
+          "CWE-121",
+          2908
+        ],
+        [
+          "CWE-476",
+          2844
+        ]
+      ],
+      "top_products": [
+        [
+          "[\"o\",\"linux\",\"linux_kernel\"]",
+          8140
+        ],
+        [
+          "[\"a\",\"google\",\"chrome\"]",
+          4337
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2022\"]",
+          3854
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2019\"]",
+          3671
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2025\"]",
+          3632
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_24h2\"]",
+          3559
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_22h2\"]",
+          3482
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_21h2\"]",
+          3471
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_1809\"]",
+          3452
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_23h2\"]",
+          3359
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2016\"]",
+          3131
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_1607\"]",
+          2916
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_25h2\"]",
+          2827
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2012\"]",
+          2547
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_26h1\"]",
+          2535
+        ],
+        [
+          "[\"o\",\"apple\",\"macos\"]",
+          2060
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2022_23h2\"]",
+          1653
+        ],
+        [
+          "[\"o\",\"google\",\"android\"]",
+          1439
+        ],
+        [
+          "[\"o\",\"apple\",\"iphone_os\"]",
+          1241
+        ],
+        [
+          "[\"o\",\"apple\",\"ipados\"]",
+          1232
+        ]
+      ],
+      "top_vendors": [
+        [
+          "linux",
+          8140
+        ],
+        [
+          "microsoft",
+          6727
+        ],
+        [
+          "google",
+          5853
+        ],
+        [
+          "oracle",
+          4053
+        ],
+        [
+          "adobe",
+          2551
+        ],
+        [
+          "apple",
+          2361
+        ],
+        [
+          "ibm",
+          2042
+        ],
+        [
+          "apache",
+          1326
+        ],
+        [
+          "debian",
+          1147
+        ],
+        [
+          "tenda",
+          1137
+        ],
+        [
+          "mozilla",
+          999
+        ],
+        [
+          "dell",
+          945
+        ],
+        [
+          "phpgurukul",
+          846
+        ],
+        [
+          "samsung",
+          734
+        ],
+        [
+          "dlink",
+          728
+        ],
+        [
+          "totolink",
+          645
+        ],
+        [
+          "cisco",
+          620
+        ],
+        [
+          "redhat",
+          604
+        ],
+        [
+          "openclaw",
+          577
+        ],
+        [
+          "qualcomm",
+          566
+        ]
+      ],
+      "unique_affected_products": 23082,
+      "cvss_by_version": {
+        "3.1": {
+          "count": 121906,
+          "average": 6.9193
+        },
+        "4.0": {
+          "count": 43602,
+          "average": 6.2432
+        },
+        "3.0": {
+          "count": 1398,
+          "average": 7.3237
+        }
+      },
+      "modified_last_30_days": 59011,
+      "notes": [
+        "CVE no equivale a ataque confirmado",
+        "Productos \u00fanicos no equivalen a registros CPE",
+        "Promedios CVSS separados por versi\u00f3n; UNKNOWN no se imputa a cero"
+      ],
+      "graph": {
+        "nodes": 627477,
+        "relationships": 1488730
+      }
+    },
+    "status": "PASS"
+  },
+  "get_affected_products": {
+    "arguments": {},
+    "result": {
+      "items": [
+        [
+          "[\"o\",\"linux\",\"linux_kernel\"]",
+          8140
+        ],
+        [
+          "[\"a\",\"google\",\"chrome\"]",
+          4337
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2022\"]",
+          3854
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2019\"]",
+          3671
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2025\"]",
+          3632
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_24h2\"]",
+          3559
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_22h2\"]",
+          3482
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_21h2\"]",
+          3471
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_1809\"]",
+          3452
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_23h2\"]",
+          3359
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2016\"]",
+          3131
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_1607\"]",
+          2916
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_25h2\"]",
+          2827
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2012\"]",
+          2547
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_26h1\"]",
+          2535
+        ],
+        [
+          "[\"o\",\"apple\",\"macos\"]",
+          2060
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2022_23h2\"]",
+          1653
+        ],
+        [
+          "[\"o\",\"google\",\"android\"]",
+          1439
+        ],
+        [
+          "[\"o\",\"apple\",\"iphone_os\"]",
+          1241
+        ],
+        [
+          "[\"o\",\"apple\",\"ipados\"]",
+          1232
+        ]
+      ]
+    },
+    "status": "PASS"
+  },
+  "explore_cve_relationships": {
+    "arguments": {
+      "cve_id": "CVE-2020-9709"
+    },
+    "result": {
+      "items": [
+        {
+          "cve_id": "CVE-2020-9709",
+          "relationship": "REFERENCES",
+          "labels": [
+            "Reference"
+          ],
+          "entity": {
+            "url": "https://helpx.adobe.com/security/products/photoshop/apsb20-45.html"
+          }
+        },
+        {
+          "cve_id": "CVE-2020-9709",
+          "relationship": "CLASSIFIED_AS",
+          "labels": [
+            "CWE"
+          ],
+          "entity": {
+            "id": "CWE-269"
+          }
+        }
+      ],
+      "limit": 250
+    },
+    "status": "PASS"
+  }
+}

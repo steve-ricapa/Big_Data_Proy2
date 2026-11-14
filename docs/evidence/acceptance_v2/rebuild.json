@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-11T02:46:58.248627+00:00",
+  "compose_config": "PASS",
+  "images": {
+    "app": {
+      "status": "PASS",
+      "tag": "ti-v2-app:verification",
+      "image_id": "sha256:847d63dbcabbdd530f6c79a520692ec67a3ad2d067a767978fb1bd6c8e71e1d9"
+    },
+    "test": {
+      "status": "PASS",
+      "tag": "ti-v2-test:verification",
+      "image_id": "sha256:d41bb1e769353fc0f4f2ff20fa00ba6ec245d71543525ad1f39181f1215737d1"
+    },
+    "mcp": {
+      "status": "PASS",
+      "tag": "ti-v2-mcp:verification",
+      "image_id": "sha256:3cccbc52ceb5ba20572c61525bd0fb0fc278e57eaa4d90cd733b23b4db37e9e6"
+    },
+    "airflow": {
+      "status": "PASS",
+      "tag": "ti-v2-airflow:verification",
+      "image_id": "sha256:1d5484a3a16f20e73cf388010522090b23d2b428eb7359edaf4465d83e988f1a"
+    }
+  },
+  "existing_tags_replaced": false,
+  "infrastructure_recreated": false,
+  "production_container_ids_before": [
+    "0ed361c1bcec066c9b5d800544fec745817854bcc872d6850f82181857cc810a",
+    "1862be92c4b785983e2c09bf18a618ce12d3addf02e0d445ece6c909a32fe770",
+    "1bd674b6e997d034776ff0abae5f5afeb3e174c5a4e848eaab28ac83a6b79a4d",
+    "2ebe0fab5277de1e999f874c49dbb56a7a31af85b0a03c4b6b8dee87ebd9aae0",
+    "304900bfaf5b5d9b502158ed565238fa42b461563486f00f40c4483f2ac5e1e4",
+    "403c14617ab637c09644a6e3bb1837b1d11d7d19c7fb19dfae0110b79764b5cc",
+    "4b8df2eeee8e1a96f605a83d2d23ea87fc11655da86b6844b4bf61ff3b72ba5b",
+    "57a0be61aeade165ee0148ed4d7c4e1cf2d4c8e3e24ba8f4068a429c1297b01f",
+    "8042f3feb8e23a61baa49e9f39c64de56b8dfeba054eebd88feb1376e34be20d",
+    "818a3c7de901e17e1c3cc3a30304b5521e0f93a12ad5365ffd9cb79edacb3b13",
+    "977d0005d8f9506cf06eff56af6954fbad3377e2642074acf9f4645396b148f1",
+    "98ad8b7bca0b2a862edb9bfd20fd1ce242b9a86cba4269fd27d7499cf129e86c",
+    "bb00c6d94aba541eb6de623ac6101d58dfb18c59edc800d789713f110a8a7694",
+    "fb1b007f83a69728010a13f767de1a7006abbd3a5ca54da94cdc89b9091b3828"
+  ],
+  "inputs_sha256": {
+    "pyproject.toml": "96e32ff1dc8843a248fa6afbcc5d6aedf8aa472352d25ab9c56bee160ca195bc",
+    "requirements.lock": "f74ba1dbdcdd1465ec54ffed0063eeea5725daecf5430954fee3253bc02a2771",
+    "requirements-mcp.lock": "1f89561d68464cd64276956e4e2fec096fd9ca78d1be52b38d4e56bfa29e69e0",
+    "airflow/requirements.lock": "35dd406b460791406e5f1e675b7faf2aa61c2763e7bc3d14759ad6be2c9d3ed6",
+    "infrastructure/docker/python.Dockerfile": "d0a0a6a333e52efdf301f035df0119644f5b913f9a08027d1f28094297ae2a6a",
+    "infrastructure/docker/airflow3.Dockerfile": "59619a74663163b5a6bda1e547e48ee63a9b5de0539a01e4f7a6814838718377",
+    ".dockerignore": "6c1e005ec9da95787550b9dbc05166710a4d1239ac78331e00ecea8afb842918"
+  },
+  "production_container_ids_unchanged": true,
+  "status": "PASS",
+  "limits": [
+    "Uses existing base-image/build caches; no clean-host rebuild",
+    "Base images are version-tagged, not digest-pinned",
+    "No Terraform apply, VM recreation, database migration, production image replacement or registry push"
+  ]
+}

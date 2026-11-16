@@ -11,11 +11,24 @@
 .env.*
 !.env.example
 secrets/
+# Code-only Terraform module: do not unignore runtime secrets elsewhere.
+!infrastructure/terraform/modules/secrets/
+infrastructure/terraform/modules/secrets/*
+!infrastructure/terraform/modules/secrets/*.tf
+!infrastructure/terraform/modules/secrets/README.md
 credentials/
 *credentials*.json
 *service-account*.json
 *.pem
 *.key
+*.ppk
+*.p12
+*.pfx
+*.kdbx
+.terraformrc
+terraform.rc
+.codex/auth.json
+.codex/auth.json.*
 
 # Python y herramientas
 .venv/
@@ -38,6 +51,7 @@ htmlcov/
 *.tfstate
 *.tfstate.*
 *.tfplan
+*.tfplan.*
 plan.txt
 crash.log
 *.hcl.backup

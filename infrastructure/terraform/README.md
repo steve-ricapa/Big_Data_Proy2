@@ -14,29 +14,50 @@ No hay backend remoto configurado: el state local no se debe compartir ni
 subir a Git. Cambiar a backend privado aprobado antes de trabajo concurrente.
 Plan de arquitectura y operación en `docs/architecture/` desde la raíz.
 
-## Validaciones realizadas en esta tarea
+## Reproducción desde un clon — cierre técnico 16/11/2026
 
-### Estado vigente, segunda revisión 10/11/2026
-- CLI temporal existente en `%LOCALAPPDATA%/Temp/opencode/terraform/terraform.exe`.
-- `fmt -check`, `init -backend=false`, `validate` y `plan` correctos.
-- Plan vigente: 37 altas, 0 cambios, 0 bajas, sin apply/destroy ni APIs habilitadas.
-- Evidencias `docs/evidence/revalidation_terraform_*` desde raíz. Lockfile real
-  existente conservado. ADC disponible se utiliza sin leer/imprimir credenciales.
-- Workloads locales sí construidos/probados; no infraestructura cloud ejecutada.
+El módulo `modules/secrets/main.tf` contiene solo recursos/IAM, no versiones ni
+valores de secretos. Su exclusión Git accidental se corrige con una excepción
+limitada a código. Los ocho módulos deben acompañar al clon; no usar archivos
+locales ignorados para dar por válida una reconstrucción.
 
-### Histórico de la preparación inicial (ya superado)
+Desde la raíz del repositorio, con Terraform >=1.9,<2 instalado en PATH:
 
-- `docker compose config --quiet`: correcto, sin iniciar Docker workloads.
-- `bash -n infrastructure/scripts/vm-bootstrap.sh`: correcto.
-- Rutas de ocho módulos y startup-script: existen.
-- Fórmulas de costos: recalculadas con Python estándar.
-- Los tres originales: bytes y SHA-256 coinciden con el inventario inicial.
-- Terraform no disponible en PATH: no se ejecutaron fmt, init, validate o plan.
-  No hay validación semántica del proveedor ni lockfile todavía.
-- No se descargaron imágenes, probaron healthchecks, TLS, conectividad ni
-  permisos en GCP. No se ejecutaron gcloud ni operaciones cloud.
+```powershell
+terraform fmt -check -recursive infrastructure/terraform
+terraform -chdir=infrastructure/terraform/environments/dev init -backend=false -lockfile=readonly -input=false
+terraform -chdir=infrastructure/terraform/environments/dev validate
+```
 
-Bloqueos antes de un despliegue funcional: boot_image real, APIs/IAM autorizados,
-decisión de egress, inicialización controlada de filesystem, secretos runtime,
-TLS/autenticación y overlay GCP, imágenes reales y compatibilidad de versiones.
-El script bootstrap no inicia contenedores ni formatea automáticamente discos.
+No se necesita copiar state, tfvars privados ni credenciales para validar.
+La descarga del proveedor debe coincidir con `.terraform.lock.hcl` versionado.
+No ejecutar `apply`, ni un plan contra producción sin los inputs/state privados
+correctos. Un plan desde un clon sin state propondría crear recursos que ya
+existen: **no es evidencia de deriva** ni autorización para duplicarlos.
+
+La comprobación final se hace sobre un export de los archivos versionados en un
+directorio temporal, con init/validate reales y sin copiar `.terraform` ni state.
+Resultados precisos en `docs/audits/technical_deliverables_audit.md` desde raíz.
+Esto acredita configuración reproducible y válida; no una VM reconstruida desde
+cero ni reproducibilidad byte a byte de imágenes por tag.
+
+## Despliegue y operación existentes (no ejecutar durante validación)
+
+GCP fue desplegado con autorización el10–11/11/2026. El entorno dev permite
+la VM, red/discos, IAM, buckets, Secret Manager, Artifact Registry y Monitoring.
+Cloud Run queda deshabilitado por `web_services={}`; los servicios web corren
+con Compose dentro de la VM, no como tres servicios Cloud Run.
+
+Para reproducir un despliegue nuevo se necesita una aprobación independiente,
+inputs como project_id/boot_image/IP/políticas, APIs e IAM habilitados, capacidad
+y filesystem de disco preparados, bundle de aplicación y secretos privados.
+`infrastructure/scripts/vm-bootstrap.sh` se niega a formatear automáticamente
+discos y no inicia contenedores. `scripts/cloud_install.py` tiene operaciones
+sensibles de instalación: inspeccionarlo antes de cualquier ejecución; no es
+un comando de validación ni una herramienta para una VM existente con datos.
+
+El runtime combina `docker-compose.yml`, `docker-compose.airflow3.yml`,
+`docker-compose.secure.yml` y `docker-compose.public.yml` con
+`secrets/public.env`. Sus valores no se incluyen en Git. Operación vigente y
+límites: `docs/architecture/system.md`, `docs/architecture/gcp-operations.md`.
+Las evidencias de planes previos son históricas, no un nuevo apply o plan de hoy.

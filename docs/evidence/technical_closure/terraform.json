@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-16T18:25:05.852629+00:00",
+  "export": "Git index only; no state, tfvars or .terraform copied",
+  "directory": "C:\\Users\\steve\\AppData\\Local\\Temp\\opencode\\closure-export-20261116-v1",
+  "apply_executed": false,
+  "checks": {
+    "fmt": {
+      "exit": 0,
+      "status": "PASS"
+    },
+    "init": {
+      "exit": 0,
+      "status": "PASS"
+    },
+    "validate": {
+      "exit": 0,
+      "status": "PASS"
+    }
+  }
+}

@@ -114,9 +114,17 @@ try:
             st.json(get("/api/v1/vulnerabilities/" + chosen), expanded=False)
     elif view == "Graph Intelligence":
         examples = get("/api/v1/vulnerabilities", page_size=1)["items"]
-        identifier = st.text_input("CVE", examples[0]["cve_id"] if examples else "")
-        if st.button("Explorar relaciones"):
-            data = get("/api/v1/graph/cve/" + identifier)
+        with st.form("graph_filters"):
+            identifier = st.text_input("CVE", examples[0]["cve_id"] if examples else "")
+            graph_page = st.number_input("Página de relaciones", min_value=1, max_value=10000, value=1)
+            graph_size = st.selectbox("Relaciones por página", [25, 73, 100, 250], index=3)
+            relationship = st.selectbox("Tipo de relación", ["Todas", "AFFECTS", "AFFECTS_CPE", "CLASSIFIED_AS", "REFERENCES"])
+            explore = st.form_submit_button("Explorar relaciones")
+        if explore:
+            params = {"page": graph_page, "page_size": graph_size}
+            if relationship != "Todas":
+                params["relationship_type"] = relationship
+            data = get("/api/v1/graph/cve/" + identifier, **params)
             st.dataframe(data["items"], hide_index=True)
             # DOT escapes both quotes and backslashes; no raw HTML from source data.
             import json
@@ -130,7 +138,10 @@ try:
                 )
             st.graphviz_chart("digraph { " + " ".join(edges) + " }")
             st.caption(
-                "Subgrafo limitado a 250 relaciones salientes. AFFECTS indica asociación NVD, no explotación observada."
+                f"Página {data['page']} · {len(data['items'])} de {data['total']} relaciones filtradas "
+                f"({data['total_relationships']} totales). "
+                + (f"Continuar en página {data['next_page']} y pulsar Explorar relaciones. " if data["has_more"] else "Fin de resultados. ")
+                + "AFFECTS indica asociación NVD, no explotación observada. Reinicie la paginación si cambia el dataset."
             )
     else:
         st.json(get("/api/v1/pipeline/status"))

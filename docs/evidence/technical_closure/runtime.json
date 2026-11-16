@@ -1,0 +1,1697 @@
+{
+  "at": "2026-11-16T18:34:09.935947+00:00",
+  "mode": "READ_ONLY_NO_DDL_NO_CRUD",
+  "containers": [
+    {
+      "name": "/threat-intelligence-airflow3-dag-processor-1",
+      "image": "ti-airflow:3.4-local",
+      "id": "f39c3046315c",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/opt/airflow/checkpoints",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_checkpoint_data/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/airflow/dags",
+          "source": "/opt/threat-intelligence/airflow/dags"
+        },
+        {
+          "type": "volume",
+          "destination": "/opt/airflow/logs",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_airflow3_logs/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/data",
+          "source": "/opt/threat-intelligence/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/evidence",
+          "source": "/opt/threat-intelligence/docs/evidence"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/scripts",
+          "source": "/opt/threat-intelligence/scripts"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/src",
+          "source": "/opt/threat-intelligence/src"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-caddy-1",
+      "image": "caddy:2.10.2-alpine",
+      "id": "59b0c851774e",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/config",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_caddy_config/_data"
+        },
+        {
+          "type": "volume",
+          "destination": "/data",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_caddy_data/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/etc/caddy/Caddyfile",
+          "source": "/opt/threat-intelligence/infrastructure/docker/Caddyfile"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/ti/caddy-entrypoint.sh",
+          "source": "/opt/threat-intelligence/scripts/caddy-entrypoint.sh"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-keycloak-1",
+      "image": "quay.io/keycloak/keycloak:26.8.2",
+      "id": "d857900f7989",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "destination": "/opt/ti/keycloak-entrypoint.sh",
+          "source": "/opt/threat-intelligence/scripts/keycloak-entrypoint.sh"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/keycloak/data/import/ti-realm.json",
+          "source": "/opt/threat-intelligence/secrets/keycloak-realm.json"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-dashboard-1",
+      "image": "ti-app:local",
+      "id": "80d41de6d049",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": []
+    },
+    {
+      "name": "/threat-intelligence-api-1",
+      "image": "ti-app:local",
+      "id": "3526b6a3449c",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "destination": "/app/data/staging",
+          "source": "/opt/threat-intelligence/data/staging"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-mcp-remote-1",
+      "image": "ti-mcp:local",
+      "id": "b33bd4fc011e",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": []
+    },
+    {
+      "name": "/threat-intelligence-mongodb-1",
+      "image": "mongo:8.0.12",
+      "id": "1bd674b6e997",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/data/configdb",
+          "source": "/srv/ti-data/docker/volumes/4a00a65d08693d293ff74eca70aa741caf84c87997ed11d56ce6c5a8ba890a95/_data"
+        },
+        {
+          "type": "volume",
+          "destination": "/data/db",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_mongodb_data/_data"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-keycloak-db-1",
+      "image": "postgres:16.10-bookworm",
+      "id": "403c14617ab6",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/var/lib/postgresql/data",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_keycloak_postgres/_data"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-airflow3-scheduler-1",
+      "image": "ti-airflow:3.4-local",
+      "id": "98ad8b7bca0b",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/opt/airflow/checkpoints",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_checkpoint_data/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/airflow/dags",
+          "source": "/opt/threat-intelligence/airflow/dags"
+        },
+        {
+          "type": "volume",
+          "destination": "/opt/airflow/logs",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_airflow3_logs/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/data",
+          "source": "/opt/threat-intelligence/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/evidence",
+          "source": "/opt/threat-intelligence/docs/evidence"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/scripts",
+          "source": "/opt/threat-intelligence/scripts"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/src",
+          "source": "/opt/threat-intelligence/src"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-airflow3-api-1",
+      "image": "ti-airflow:3.4-local",
+      "id": "bb00c6d94aba",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/opt/airflow/checkpoints",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_checkpoint_data/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/airflow/dags",
+          "source": "/opt/threat-intelligence/airflow/dags"
+        },
+        {
+          "type": "volume",
+          "destination": "/opt/airflow/logs",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_airflow3_logs/_data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/data",
+          "source": "/opt/threat-intelligence/data"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/evidence",
+          "source": "/opt/threat-intelligence/docs/evidence"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/scripts",
+          "source": "/opt/threat-intelligence/scripts"
+        },
+        {
+          "type": "bind",
+          "destination": "/opt/project/src",
+          "source": "/opt/threat-intelligence/src"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-airflow3-postgres-1",
+      "image": "postgres:16.10-bookworm",
+      "id": "304900bfaf5b",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/var/lib/postgresql/data",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_airflow3_postgres/_data"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-cassandra-1",
+      "image": "cassandra:4.1.9",
+      "id": "977d0005d8f9",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "bind",
+          "destination": "/opt/ti/cassandra-secure-entrypoint.sh",
+          "source": "/opt/threat-intelligence/scripts/cassandra-secure-entrypoint.sh"
+        },
+        {
+          "type": "volume",
+          "destination": "/var/lib/cassandra",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_cassandra_data/_data"
+        }
+      ]
+    },
+    {
+      "name": "/threat-intelligence-neo4j-1",
+      "image": "neo4j:5.26.12-community",
+      "id": "8042f3feb8e2",
+      "status": "running",
+      "health": "healthy",
+      "restart_count": 0,
+      "mounts": [
+        {
+          "type": "volume",
+          "destination": "/data",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_neo4j_data/_data"
+        },
+        {
+          "type": "volume",
+          "destination": "/logs",
+          "source": "/srv/ti-data/docker/volumes/threat-intelligence_neo4j_logs/_data"
+        }
+      ]
+    }
+  ],
+  "disk": "Filesystem      Size  Used Avail Use% Mounted on\n/dev/sda1        30G   20G  8.9G  69% /\n/dev/sdb         98G   16G   78G  17% /srv/ti-data\n",
+  "systemd": {
+    "ti-stack.service": "inactive",
+    "ti-backup.service": "inactive",
+    "ti-backup.timer": "active",
+    "ti-health.timer": "active",
+    "ti-component-health.timer": "active"
+  },
+  "databases": {
+    "at": "2026-11-16T18:34:13.050344+00:00",
+    "kpi_snapshot": {
+      "as_of": "2026-11-16T03:01:29.397074+00:00",
+      "total_cves": 176803,
+      "rejected_cves": 4036,
+      "severity": {
+        "CRITICAL": 18080,
+        "HIGH": 65578,
+        "MEDIUM": 75049,
+        "LOW": 10263,
+        "UNKNOWN": 7754,
+        "NONE": 79
+      },
+      "severity_percent": {
+        "CRITICAL": 10.2261,
+        "HIGH": 37.091,
+        "MEDIUM": 42.4478,
+        "LOW": 5.8048,
+        "UNKNOWN": 4.3857,
+        "NONE": 0.0447
+      },
+      "monthly": {
+        "2000-06": 2,
+        "2000-10": 1,
+        "2001-01": 3,
+        "2001-03": 6,
+        "2001-07": 1,
+        "2001-08": 5,
+        "2002-01": 2,
+        "2002-03": 3,
+        "2002-04": 4,
+        "2002-05": 1,
+        "2002-08": 1,
+        "2003-11": 1,
+        "2005-05": 1,
+        "2010-02": 1,
+        "2010-04": 3,
+        "2011-10": 1,
+        "2014-04": 1,
+        "2016-05": 1,
+        "2017-07": 1,
+        "2021-06": 1,
+        "2021-09": 1,
+        "2021-10": 1,
+        "2021-12": 1,
+        "2022-01": 2,
+        "2022-03": 1,
+        "2022-04": 4,
+        "2022-08": 1,
+        "2022-12": 1,
+        "2023-01": 1,
+        "2023-02": 10,
+        "2023-03": 11,
+        "2023-04": 5,
+        "2023-05": 4,
+        "2023-06": 2,
+        "2023-07": 47,
+        "2023-08": 113,
+        "2023-10": 11,
+        "2023-11": 2,
+        "2023-12": 1,
+        "2024-01": 1143,
+        "2024-02": 1759,
+        "2024-03": 2640,
+        "2024-04": 3240,
+        "2024-05": 3386,
+        "2024-06": 2752,
+        "2024-07": 2894,
+        "2024-08": 2708,
+        "2024-09": 2420,
+        "2024-10": 3378,
+        "2024-11": 3776,
+        "2024-12": 3025,
+        "2025-01": 4150,
+        "2025-02": 2960,
+        "2025-03": 3953,
+        "2025-04": 4062,
+        "2025-05": 3759,
+        "2025-06": 3441,
+        "2025-07": 3846,
+        "2025-08": 3559,
+        "2025-09": 3916,
+        "2025-10": 3828,
+        "2025-11": 3076,
+        "2025-12": 4735,
+        "2026-01": 4691,
+        "2026-02": 4402,
+        "2026-03": 5976,
+        "2026-04": 5686,
+        "2026-05": 6732,
+        "2026-06": 7809,
+        "2026-07": 9905,
+        "2026-08": 12481,
+        "2026-09": 15013,
+        "2026-10": 17385,
+        "2026-11": 8058
+      },
+      "top_cwes": [
+        [
+          "CWE-79",
+          23100
+        ],
+        [
+          "CWE-89",
+          10321
+        ],
+        [
+          "CWE-862",
+          9032
+        ],
+        [
+          "CWE-284",
+          6511
+        ],
+        [
+          "CWE-416",
+          5396
+        ],
+        [
+          "CWE-22",
+          5108
+        ],
+        [
+          "CWE-74",
+          4824
+        ],
+        [
+          "CWE-787",
+          4811
+        ],
+        [
+          "CWE-125",
+          4580
+        ],
+        [
+          "CWE-352",
+          4308
+        ],
+        [
+          "CWE-94",
+          4173
+        ],
+        [
+          "CWE-200",
+          4057
+        ],
+        [
+          "CWE-78",
+          3708
+        ],
+        [
+          "CWE-863",
+          3471
+        ],
+        [
+          "CWE-20",
+          3377
+        ],
+        [
+          "CWE-122",
+          3241
+        ],
+        [
+          "CWE-918",
+          3191
+        ],
+        [
+          "CWE-639",
+          3036
+        ],
+        [
+          "CWE-121",
+          2932
+        ],
+        [
+          "CWE-476",
+          2865
+        ]
+      ],
+      "top_products": [
+        [
+          "[\"o\",\"linux\",\"linux_kernel\"]",
+          8240
+        ],
+        [
+          "[\"a\",\"google\",\"chrome\"]",
+          4409
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2022\"]",
+          3854
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2019\"]",
+          3671
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2025\"]",
+          3632
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_24h2\"]",
+          3559
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_22h2\"]",
+          3482
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_21h2\"]",
+          3471
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_1809\"]",
+          3452
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_23h2\"]",
+          3359
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2016\"]",
+          3131
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_10_1607\"]",
+          2916
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_25h2\"]",
+          2827
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2012\"]",
+          2547
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_11_26h1\"]",
+          2535
+        ],
+        [
+          "[\"o\",\"apple\",\"macos\"]",
+          2060
+        ],
+        [
+          "[\"o\",\"microsoft\",\"windows_server_2022_23h2\"]",
+          1653
+        ],
+        [
+          "[\"o\",\"google\",\"android\"]",
+          1439
+        ],
+        [
+          "[\"o\",\"apple\",\"iphone_os\"]",
+          1241
+        ],
+        [
+          "[\"o\",\"apple\",\"ipados\"]",
+          1232
+        ]
+      ],
+      "top_vendors": [
+        [
+          "linux",
+          8240
+        ],
+        [
+          "microsoft",
+          6756
+        ],
+        [
+          "google",
+          5925
+        ],
+        [
+          "oracle",
+          4067
+        ],
+        [
+          "adobe",
+          2562
+        ],
+        [
+          "apple",
+          2363
+        ],
+        [
+          "ibm",
+          2068
+        ],
+        [
+          "apache",
+          1329
+        ],
+        [
+          "debian",
+          1149
+        ],
+        [
+          "tenda",
+          1137
+        ],
+        [
+          "mozilla",
+          999
+        ],
+        [
+          "dell",
+          946
+        ],
+        [
+          "phpgurukul",
+          846
+        ],
+        [
+          "samsung",
+          734
+        ],
+        [
+          "dlink",
+          728
+        ],
+        [
+          "totolink",
+          645
+        ],
+        [
+          "cisco",
+          621
+        ],
+        [
+          "redhat",
+          607
+        ],
+        [
+          "openclaw",
+          577
+        ],
+        [
+          "qualcomm",
+          566
+        ]
+      ],
+      "unique_affected_products": 23258,
+      "cvss_by_version": {
+        "3.1": {
+          "count": 123120,
+          "average": 6.9182
+        },
+        "4.0": {
+          "count": 44441,
+          "average": 6.2555
+        },
+        "3.0": {
+          "count": 1452,
+          "average": 7.305
+        },
+        "2.0": {
+          "count": 36,
+          "average": 6.0833
+        }
+      },
+      "modified_last_30_days": 53876,
+      "notes": [
+        "CVE no equivale a ataque confirmado",
+        "Productos \u00fanicos no equivalen a registros CPE",
+        "Promedios CVSS separados por versi\u00f3n; UNKNOWN no se imputa a cero"
+      ],
+      "graph": {
+        "nodes": 634634,
+        "relationships": 1501507
+      }
+    },
+    "indexes_mongo": [
+      {
+        "v": 2,
+        "key": {
+          "_id": 1
+        },
+        "name": "_id_"
+      },
+      {
+        "v": 2,
+        "key": {
+          "cve_id": 1
+        },
+        "name": "cve_id_1",
+        "unique": true
+      },
+      {
+        "v": 2,
+        "key": {
+          "last_modified": 1
+        },
+        "name": "last_modified_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "month": 1
+        },
+        "name": "month_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "severity": 1
+        },
+        "name": "severity_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "cwes": 1
+        },
+        "name": "cwes_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "products.id": 1
+        },
+        "name": "products.id_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "year": 1,
+          "cve_id": 1
+        },
+        "name": "year_1_cve_id_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "published": 1,
+          "cve_id": 1
+        },
+        "name": "published_1_cve_id_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "_fts": "text",
+          "_ftsx": 1
+        },
+        "name": "description_text",
+        "weights": {
+          "description": 1
+        },
+        "default_language": "english",
+        "language_override": "language",
+        "textIndexVersion": 3
+      }
+    ],
+    "mongo_validator": {
+      "validator": {
+        "$jsonSchema": {
+          "bsonType": "object",
+          "required": [
+            "cve_id",
+            "content_hash",
+            "published",
+            "last_modified"
+          ],
+          "properties": {
+            "cve_id": {
+              "bsonType": "string",
+              "pattern": "^CVE-[0-9]{4}-[0-9]{4,19}$"
+            }
+          }
+        }
+      }
+    },
+    "mongodb": {
+      "count": 176803,
+      "duplicate_ids": 0,
+      "sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d"
+    },
+    "cassandra": {
+      "count": 176803,
+      "duplicate_ids": 0,
+      "sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d"
+    },
+    "neo4j": {
+      "count": 176803,
+      "duplicate_ids": 0,
+      "sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d"
+    },
+    "cassandra_schema": "CREATE KEYSPACE threat_intelligence WITH replication = {'class': 'NetworkTopologyStrategy', 'dc1': '1'}  AND durable_writes = true;\n\nCREATE TABLE threat_intelligence.cves_by_cwe (\n    bucket text,\n    month text,\n    published text,\n    cve_id text,\n    description text,\n    score double,\n    severity text,\n    PRIMARY KEY ((bucket, month), published, cve_id)\n) WITH CLUSTERING ORDER BY (published DESC, cve_id ASC)\n    AND additional_write_policy = '99p'\n    AND bloom_filter_fp_chance = 0.01\n    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}\n    AND comment = ''\n    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}\n    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}\n    AND crc_check_chance = 1.0\n    AND default_time_to_live = 0\n    AND gc_grace_seconds = 864000\n    AND max_index_interval = 2048\n    AND memtable_flush_period_in_ms = 0\n    AND min_index_interval = 128\n    AND read_repair = 'BLOCKING'\n    AND speculative_retry = '99p';\n\nCREATE TABLE threat_intelligence.cves_by_id (\n    cve_id text PRIMARY KEY,\n    content_hash text,\n    document text\n) WITH additional_write_policy = '99p'\n    AND bloom_filter_fp_chance = 0.01\n    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}\n    AND comment = ''\n    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}\n    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}\n    AND crc_check_chance = 1.0\n    AND default_time_to_live = 0\n    AND gc_grace_seconds = 864000\n    AND max_index_interval = 2048\n    AND memtable_flush_period_in_ms = 0\n    AND min_index_interval = 128\n    AND read_repair = 'BLOCKING'\n    AND speculative_retry = '99p';\n\nCREATE TABLE threat_intelligence.cves_by_product (\n    bucket text,\n    month text,\n    published text,\n    cve_id text,\n    description text,\n    score double,\n    severity text,\n    PRIMARY KEY ((bucket, month), published, cve_id)\n) WITH CLUSTERING ORDER BY (published DESC, cve_id ASC)\n    AND additional_write_policy = '99p'\n    AND bloom_filter_fp_chance = 0.01\n    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}\n    AND comment = ''\n    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}\n    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}\n    AND crc_check_chance = 1.0\n    AND default_time_to_live = 0\n    AND gc_grace_seconds = 864000\n    AND max_index_interval = 2048\n    AND memtable_flush_period_in_ms = 0\n    AND min_index_interval = 128\n    AND read_repair = 'BLOCKING'\n    AND speculative_retry = '99p';\n\nCREATE TABLE threat_intelligence.cves_by_severity (\n    bucket text,\n    month text,\n    published text,\n    cve_id text,\n    description text,\n    score double,\n    severity text,\n    PRIMARY KEY ((bucket, month), published, cve_id)\n) WITH CLUSTERING ORDER BY (published DESC, cve_id ASC)\n    AND additional_write_policy = '99p'\n    AND bloom_filter_fp_chance = 0.01\n    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}\n    AND comment = ''\n    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}\n    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}\n    AND crc_check_chance = 1.0\n    AND default_time_to_live = 0\n    AND gc_grace_seconds = 864000\n    AND max_index_interval = 2048\n    AND memtable_flush_period_in_ms = 0\n    AND min_index_interval = 128\n    AND read_repair = 'BLOCKING'\n    AND speculative_retry = '99p';\n\nCREATE TABLE threat_intelligence.kpi_snapshots (\n    snapshot_id text PRIMARY KEY,\n    payload text\n) WITH additional_write_policy = '99p'\n    AND bloom_filter_fp_chance = 0.01\n    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}\n    AND comment = ''\n    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}\n    AND compression = {'chunk_length_in_kb': '16', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}\n    AND crc_check_chance = 1.0\n    AND default_time_to_live = 0\n    AND gc_grace_seconds = 864000\n    AND max_index_interval = 2048\n    AND memtable_flush_period_in_ms = 0\n    AND min_index_interval = 128\n    AND read_repair = 'BLOCKING'\n    AND speculative_retry = '99p';",
+    "neo4j_constraints": [
+      {
+        "name": "cpe_unique",
+        "type": "UNIQUENESS",
+        "labelsOrTypes": [
+          "CPE"
+        ],
+        "properties": [
+          "id"
+        ]
+      },
+      {
+        "name": "cve_unique",
+        "type": "UNIQUENESS",
+        "labelsOrTypes": [
+          "CVE"
+        ],
+        "properties": [
+          "id"
+        ]
+      },
+      {
+        "name": "cwe_unique",
+        "type": "UNIQUENESS",
+        "labelsOrTypes": [
+          "CWE"
+        ],
+        "properties": [
+          "id"
+        ]
+      },
+      {
+        "name": "product_unique",
+        "type": "UNIQUENESS",
+        "labelsOrTypes": [
+          "Product"
+        ],
+        "properties": [
+          "id"
+        ]
+      },
+      {
+        "name": "reference_unique",
+        "type": "UNIQUENESS",
+        "labelsOrTypes": [
+          "Reference"
+        ],
+        "properties": [
+          "url"
+        ]
+      },
+      {
+        "name": "vendor_unique",
+        "type": "UNIQUENESS",
+        "labelsOrTypes": [
+          "Vendor"
+        ],
+        "properties": [
+          "id"
+        ]
+      }
+    ],
+    "neo4j_indexes": [
+      {
+        "name": "cpe_unique",
+        "state": "ONLINE",
+        "type": "RANGE"
+      },
+      {
+        "name": "cve_unique",
+        "state": "ONLINE",
+        "type": "RANGE"
+      },
+      {
+        "name": "cwe_unique",
+        "state": "ONLINE",
+        "type": "RANGE"
+      },
+      {
+        "name": "index_343aff4e",
+        "state": "ONLINE",
+        "type": "LOOKUP"
+      },
+      {
+        "name": "index_f7700477",
+        "state": "ONLINE",
+        "type": "LOOKUP"
+      },
+      {
+        "name": "product_unique",
+        "state": "ONLINE",
+        "type": "RANGE"
+      },
+      {
+        "name": "reference_unique",
+        "state": "ONLINE",
+        "type": "RANGE"
+      },
+      {
+        "name": "vendor_unique",
+        "state": "ONLINE",
+        "type": "RANGE"
+      }
+    ],
+    "graph_counts": {
+      "nodes": 634634,
+      "relationships": 1501507
+    },
+    "relationship_types": [
+      {
+        "type": "AFFECTS",
+        "n": 243633
+      },
+      {
+        "type": "AFFECTS_CPE",
+        "n": 512740
+      },
+      {
+        "type": "CLASSIFIED_AS",
+        "n": 189540
+      },
+      {
+        "type": "IDENTIFIES",
+        "n": 49986
+      },
+      {
+        "type": "PRODUCED_BY",
+        "n": 23260
+      },
+      {
+        "type": "REFERENCES",
+        "n": 482348
+      }
+    ],
+    "independent_kpi_checks": {
+      "total_cves": true,
+      "severity": true,
+      "monthly": true,
+      "cvss_by_version": true,
+      "rejected_cves": true,
+      "modified_last_30_days": true,
+      "unique_affected_products": true,
+      "top_cwes": true,
+      "top_products": true,
+      "top_vendors": true,
+      "severity_percent": true,
+      "graph_counts": true,
+      "cassandra_snapshot_equal_mongo": true,
+      "three_engine_parity": true
+    },
+    "control_documents": {
+      "CVE-2021-44228": {
+        "cvss": {
+          "version": "3.1",
+          "score": 10.0,
+          "severity": "CRITICAL",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H",
+          "source": "nvd@nist.gov"
+        },
+        "products": 145,
+        "cpes": 358,
+        "cassandra_document_equals_mongo_projection": true,
+        "cassandra_partitions": {
+          "cves_by_severity": true,
+          "cves_by_product": true,
+          "cves_by_cwe": true
+        },
+        "graph": [
+          {
+            "type": "CLASSIFIED_AS",
+            "n": 4
+          },
+          {
+            "type": "AFFECTS",
+            "n": 145
+          },
+          {
+            "type": "AFFECTS_CPE",
+            "n": 358
+          },
+          {
+            "type": "REFERENCES",
+            "n": 52
+          }
+        ]
+      },
+      "CVE-2024-0001": {
+        "cvss": {
+          "version": "3.1",
+          "score": 9.8,
+          "severity": "CRITICAL",
+          "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "source": "nvd@nist.gov"
+        },
+        "products": 1,
+        "cpes": 1,
+        "cassandra_document_equals_mongo_projection": true,
+        "cassandra_partitions": {
+          "cves_by_severity": true,
+          "cves_by_product": true,
+          "cves_by_cwe": true
+        },
+        "graph": [
+          {
+            "type": "REFERENCES",
+            "n": 1
+          },
+          {
+            "type": "AFFECTS",
+            "n": 1
+          },
+          {
+            "type": "AFFECTS_CPE",
+            "n": 1
+          },
+          {
+            "type": "CLASSIFIED_AS",
+            "n": 1
+          }
+        ]
+      }
+    },
+    "latest_verified_runs": [
+      {
+        "started_at": "2026-11-16T03:00:50.917938+00:00",
+        "stages": {
+          "nvd_sync": {
+            "from": "2026-11-15T00:55:08.124309+00:00",
+            "through": "2026-11-16T02:55:08.323007+00:00",
+            "pages": [
+              "window-00000-page-00000000.json"
+            ],
+            "records": 132,
+            "requests": 1,
+            "retries": 0,
+            "complete": true
+          },
+          "validate": {
+            "seen": 132,
+            "invalid": 0,
+            "duplicates": 0,
+            "unique_valid": 132
+          },
+          "mongodb": {
+            "seen": 132,
+            "new": 112,
+            "modified": 10,
+            "unchanged": 10,
+            "stale": 0,
+            "written": 122,
+            "batches_committed": 1,
+            "total_in_engine": 176803,
+            "seconds": 8.526
+          },
+          "cassandra": {
+            "seen": 132,
+            "new": 112,
+            "modified": 10,
+            "unchanged": 10,
+            "stale": 0,
+            "written": 122,
+            "batches_committed": 1,
+            "total_in_engine": 176803,
+            "seconds": 11.396
+          },
+          "neo4j": {
+            "seen": 132,
+            "new": 112,
+            "modified": 10,
+            "unchanged": 10,
+            "stale": 0,
+            "written": 122,
+            "batches_committed": 1,
+            "total_in_engine": 176803,
+            "seconds": 9.614
+          },
+          "kpis": {
+            "total_cves": 176803,
+            "as_of": "2026-11-16T03:01:29.397074+00:00"
+          },
+          "verify": {
+            "counts": {
+              "mongodb": 176803,
+              "cassandra": 176803,
+              "neo4j": 176803
+            },
+            "fingerprints": {
+              "mongodb": {
+                "records": 176803,
+                "sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d"
+              },
+              "cassandra": {
+                "records": 176803,
+                "sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d"
+              },
+              "neo4j": {
+                "records": 176803,
+                "sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d"
+              }
+            }
+          }
+        },
+        "status": "SUCCESS"
+      },
+      {
+        "started_at": "2026-11-15T03:00:51.642919+00:00",
+        "stages": {
+          "nvd_sync": {
+            "from": "2026-11-14T00:55:08.244374+00:00",
+            "through": "2026-11-15T02:55:08.124309+00:00",
+            "pages": [
+              "window-00000-page-00000000.json"
+            ],
+            "records": 268,
+            "requests": 1,
+            "retries": 0,
+            "complete": true
+          },
+          "validate": {
+            "seen": 268,
+            "invalid": 0,
+            "duplicates": 0,
+            "unique_valid": 268
+          },
+          "mongodb": {
+            "seen": 268,
+            "new": 73,
+            "modified": 165,
+            "unchanged": 30,
+            "stale": 0,
+            "written": 238,
+            "batches_committed": 2,
+            "total_in_engine": 176691,
+            "seconds": 7.973
+          },
+          "cassandra": {
+            "seen": 268,
+            "new": 73,
+            "modified": 165,
+            "unchanged": 30,
+            "stale": 0,
+            "written": 238,
+            "batches_committed": 2,
+            "total_in_engine": 176691,
+            "seconds": 12.541
+          },
+          "neo4j": {
+            "seen": 268,
+            "new": 73,
+            "modified": 165,
+            "unchanged": 30,
+            "stale": 0,
+            "written": 238,
+            "batches_committed": 2,
+            "total_in_engine": 176691,
+            "seconds": 10.637
+          },
+          "kpis": {
+            "total_cves": 176691,
+            "as_of": "2026-11-15T03:01:31.731822+00:00"
+          },
+          "verify": {
+            "counts": {
+              "mongodb": 176691,
+              "cassandra": 176691,
+              "neo4j": 176691
+            },
+            "fingerprints": {
+              "mongodb": {
+                "records": 176691,
+                "sha256_sum": "257bd894c58f5bd94aa6bfc9eed694bf2bb2aa4b12b43f0aa057ef2f0e815a00"
+              },
+              "cassandra": {
+                "records": 176691,
+                "sha256_sum": "257bd894c58f5bd94aa6bfc9eed694bf2bb2aa4b12b43f0aa057ef2f0e815a00"
+              },
+              "neo4j": {
+                "records": 176691,
+                "sha256_sum": "257bd894c58f5bd94aa6bfc9eed694bf2bb2aa4b12b43f0aa057ef2f0e815a00"
+              }
+            }
+          }
+        },
+        "status": "SUCCESS"
+      }
+    ],
+    "snapshot_end": {
+      "as_of": "2026-11-16T03:01:29.397074+00:00"
+    }
+  },
+  "airflow": {
+    "version": "3.4.0",
+    "dag": {
+      "dag_id": "nvd_threat_intelligence",
+      "is_paused": "False",
+      "next_dagrun": "2026-11-17 03:00:00+00:00",
+      "next_dagrun_create_after": "2026-11-17 03:00:00+00:00",
+      "last_parsed_time": "2026-11-16 18:34:42.977119+00:00"
+    },
+    "import_errors": 0,
+    "runs": [
+      {
+        "run_id": "scheduled__2026-11-16T03:00:00+00:00",
+        "run_type": "scheduled",
+        "state": "success",
+        "start_date": "2026-11-16 03:00:01.175782+00:00",
+        "end_date": "2026-11-16 03:02:00.491274+00:00",
+        "tasks": [
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "scheduled__2026-11-15T03:00:00+00:00",
+        "run_type": "scheduled",
+        "state": "success",
+        "start_date": "2026-11-15 03:00:01.102792+00:00",
+        "end_date": "2026-11-15 03:02:02.520365+00:00",
+        "tasks": [
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "scheduled__2026-11-14T03:00:00+00:00",
+        "run_type": "scheduled",
+        "state": "success",
+        "start_date": "2026-11-14 03:00:01.064577+00:00",
+        "end_date": "2026-11-14 03:02:24.564294+00:00",
+        "tasks": [
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "scheduled__2026-11-13T03:00:00+00:00",
+        "run_type": "scheduled",
+        "state": "success",
+        "start_date": "2026-11-13 03:00:01.093949+00:00",
+        "end_date": "2026-11-13 03:02:10.467633+00:00",
+        "tasks": [
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "scheduled__2026-11-12T03:00:00+00:00",
+        "run_type": "scheduled",
+        "state": "success",
+        "start_date": "2026-11-12 03:00:00.563692+00:00",
+        "end_date": "2026-11-12 03:02:54.838595+00:00",
+        "tasks": [
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "scheduled__2026-11-11T03:00:00+00:00",
+        "run_type": "scheduled",
+        "state": "success",
+        "start_date": "2026-11-11 03:00:46.465455+00:00",
+        "end_date": "2026-11-11 03:02:32.301134+00:00",
+        "tasks": [
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "sync34_20261110T215555",
+        "run_type": "manual",
+        "state": "success",
+        "start_date": "2026-11-10 21:56:08.713232+00:00",
+        "end_date": "2026-11-10 21:57:22.332325+00:00",
+        "tasks": [
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      },
+      {
+        "run_id": "full34_20261110T212506",
+        "run_type": "manual",
+        "state": "success",
+        "start_date": "2026-11-10 21:25:59.988707+00:00",
+        "end_date": "2026-11-10 21:55:17.689337+00:00",
+        "tasks": [
+          {
+            "task_id": "validate",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "extract",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_mongodb",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_cassandra",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "load_neo4j",
+            "state": "success",
+            "try_number": "2",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "calculate_kpis",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          },
+          {
+            "task_id": "verify",
+            "state": "success",
+            "try_number": "1",
+            "max_tries": "2"
+          }
+        ]
+      }
+    ],
+    "active_runs": 0,
+    "run_states": {
+      "success": 10,
+      "failed": 0,
+      "running": 0,
+      "queued": 0
+    },
+    "watermark": {
+      "through": "2026-11-16T02:55:08.323007+00:00",
+      "last_run": "/opt/project/data/staging/2299bd7970c717f3e786",
+      "records": 132,
+      "committed_at": "2026-11-16T03:02:00.047516+00:00"
+    }
+  },
+  "api": {
+    "/ready": {
+      "status": "ready"
+    },
+    "/api/v1/kpis": {
+      "status": 200,
+      "as_of": "2026-11-16T03:01:29.397074+00:00"
+    },
+    "/api/v1/analytics/cassandra/snapshot": {
+      "status": 200,
+      "source": "cassandra"
+    },
+    "/api/v1/vulnerabilities?cve_id=CVE-2021-44228&view=summary": {
+      "status": 200,
+      "total": 1
+    },
+    "/api/v1/vulnerabilities?severity=CRITICAL&page_size=1&view=summary": {
+      "status": 200,
+      "total": 18080
+    },
+    "/api/v1/graph/cve/CVE-2021-44228?page_size=73": {
+      "status": 200,
+      "total": 559,
+      "total_relationships": 559,
+      "has_more": true
+    },
+    "/api/v1/pipeline/status": {
+      "status": "SUCCESS",
+      "stages": [
+        "nvd_sync",
+        "validate",
+        "mongodb",
+        "cassandra",
+        "neo4j",
+        "kpis",
+        "verify"
+      ]
+    },
+    "/api/v1/products/top?mode=catalog&page_size=1": {
+      "status": 200,
+      "total": 23258,
+      "has_more": true
+    },
+    "/api/v1/kpis?unexpected_parameter=qa": {
+      "status": 422
+    }
+  },
+  "source_hashes": {
+    "services/api/app.py": "fcc0ce36930f1eb0b0510ca0f2adbb1fad311a2ab3355219af5d6ab85d05abc0",
+    "services/api/views.py": "6caece10f27ddc2f80465d74f286b7cf054723f28f5b38b8760c257956718f7a",
+    "services/mcp_server/server.py": "1d78d96ef7a383b2261165a1ed93de2cbc1914a08e852937b016427a00419115",
+    "services/mcp_server/remote.py": "5c1b64a24fdbf11e6c64f15caac6122a3b7ec449cb6415f0f977dc6a83938a41",
+    "services/mcp_server/contracts.py": "c6922f8091a876ad13b024e0012130b24b066c6ce9d63b2aa7172d2ba0583950",
+    "services/dashboard/app.py": "59430ac3bdae894311fc1a3bfde5e0d80d785c927eb62678ce2423d817b7762a",
+    "airflow/dags/nvd_pipeline.py": "f7c9cca5b2b843232b91a827c54660ca41ce54f680fcb1383a18cc2e8e923451",
+    "src/threat_intelligence/pipeline.py": "73cc1bf99f85eafca6bc410a8d5f4e927f6ae0b810a3874c5de0285749949041",
+    "src/threat_intelligence/analytics/kpis.py": "7993d4dce87a0d6d28c53775487975ba03f69b7231def910a6400e66b98e517e"
+  },
+  "finished_at": "2026-11-16T18:35:04.597762+00:00",
+  "mcp_testing": "Not repeated; manual confirmation from owner"
+}

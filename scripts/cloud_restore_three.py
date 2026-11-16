@@ -19,7 +19,7 @@ OUT = ROOT / "docs/evidence/acceptance_v2/restore_three.json"
 
 
 def run(args, timeout=600):
-    p = subprocess.run(args, capture_output=True, text=True, timeout=timeout)
+    p = subprocess.run(args, capture_output=True, text=True, timeout=timeout, check=False)
     if p.returncode:
         # Do not emit logs/arguments: database clients can contain credentials.
         raise RuntimeError(f"Isolated operation failed: {args[0]} (exit {p.returncode})")
@@ -162,12 +162,12 @@ def main():
             assert actual["records"] == actual["unique"] == expected["records"]
             assert actual["sha256_sum"] == expected["sha256_sum"]
             result["engines"][engine] = {"status": "PASS", "archive_sha256_valid": True, "restored": actual, "container": name, "scratch_volume": name}
-        except Exception as error:
+        except (AssertionError, OSError, RuntimeError, ValueError, subprocess.SubprocessError) as error:
             result["engines"][engine] = {"status": "FAIL", "error_type": type(error).__name__, "container": name, "scratch_volume": name}
         finally:
             # Only this invocation's disposable client; never source data volumes.
-            subprocess.run(["docker", "rm", "-f", name + "-client"], capture_output=True, timeout=30)
-            subprocess.run(["docker", "stop", "--time", "90", name], capture_output=True, timeout=120)
+            subprocess.run(["docker", "rm", "-f", name + "-client"], capture_output=True, timeout=30, check=False)
+            subprocess.run(["docker", "stop", "--time", "90", name], capture_output=True, timeout=120, check=False)
             OUT.write_text(json.dumps(result, indent=2))
     result["status"] = "PASS" if len(result["engines"]) == 3 and all(e["status"] == "PASS" for e in result["engines"].values()) else "PARTIAL"
     result["finished_at"] = datetime.now(UTC).isoformat()

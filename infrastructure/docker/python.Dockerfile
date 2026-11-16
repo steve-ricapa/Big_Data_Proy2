@@ -19,6 +19,7 @@ COPY requirements-mcp.lock /app/
 RUN pip install --no-cache-dir --require-hashes -r requirements-mcp.lock
 RUN pip install --no-cache-dir pytest==9.2.0
 COPY tests/ /app/tests/
+COPY scripts/verify_dashboard_readonly.py /app/scripts/verify_dashboard_readonly.py
 USER 50000:0
 ENTRYPOINT ["python", "-m", "pytest"]
 

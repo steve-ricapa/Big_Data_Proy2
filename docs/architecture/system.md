@@ -7,7 +7,7 @@ el plan de cierre v2 es una comprobación no destructiva, no un nuevo apply.
 
 ```mermaid
 flowchart LR
-  F[JSON NVD originales] --> A[Airflow 3.4 / CLI]
+  F[JSON NVD originales / API incremental NVD] --> A[Airflow 3.4 / CLI]
   A --> V[Streaming + validación + SQLite dedup]
   V --> N[NDJSON canónico / cuarentena]
   N --> M[(MongoDB 8)]
@@ -53,7 +53,9 @@ la credencial admin queda solo en inicialización opt-in. Prueba automatizada
 comprueba que el lector puede consultar pero recibe Unauthorized al escribir.
 MCP remoto usa la API de solo lectura, no credenciales de motores; endpoint
 HTTPS `/mcp`, JWT/OIDC real, seis herramientas. MCP stdio queda como opción
-local. La cuenta ChatGPT aún requiere conexión interactiva del dueño.
+local. El dueño confirmó manualmente una prueba exitosa desde Codex App en
+el cierre técnico del16/11. No se atribuye a la suite automatizada ni afirma
+una conexión ChatGPT distinta. No se modificaron OAuth ni Keycloak.
 
 Solo Caddy publica 80/443; acceso SSH por IAP. API/dashboard/Airflow escuchan
 en loopback de la VM. Las reglas default de otra VPC no se atribuyen a esta VM.
@@ -63,14 +65,30 @@ privado public.env. No publicar el Compose base solo en Internet.
 ## Operación y verificaciones
 13 servicios: MongoDB/Cassandra/Neo4j, API/dashboard, PostgreSQL Airflow,
 Airflow API/scheduler/dag-processor, PostgreSQL Keycloak/Keycloak, MCP/Caddy.
-Nueve healthchecks Docker existentes; cuatro sondas funcionales periódicas
-adicionales sin recrear servicios. Compose declara las cuatro sondas nativas
-para una futura recreación autorizada; no se afirma que estén activas ya.
+Los13 contenedores se observaron running/healthy en la auditoría del16/11;
+las cuatro sondas nativas antes pendientes ya estaban activas. Las sondas
+externas periódicas se mantienen y no reinician servicios.
 Sincronización NVD diaria 03:00 UTC; backup coordinado 02:00 UTC;
 5 políticas Monitoring y 10 secretos, ver inventario API de aceptación.
 Respaldo conserva volúmenes privados; restauraciones se prueban en volúmenes
 scratch, sin red externa y sin montar volúmenes productivos.
-Conteos por corte y resultados: `../report/final_acceptance_v2.md`.
+Conteos actuales y resultados: [auditoría técnica](../audits/technical_deliverables_audit.md).
+El cierre v2 del11/11 conserva evidencia histórica, no los conteos actuales.
+El16/11 se verificaron176803 CVE por motor con huella coincidente.
+
+## Reproducción y configuración
+
+Los ocho módulos Terraform y el lockfile pertenecen a Git, incluido el módulo
+`modules/secrets` que solo declara recursos/IAM. Ningún state, tfvars privado
+o valor de secreto debe acompañarlos. Init/validate desde un export limpio no
+crea infraestructura; la reconstrucción de una VM requiere autorización,
+inputs privados y restauración por un procedimiento separado. Véase
+[Terraform](../../infrastructure/terraform/README.md).
+
+`ti-stack.service` está enabled pero se observó inactive/dead pese a servicios
+funcionales; hay que contrastar su ciclo de vida con el backup, no reiniciar la
+VM para comprobarlo durante una auditoría. Persistencia actual se acredita por
+volúmenes sobre disco de datos, no por un ensayo de reboot nuevo.
 
 ## Límites
 No transacción distribuida: fallos parciales se recuperan por upserts y checkpoint por sink. No ejecutar CLI/DAG simultáneamente; `max_active_runs=1` solo coordina Airflow. Cambiar manualmente datos o borrar parcialmente un motor requiere reconciliación/`--force`. Restablecer checkpoints sin preservar proyecciones Cassandra puede dejar índices antiguos; para reconstrucción total usar volúmenes nuevos deliberadamente, no borrar a ciegas.

@@ -21,7 +21,7 @@ def main():
     result = {"at": datetime.now(UTC).isoformat(), "mode": "external-monitor-no-recreation", "checks": {}}
     for service, command in PROBES.items():
         try:
-            process = subprocess.run(["docker", "exec", f"threat-intelligence-{service}-1", *command], capture_output=True, timeout=20)
+            process = subprocess.run(["docker", "exec", f"threat-intelligence-{service}-1", *command], capture_output=True, timeout=20, check=False)
             status = "PASS" if process.returncode == 0 else "FAIL"
         except subprocess.TimeoutExpired:
             status = "FAIL"

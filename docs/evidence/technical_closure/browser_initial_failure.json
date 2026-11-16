@@ -1,0 +1,7 @@
+{
+  "classification": "INSTRUMENTATION_FAILURE",
+  "status": "SUPERSEDED_BY_BROWSER_RERUN",
+  "reason": "First probe incorrectly required canvas charts; this deployed Streamlit release renders Vega-Lite as SVG. Corrected probe waits for the two chart SVGs.",
+  "application_exceptions": 0,
+  "application_changed_to_satisfy_probe": false
+}

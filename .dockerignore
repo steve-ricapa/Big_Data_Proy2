@@ -12,6 +12,13 @@ credentials/
 **/*service-account*.json
 **/*.pem
 **/*.key
+**/*.ppk
+**/*.p12
+**/*.pfx
+**/*.kdbx
+.terraformrc
+terraform.rc
+.codex/auth.json*
 .venv/
 venv/
 env/
@@ -21,6 +28,8 @@ env/
 **/.terraform/
 **/*.tfstate*
 **/*.tfplan
+**/*.tfplan.*
+**/tfplan.*
 **/*.tfvars
 **/*.tfvars.json
 **/logs/

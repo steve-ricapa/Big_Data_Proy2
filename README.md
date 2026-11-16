@@ -2,36 +2,30 @@
 
 Análisis de vulnerabilidades NIST NVD con **MongoDB, Apache Cassandra, Neo4j, Airflow, FastAPI y Streamlit**. Entrega académica: 16/11/2026. CVE publicado no equivale a ataque confirmado.
 
-## Estado verificable
+## Estado verificable — 16/11/2026
 
-> **Runtime recomendado: Airflow 3.4.0** con dependencias mínimas bloqueadas:
-> auditoría Python de 145 paquetes, 0 hallazgos conocidos. Migración local con
-> siete tareas y retry real verificados; metadata 2.11 preservada y detenida.
-> No es certificación de seguridad ni autorización para producción/GCP.
-> [Migración](docs/implementation/airflow3-migration.md),
-> [seguridad](docs/implementation/security_review.md).
+Runtime recomendado: **Python 3.11 y Airflow 3.4.0**, con locks separados.
+La referencia Airflow 2.11 se conserva como histórico, no para instalaciones
+nuevas. [Migración](docs/implementation/airflow3-migration.md).
 
-**Cierre v2: 55 pruebas cloud PASS**, incluidas ocho integraciones de motores
-y permisos; Windows **47 PASS/8 SKIP**, sin sumar ambas suites.
-CRUD cloud: 12 operaciones temporales PASS con limpieza verificada. Corte
-auditado 11/11 00:38 UTC: **174607 CVE únicos por motor**, cero duplicados y
-misma huella; la sincronización diaria puede avanzar el siguiente corte.
-Resultados finales, restauraciones y límites de reconstrucción:
-[`final_acceptance_v2.md`](docs/report/final_acceptance_v2.md).
-171791 era la carga inicial local/cloud; las suites37/42/53 son históricas,
-no los resultados nuevos del cierre.
+- GCP desplegado: una VM, tres motores reales, FastAPI, Streamlit, Caddy HTTPS
+  y MCP remoto con Keycloak/OIDC. No es un servicio HA ni una certificación de seguridad.
+- Corte de datos comprobado: **176803 CVE por motor**, sin duplicados y con
+  huella coincidente; KPI del **16/11 a las03:01:29 UTC**. Las ingestas futuras
+  pueden cambiar estos valores legítimamente.
+- DAG de siete tareas, sincronización NVD automática diaria03:00 UTC, backup
+  coordinado02:00 UTC. Las seis ejecuciones diarias11–16/11 fueron SUCCESS.
+- **Codex App: validación exitosa confirmada manualmente por el dueño** durante
+  el cierre técnico. No equivale a una nueva suite automatizada OAuth ejecutada
+  por el agente. No se cambian OAuth/Keycloak para repetir esa validación.
+- Resultados actuales y límites: [auditoría técnica](docs/audits/technical_deliverables_audit.md).
+  Las suites47/55, CRUD y restores del11/11 en
+  [cierre v2](docs/report/final_acceptance_v2.md) son evidencia histórica,
+  no resultados nuevos ni cuentas que deban permanecer constantes.
 
-Matriz de 17 criterios académicos con evidencia trazable; porcentaje final en
-el cierre v2, no equivale a producción. **GCP desplegado el 10-11/11/2026**
-(una VM, USD ~4/día estimado; ver sección Terraform/GCP):
-HTTPS+TLS1.3, OIDC Keycloak real, MCP remoto de seis herramientas solo
-lectura, sincronización NVD diaria automática verificada con CVE reales
-(174734 por motor en paridad al cierre v2), respaldo frío coordinado y restauración
-aislada verificada. ChatGPT requiere login manual del dueño (documentado).
-Terraform aplicado tras gate de costo; plan final sin deriva. Carga completa
-previa por CLI compartida, conteos/huellas y originales nuevamente verificados.
-El replay full Airflow3 `full34_20261110T170841` pasó las siete etapas sobre
-los tres feeds, sin duplicar.
+La matriz de17 criterios en `docs/implementation/requirements.md` fue elaborada
+por el proyecto; no se localizó una rúbrica original del profesor. Los171791
+registros son la carga inicial de feeds, no el total actual.
 
 ## Problema y objetivos
 
@@ -44,7 +38,8 @@ Arquitectura: [sistema](docs/architecture/system.md), [flujo](docs/architecture/
 Requisitos: Docker Desktop Linux containers (~8GiB disponibles para Docker), Python 3.11 (no usar Python predeterminado 3.14 para drivers), `uv`, espacio libre ≥15GB. No se incluye dataset en imágenes ni Git.
 
 ```powershell
-Set-Location C:\Users\steve\Desktop\Big_Data2
+git clone https://github.com/steve-ricapa/Big_Data_Proy2.git
+Set-Location Big_Data_Proy2
 uv sync --locked --extra dev --extra mcp --python 3.11
 .\.venv\Scripts\python.exe scripts/prepare_local.py
 powershell -File scripts/start-local.ps1 -WithAirflow
@@ -55,37 +50,53 @@ mediante el overlay, en 18081. Usuarios Mongo read/readWrite se inicializan sin
 resetear contraseñas existentes. No usar el airflow-init 2.11 del Compose raíz
 para nuevas demostraciones. Secretos privados en `secrets/`; login Airflow
 admin, contraseña `secrets/airflow-admin-password`, nunca capturar/publicar.
+`start-local.ps1` construye primero `ti-app:local`; el dashboard usa la etiqueta
+separada `ti-dashboard:local` mediante `infrastructure/docker/dashboard.Dockerfile`.
+Así una actualización del dashboard no obliga a recrear API o MCP.
 
-## Pipeline y demostración
+## Pipeline local y sincronización
 
-**Ejecutar un pipeline a la vez** (CLI o Airflow). Los comandos siguientes son alternativas secuenciales, no lanzarlos en paralelo.
+**Ejecutar un pipeline a la vez** (CLI o Airflow). Los comandos siguientes
+escriben en las bases: son alternativas operativas locales, no pruebas de solo
+lectura ni instrucciones para repetir cargas en producción. Un clon nuevo no
+incluye feeds ni datos; colocar los feeds NVD 2.0 en `data/raw/nvd/<año>/` para
+un replay local, o usar `sync` para la ventana incremental reciente.
 
 ```powershell
-# Inventario streaming y hashes (no vuelve a descargar)
-docker compose run --rm --no-deps runner inventory --output docs/evidence/inventory.json
+$compose = @('compose', '-f', 'docker-compose.yml', '-f', 'docker-compose.airflow3.yml', '-f', 'docker-compose.secure.yml')
+# Inventario streaming local (no descarga)
+docker @compose run --rm --no-deps runner inventory --output docs/evidence/inventory.json
 # Muestra; todas las bases deben estar saludables
-docker compose run --rm --no-deps runner run --limit 1000 --run-dir data/staging/demo1000
+docker @compose run --rm --no-deps runner run --limit 1000 --run-dir data/staging/demo1000
 # Completo, sin límite: puede tomar varios minutos
-docker compose run --rm --no-deps runner run --run-dir data/staging/full_demo
+docker @compose run --rm --no-deps runner run --run-dir data/staging/full_demo
 # Reintento por motor sin repetir extracción
-docker compose run --rm --no-deps runner cassandra --run-dir data/staging/full_demo
+docker @compose run --rm --no-deps runner cassandra --run-dir data/staging/full_demo
 # Verificar identidad/hash además de conteos
-docker compose run --rm --no-deps runner verify --run-dir data/staging/full_demo
+docker @compose run --rm --no-deps runner verify --run-dir data/staging/full_demo
 # CRUD y regresión incremental real; IDs sintéticos aislados, se limpian
-docker compose run --rm --no-deps runner crud --output docs/evidence/crud.json
-docker compose run --rm --no-deps runner selftest --output docs/evidence/incremental.json
+docker @compose run --rm --no-deps runner crud --output docs/evidence/crud.json
+docker @compose run --rm --no-deps runner selftest --output docs/evidence/incremental.json
 # Airflow 3: scheduler real, 10000 entradas y retry; pausa al finalizar
-docker compose -f docker-compose.yml -f docker-compose.airflow3.yml exec -T airflow3-scheduler python /opt/project/scripts/verify_scheduler3.py
+docker @compose exec -T airflow3-scheduler python /opt/project/scripts/verify_scheduler3.py
 # Replay completo ya verificado; reservar tiempo, no lanzarlo durante la exposición:
 # mismo comando anterior añadiendo --limit 0
 ```
 
-Actualización incremental de un feed nuevo: `runner run --source /app/data/raw/nvd/modified/nvdcve-2.0-modified.json --run-dir data/staging/modified`. El operador coloca el feed local; descarga automática de NVD no implementada. DAG diario a 03:00 UTC, inicialmente pausado; habilitarlo en UI solo sin otra carga activa. Backfill relee el snapshot disponible, no reconstruye datos históricos ausentes.
+Actualización desde un archivo local: añadir `--source /app/data/raw/nvd/modified/nvdcve-2.0-modified.json`
+a `runner run`. Para **descarga automática NVD** en una instalación local:
+`docker @compose run --rm --no-deps runner sync --run-dir data/staging/sync_demo`.
+Usa API NVD, páginas durables, solape2h y watermark confirmado solo tras paridad.
+Sin watermark inicial consulta los dos días recientes: no rellena todo el histórico.
+El DAG nuevo nace pausado; en el cloud existente está activo. Ejecuciones
+programadas usan NVD; manuales `source_mode=auto` usan feeds locales.
+Un backfill histórico masivo requiere aprobación separada.
 
 ## Dashboard y API
 
 ```powershell
-docker compose --profile web up -d --wait api dashboard --wait-timeout 180
+# Después de start-local.ps1, que prepara usuarios y motores:
+docker @compose --profile web up -d --wait api dashboard --wait-timeout 180
 .\.venv\Scripts\python.exe scripts/verify_http.py
 ```
 
@@ -96,12 +107,16 @@ docker compose --profile web up -d --wait api dashboard --wait-timeout 180
 Solo puertos loopback de presentación; motores sin puertos publicados. API
 Mongo read-only, ETL readWrite, admin solo bootstrap. Readiness comprueba los
 tres motores; Threat Analytics consulta snapshot Cassandra real. Caché 30s,
-botón actualizar, errores visibles. Aún no es un despliegue de producción TLS.
+botón actualizar y errores visibles. Estos endpoints loopback son del entorno
+local; el cloud existente sí tiene HTTPS mediante Caddy.
 
 MCP opcional local: `docker compose build mcp`, luego
 `uv run --extra mcp python scripts/verify_mcp.py`.
 Configuración para agentes en [`services/mcp_server/README.md`](services/mcp_server/README.md).
-No hay endpoint público ni integración ChatGPT remota afirmada.
+Endpoint público cloud: **https://ti-136-114-21-18.sslip.io/mcp**.
+La confirmación manual vigente es de **Codex App**, no de una cuenta ChatGPT
+distinta. [Contrato MCP](docs/integrations/mcp_comprehensive_remediation.md).
+No ejecutar de nuevo la suite exhaustiva ni modificar identidad para abrir el dashboard.
 
 ## Datos
 
@@ -117,34 +132,39 @@ No hay endpoint público ni integración ChatGPT remota afirmada.
 ## Pruebas y calidad
 
 ```powershell
-uv run pytest -q --junitxml=docs/evidence/unit_tests.xml
-uv run ruff check src services tests airflow/dags scripts
+uv run --extra dev --extra mcp pytest -q --junitxml=docs/evidence/unit_tests.xml
+uv run --extra dev --extra mcp ruff check src services tests airflow/dags scripts
 # La Cassandra cloud autenticada se prueba con el lector de API, no pasando contraseñas a cqlsh.
 ```
 
-Suite cloud de cierre: **55 PASS/0 FAIL/0 SKIP** (47 de código/contrato y ocho
-integraciones de motores/permisos). Windows47 PASS/8 SKIP; no sumar
-ejecuciones repetidas como tests distintos. Locks app/MCP y Airflow separados,
-con hashes. [Resultados](docs/evidence/test_results.md),
-[trazabilidad](docs/implementation/requirements.md).
+El conteo vigente de pruebas y lecturas cloud está en la auditoría técnica;
+no sumar ejecuciones repetidas ni presentar SKIP como PASS. Locks app/MCP y
+Airflow separados con hashes. La suite cloud55 y Windows47 del cierre v2
+son históricas. Los comandos siguientes **sí escriben CRUD temporal**: solo
+usarlos en un entorno aislado autorizado, no como auditoría productiva de lectura.
 
 ```powershell
-docker compose build tester
-docker compose run --rm --no-deps tester -q -p no:cacheprovider --junitxml=docs/evidence/integration_tests.xml
-docker compose run --rm --no-deps runner audit-kpis --output docs/evidence/kpi_audit.json
+docker @compose build tester
+docker @compose run --rm --no-deps tester -q -p no:cacheprovider --junitxml=docs/evidence/integration_tests.xml
 ```
 
 ## Terraform / GCP
 
 ```powershell
-$tf = "$env:LOCALAPPDATA\Temp\opencode\terraform\terraform.exe"
-& $tf fmt -check -recursive infrastructure/terraform
-& $tf -chdir=infrastructure/terraform/environments/dev init -backend=false -input=false
-& $tf -chdir=infrastructure/terraform/environments/dev validate
-& $tf -chdir=infrastructure/terraform/environments/dev plan -input=false -var='project_id=proyectobigdata2-514216' -var='boot_image=projects/debian-cloud/global/images/debian-12-bookworm-v20261109'
+# Terraform instalado en PATH; alternativamente indicar su ruta absoluta.
+terraform fmt -check -recursive infrastructure/terraform
+terraform -chdir=infrastructure/terraform/environments/dev init -backend=false -lockfile=readonly -input=false
+terraform -chdir=infrastructure/terraform/environments/dev validate
 ```
 
-CLI temporal verificado SHA256; alternativamente instalar Terraform ≥1.13. ADC existente, no claves JSON (apply vía `scripts/terraform_adc.py`). **Prohibido apply/destroy, habilitar APIs, subir datos o crear recursos facturables sin aprobación explícita.** [Costos](docs/architecture/gcp_cost_estimate.md), [plan previo](docs/architecture/gcp-deployment-plan.md), [operación/TLS](docs/architecture/gcp-operations.md).
+Instalar Terraform compatible con `versions.tf` y conservar el lockfile. Estos
+comandos no requieren state productivo ni aplican cambios. Los ocho módulos
+locales, incluido `modules/secrets`, forman parte del código; los secretos,
+state y tfvars privados no. [Reproducción y despliegue](infrastructure/terraform/README.md).
+La sintaxis validada no demuestra una reconstrucción de VM vacía ni deriva
+cero. **Prohibido apply/destroy, habilitar APIs o crear recursos facturables sin
+aprobación explícita.** [Costos](docs/architecture/gcp_cost_estimate.md),
+[operación/TLS](docs/architecture/gcp-operations.md).
 
 ### Despliegue cloud real (10-11/2026, autorizado)
 
@@ -154,12 +174,15 @@ Auth), MCP remoto `…/mcp` con OIDC Keycloak PKCE S256, sincronización NVD
 automática diaria 03:00 UTC (verificada con CVE reales, watermark tras
 paridad), respaldo frío 02:00 UTC con subida privada a GCS y restauración
 aislada verificada, 5 políticas de observabilidad, imágenes en Artifact
-Registry, unidad `ti-stack.service` en arranque. Cierre v2: **174734 CVE por
-motor** con paridad. Objetivo USD 5/día (estimado 4.08 con SKU oficiales).
+Registry y unidad de arranque `ti-stack.service` habilitada. Su estado
+inactive/dead observado en la auditoría requiere contraste con el ciclo de
+backup; los13 contenedores funcionan. Cierre v2:174734 por motor; corte
+16/11:176803. Objetivo USD5/día (estimado histórico4.08 con SKU oficiales,
+no factura ni tope automático).
 Acceso operativo por IAP SSH; Airflow UI solo por túnel (18081).
-Pendiente externo: conexión manual de la cuenta ChatGPT del dueño
-([pasos](docs/evidence/gcp_mcp_validation.md)) y alertas presupuestarias
-(bloqueadas por IAM de facturación). Detalle:
+Codex App fue confirmado manualmente por el dueño. Una conexión ChatGPT
+separada no se afirma. Alertas presupuestarias/facturación no verificadas
+por IAM. Detalle histórico:
 [entrega final](docs/report/final_delivery.md),
 [arquitectura desplegada](docs/architecture/gcp_deployed_architecture.md),
 [bitácora](docs/evidence/gcp_deployment.md).
@@ -174,6 +197,8 @@ No borrar checkpoints durante operación normal. API consulta Mongo, Cassandra
 y Neo4j; no todos los motores en cada gráfico.
 
 Apagar solo este proyecto sin eliminar datos: `powershell -File scripts/stop-local.ps1`.
-No usar `down -v` ni `--remove-orphans`. Límites: sin HA/TLS productivo, sin
-descarga automática NVD, sin ChatGPT remoto, sin transacción distribuida ni
-garantías ante escritores externos concurrentes. GCP requiere autorización.
+No usar `down -v` ni `--remove-orphans`. Límites: sin HA, sin transacción
+distribuida ni garantías ante escritores externos concurrentes; cobertura
+NVD parcial. HTTPS y sincronización NVD sí existen en cloud. La interfaz MCP
+conserva defaults legacy y ofrece summary opt-in. Cambios productivos,
+backfills y migraciones incompatibles requieren autorización explícita.

@@ -1,0 +1,124 @@
+{
+  "at": "2026-11-16T18:38:07.096761+00:00",
+  "method": "agent-browser Chrome; authenticated public HTTPS dashboard",
+  "url": "https://ti-136-114-21-18.sslip.io",
+  "views": [
+    {
+      "view": "Overview",
+      "status": "PASS",
+      "dom": {
+        "exceptions": 0,
+        "alerts": [],
+        "dataframes": 0,
+        "canvas": 0,
+        "vega_svg": 2,
+        "svg": 0,
+        "metrics": [
+          "CVE \u00fanicos\n\n176,803",
+          "Cr\u00edticos\n\n18,080",
+          "Modificados en 30 d\u00edas\n\n53,876",
+          "Productos identificables\n\n23,258"
+        ],
+        "captions": [
+          "Vulnerabilidades publicadas, no ataques confirmados. Fuente local NVD; KPI con fecha de corte expl\u00edcita.",
+          "\u00daltimo c\u00e1lculo: 2026-11-16T03:01:29.397074+00:00"
+        ]
+      },
+      "screenshot": "screenshots/overview.png",
+      "bytes": 64347
+    },
+    {
+      "view": "Vulnerability Explorer",
+      "status": "PASS",
+      "dom": {
+        "exceptions": 0,
+        "alerts": [],
+        "dataframes": 1,
+        "canvas": 5,
+        "vega_svg": 0,
+        "svg": 0,
+        "metrics": [],
+        "captions": [
+          "Vulnerabilidades publicadas, no ataques confirmados. Fuente local NVD; KPI con fecha de corte expl\u00edcita.",
+          "1 resultados \u00b7 25 por p\u00e1gina"
+        ]
+      },
+      "screenshot": "screenshots/vulnerability_explorer.png",
+      "bytes": 52359
+    },
+    {
+      "view": "Threat Analytics",
+      "status": "PASS",
+      "dom": {
+        "exceptions": 0,
+        "alerts": [],
+        "dataframes": 3,
+        "canvas": 15,
+        "vega_svg": 1,
+        "svg": 0,
+        "metrics": [],
+        "captions": [
+          "Vulnerabilidades publicadas, no ataques confirmados. Fuente local NVD; KPI con fecha de corte expl\u00edcita.",
+          "\u00daltimo c\u00e1lculo: 2026-11-16T03:01:29.397074+00:00",
+          "Snapshot consultado directamente en Cassandra: 2026-11-16T03:01:29.397074+00:00"
+        ]
+      },
+      "screenshot": "screenshots/threat_analytics.png",
+      "bytes": 56604
+    },
+    {
+      "view": "Graph Intelligence",
+      "status": "PASS",
+      "dom": {
+        "exceptions": 0,
+        "alerts": [],
+        "dataframes": 1,
+        "canvas": 5,
+        "vega_svg": 0,
+        "svg": 1,
+        "metrics": [],
+        "captions": [
+          "Vulnerabilidades publicadas, no ataques confirmados. Fuente local NVD; KPI con fecha de corte expl\u00edcita.",
+          "P\u00e1gina 3 \u00b7 59 de 559 relaciones filtradas (559 totales). Fin de resultados. AFFECTS indica asociaci\u00f3n NVD, no explotaci\u00f3n observada. Reinicie la paginaci\u00f3n si cambia el dataset."
+        ]
+      },
+      "screenshot": "screenshots/graph_intelligence.png",
+      "bytes": 46393
+    },
+    {
+      "view": "Data Pipeline",
+      "status": "PASS",
+      "dom": {
+        "exceptions": 0,
+        "alerts": [],
+        "dataframes": 0,
+        "canvas": 0,
+        "vega_svg": 0,
+        "svg": 0,
+        "metrics": [],
+        "captions": [
+          "Vulnerabilidades publicadas, no ataques confirmados. Fuente local NVD; KPI con fecha de corte expl\u00edcita.",
+          "Estado del manifiesto m\u00e1s reciente. IN_PROGRESS_OR_INTERRUPTED requiere comprobar tareas y logs; no implica que el proceso siga vivo."
+        ]
+      },
+      "screenshot": "screenshots/data_pipeline.png",
+      "bytes": 67859
+    }
+  ],
+  "checks": [
+    {
+      "id": "browser_exact_cve_filter",
+      "status": "PASS"
+    },
+    {
+      "id": "browser_svg_rendered",
+      "status": "PASS"
+    },
+    {
+      "id": "browser_graph_last_page_59_of_559",
+      "status": "PASS"
+    }
+  ],
+  "credentials_logged": false,
+  "status": "PASS"
+}

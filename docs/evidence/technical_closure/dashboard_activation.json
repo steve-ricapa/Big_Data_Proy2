@@ -1,0 +1,48 @@
+{
+  "at": "2026-11-16T18:34:52.382980+00:00",
+  "status": "APPLIED_DASHBOARD_ONLY",
+  "before": {
+    "airflow3-dag-processor": "f39c3046315c",
+    "caddy": "59b0c851774e",
+    "keycloak": "d857900f7989",
+    "dashboard": "80d41de6d049",
+    "api": "3526b6a3449c",
+    "mcp-remote": "b33bd4fc011e",
+    "mongodb": "1bd674b6e997",
+    "keycloak-db": "403c14617ab6",
+    "airflow3-scheduler": "98ad8b7bca0b",
+    "airflow3-api": "bb00c6d94aba",
+    "airflow3-postgres": "304900bfaf5b",
+    "cassandra": "977d0005d8f9",
+    "neo4j": "8042f3feb8e2"
+  },
+  "after": {
+    "dashboard": "994af21d9e48",
+    "airflow3-dag-processor": "f39c3046315c",
+    "caddy": "59b0c851774e",
+    "keycloak": "d857900f7989",
+    "api": "3526b6a3449c",
+    "mcp-remote": "b33bd4fc011e",
+    "mongodb": "1bd674b6e997",
+    "keycloak-db": "403c14617ab6",
+    "airflow3-scheduler": "98ad8b7bca0b",
+    "airflow3-api": "bb00c6d94aba",
+    "airflow3-postgres": "304900bfaf5b",
+    "cassandra": "977d0005d8f9",
+    "neo4j": "8042f3feb8e2"
+  },
+  "changed_containers": [
+    "dashboard"
+  ],
+  "other_12_container_ids_unchanged": true,
+  "rollback_image": "ti-dashboard:pre-closure20261116",
+  "release_image": "ti-dashboard:closure20261116",
+  "source_hashes": {
+    "docker-compose.yml": "dcafea321663d8efe8cff154daf7b3a6405876907f1f652a5f5475228aa56b5f",
+    "services/dashboard/app.py": "59430ac3bdae894311fc1a3bfde5e0d80d785c927eb62678ce2423d817b7762a",
+    "infrastructure/docker/dashboard.Dockerfile": "e2525948dfe35bf2902d8b32c8095362b39ffa79b978e337287607d7c3afbb48"
+  },
+  "credentials_changed": false,
+  "mcp_redeployed": false,
+  "database_writes": false
+}

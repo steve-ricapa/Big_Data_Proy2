@@ -22,7 +22,7 @@ def main():
     assert active not in ("active", "activating"), "Backup is running"
     if sys.argv[1] == "crud":
         code = "import json;from threat_intelligence.crud import run_crud;print(json.dumps(run_crud()))"
-        p = subprocess.run(["docker", "exec", "threat-intelligence-airflow3-scheduler-1", "python", "-c", code], capture_output=True, text=True)
+        p = subprocess.run(["docker", "exec", "threat-intelligence-airflow3-scheduler-1", "python", "-c", code], capture_output=True, text=True, check=False)
         if p.returncode:
             raise RuntimeError("Cloud CRUD failed; driver output suppressed")
         result = json.loads(p.stdout.splitlines()[-1])
@@ -36,7 +36,7 @@ def main():
         if len(sys.argv) > 2 and sys.argv[2] == "rebuilt":
             args = [*COMPOSE, "-f", str(override), *args[len(COMPOSE):]]
         with (OUT / "cloud_tests.log").open("w") as log:
-            p = subprocess.run(args, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
+            p = subprocess.run(args, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, check=False)
         print(json.dumps({"at": datetime.now(UTC).isoformat(), "exit_code": p.returncode, "log": str(OUT / "cloud_tests.log")}))
         return p.returncode
     return 0

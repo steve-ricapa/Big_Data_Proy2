@@ -5,6 +5,7 @@ loaded over IAP: never printed, logged, or embedded in command lines.
 Run only when no DAG load is in progress.
 """
 
+import asyncio
 import base64
 import json
 import subprocess
@@ -14,7 +15,6 @@ import urllib.request
 from pathlib import Path
 
 import websockets
-
 from cloud_test_credentials import load
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,20 +46,24 @@ def wait_ready():
         try:
             with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/version", timeout=2) as response:
                 return json.load(response)
-        except Exception:
+        except (OSError, ValueError):
             time.sleep(0.5)
     raise TimeoutError("Chrome did not start")
 
 
+def chrome_targets():
+    with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/list", timeout=5) as response:
+        return [target for target in json.load(response) if target["type"] == "page"]
+
+
 async def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    password = load()["web-password"]
+    password = (await asyncio.to_thread(load))["web-password"]
     token = base64.b64encode(f"ti-demo:{password}".encode()).decode()
     chrome = chrome_process()
     try:
-        wait_ready()
-        with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/list", timeout=5) as response:
-            targets = [t for t in json.load(response) if t["type"] == "page"]
+        await asyncio.to_thread(wait_ready)
+        targets = await asyncio.to_thread(chrome_targets)
         ws = await websockets.connect(targets[0]["webSocketDebuggerUrl"], max_size=64 * 1024 * 1024)
         counter = 0
 
@@ -87,7 +91,7 @@ async def main():
             metrics = await evaluate("document.querySelectorAll('[data-testid=stMetric]').length")
             if title and "Threat Intelligence" in title and metrics and int(metrics) > 0:
                 break
-            time.sleep(1)
+            await asyncio.sleep(1)
         else:
             raise TimeoutError("Dashboard did not render")
         labels = await evaluate("[...document.querySelectorAll('[data-testid=stSidebar] [role=radiogroup] label')].map(l=>l.textContent)")
@@ -99,17 +103,17 @@ async def main():
             for _ in range(60):
                 skeleton = await evaluate("document.querySelectorAll('[data-testid=stSkeleton]').length")
                 if skeleton is not None and int(skeleton) == 0:
-                    time.sleep(1)
+                    await asyncio.sleep(1)
                     break
-                time.sleep(1)
-            time.sleep(8)
+                await asyncio.sleep(1)
+            await asyncio.sleep(8)
             if view == "Graph Intelligence":
                 clicked = await evaluate("(()=>{const b=[...document.querySelectorAll('button')].find(b=>b.textContent.includes('Explorar relaciones'));if(!b)return false;b.click();return true})()")
                 assert clicked, "Graph exploration button missing"
                 for _ in range(60):
-                    if await evaluate("document.body.innerText.includes('Subgrafo limitado')"):
+                    if await evaluate("document.body.innerText.includes('relaciones filtradas')"):
                         break
-                    time.sleep(1)
+                    await asyncio.sleep(1)
                 else:
                     raise TimeoutError("Graph relationships did not render")
             assert not await evaluate("document.querySelector('[data-testid=stException]') !== null"), f"Exception in {view}"
@@ -126,6 +130,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    import asyncio
-
     asyncio.run(main())

@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-16T18:45:00Z",
+  "scope": "Technical closure of pending items from docs/audits/technical_deliverables_audit.md",
+  "production_mutations": {
+    "dashboard_container_recreated": true,
+    "other_12_containers_recreated": false,
+    "database_writes": false,
+    "backfills_or_bulk_loads": false,
+    "mcp_or_api_redeployed": false,
+    "oauth_or_keycloak_changed": false,
+    "credentials_changed": false,
+    "terraform_apply": false,
+    "cve_records_modified": false
+  },
+  "local": {
+    "pytest": {"pass": 94, "skip": 8, "fail": 0, "note": "8 skips are opt-in write/integration tests; not claimed as PASS"},
+    "ruff_full_scope": "src services tests airflow/dags scripts -> All checks passed (25 prior findings fixed, no rules disabled)",
+    "uv_lock_check": "PASS",
+    "uv_pip_check": "PASS 73 packages compatible",
+    "compose_config_all_overlays": "PASS quiet"
+  },
+  "terraform_export": {
+    "source": "git checkout-index export; no .terraform, state or tfvars copied",
+    "fmt": "PASS",
+    "init_backend_false_lockfile_readonly": "PASS",
+    "validate": "PASS",
+    "apply": "NOT EXECUTED"
+  },
+  "git_policy": {
+    "module_secrets_versioned": "code .tf and README only; secret values/state/tfvars still ignored",
+    "tracked_index_secret_scan": "PASS 0 hits for JWT/private key/GitHub token/Google API key patterns",
+    "check_ignore_negative_positive_cases": "covered by tests/test_delivery_inputs.py"
+  },
+  "dashboard": {
+    "canary_candidate": "15/15 PASS against real API before activation",
+    "deployed_file": "15/15 PASS after activation",
+    "browser_authenticated_https": "5 views PASS, 0 exceptions; filters, 2 Vega SVG charts, graphviz SVG, page 3 of graph shows 59/559",
+    "activation": "only dashboard container changed; rollback image ti-dashboard:pre-closure20261116"
+  },
+  "runtime_recheck": {
+    "three_engine_records": 176803,
+    "duplicate_ids": 0,
+    "same_sha256_sum": "6f33b89a75265f6d56160e4f4c9fe64dd211b63b4971bfe2745dc4ed948bef8d",
+    "independent_kpi_checks": "14/14 PASS",
+    "airflow": "3.4.0, dag active, 0 import errors, run_states success=10 failed=0",
+    "containers": "13/13 healthy"
+  },
+  "mcp": {
+    "owner_manual_confirmation": "PASS (Codex App; recorded in mcp_manual_confirmation.json)",
+    "automated_suite_repeated": false,
+    "changes_to_mcp": "none"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "at": "2026-11-16T18:28:26.871853+00:00",
+  "method": "Streamlit AppTest -> real HTTP API",
+  "writes": false,
+  "cases": [
+    {
+      "id": "overview_four_live_metrics",
+      "status": "PASS",
+      "observation": {
+        "CVE \u00fanicos": "176,803",
+        "Cr\u00edticos": "18,080",
+        "Modificados en 30 d\u00edas": "53,876",
+        "Productos identificables": "23,258"
+      }
+    },
+    {
+      "id": "overview_severity_and_month_charts",
+      "status": "PASS",
+      "observation": [
+        "vega_lite_chart",
+        "vega_lite_chart"
+      ]
+    },
+    {
+      "id": "explorer_live_total",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "explorer_combined_filters_and_detail",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "explorer_contradictory_filter_empty",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "explorer_invalid_filter_warning",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "analytics_cassandra_snapshot",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "analytics_top_cwes",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "analytics_top_vendors",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "analytics_top_products",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_all_pages_unique",
+      "status": "PASS",
+      "observation": {
+        "total": 559
+      }
+    },
+    {
+      "id": "graph_relationship_filter",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "graph_svg_source_and_pagination_caption",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "pipeline_status_and_three_engine_readiness",
+      "status": "PASS",
+      "observation": null
+    },
+    {
+      "id": "snapshot_unchanged_during_suite",
+      "status": "PASS",
+      "observation": null
+    }
+  ],
+  "as_of": "2026-11-16T03:01:29.397074+00:00",
+  "status": "PASS",
+  "candidate_dashboard_sha256": "59430ac3bdae894311fc1a3bfde5e0d80d785c927eb62678ce2423d817b7762a"
+}

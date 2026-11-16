@@ -28,7 +28,7 @@ def main():
             args += ["--target", target]
         args.append(".")
         with (OUT / f"build_{label}.log").open("w") as log:
-            process = subprocess.run(args, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200, env=dict(os.environ, DOCKER_BUILDKIT="1"))
+            process = subprocess.run(args, cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=1200, env=dict(os.environ, DOCKER_BUILDKIT="1"), check=False)
         result["images"][label] = {"status": "PASS" if process.returncode == 0 else "FAIL", "tag": tag}
         if process.returncode == 0:
             result["images"][label]["image_id"] = subprocess.run(["docker", "image", "inspect", "--format", "{{.Id}}", tag], check=True, capture_output=True, text=True).stdout.strip()

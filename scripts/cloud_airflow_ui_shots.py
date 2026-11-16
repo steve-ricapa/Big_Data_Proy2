@@ -5,6 +5,7 @@ Requires an active tunnel: gcloud compute ssh ti-dev-data --tunnel-through-iap
 local secret file and injected into the form; never printed or logged.
 """
 
+import asyncio
 import base64
 import json
 import subprocess
@@ -57,19 +58,23 @@ def wait_ready():
         try:
             with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/version", timeout=2) as response:
                 return json.load(response)
-        except Exception:
+        except (OSError, ValueError):
             time.sleep(0.5)
     raise TimeoutError("Chrome did not start")
 
 
+def chrome_targets():
+    with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/list", timeout=5) as response:
+        return [target for target in json.load(response) if target["type"] == "page"]
+
+
 async def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    password = load_admin_password()
+    password = await asyncio.to_thread(load_admin_password)
     chrome = chrome_process()
     try:
-        wait_ready()
-        with urllib.request.urlopen(f"http://127.0.0.1:{PORT}/json/list", timeout=5) as response:
-            targets = [t for t in json.load(response) if t["type"] == "page"]
+        await asyncio.to_thread(wait_ready)
+        targets = await asyncio.to_thread(chrome_targets)
         ws = await websockets.connect(targets[0]["webSocketDebuggerUrl"], max_size=64 * 1024 * 1024)
         counter = 0
 
@@ -90,7 +95,7 @@ async def main():
 
         await send("Page.enable")
         await send("Page.navigate", {"url": BASE + "/home"})
-        time.sleep(6)
+        await asyncio.sleep(6)
         logged_in = "nvd_threat_intelligence" in (await evaluate("document.body.innerText") or "")
         login = "no-form"
         if not logged_in:
@@ -100,12 +105,12 @@ async def main():
                 + ";const b=document.querySelector('button[type=submit]')||document.querySelector('button');if(b)b.click();return 'submitted'})()"
             )
             for _ in range(30):
-                time.sleep(2)
+                await asyncio.sleep(2)
                 if "nvd_threat_intelligence" in (await evaluate("document.body.innerText") or ""):
                     logged_in = True
                     break
         await send("Page.navigate", {"url": BASE + "/dags/nvd_threat_intelligence/grid"})
-        time.sleep(10)
+        await asyncio.sleep(10)
         body = (await evaluate("document.body.innerText") or "")[:2000]
         shot = await send("Page.captureScreenshot", {"format": "png"})
         path = OUT / "gcp_airflow_ui_grid.png"
@@ -118,6 +123,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    import asyncio
-
     asyncio.run(main())

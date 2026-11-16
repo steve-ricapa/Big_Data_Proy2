@@ -8,6 +8,6 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - run: uv sync --locked --extra dev --extra mcp --python 3.11
       - run: uv run --extra dev --extra mcp pytest -q
-      - run: uv run ruff check src services tests airflow/dags scripts
+      - run: uv run --extra dev --extra mcp ruff check src services tests airflow/dags scripts
       - run: python -m compileall -q src services airflow/dags
       # Actual-engine tests are local explicit commands; this job needs no cloud credentials.

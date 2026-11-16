@@ -177,7 +177,8 @@ services:
       timeout: 5s
       retries: 5
   dashboard:
-    image: ti-app:local
+    image: ti-dashboard:local
+    build: {context: ., dockerfile: infrastructure/docker/dashboard.Dockerfile}
     profiles: [web]
     environment:
       API_URL: http://api:8000

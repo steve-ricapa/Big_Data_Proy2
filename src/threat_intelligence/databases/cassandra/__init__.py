@@ -1,9 +1,14 @@
 import re
 
+from cassandra import ConsistencyLevel
 from cassandra.auth import PlainTextAuthProvider
-from cassandra.cluster import Cluster
+from cassandra.cluster import EXEC_PROFILE_DEFAULT, Cluster, ExecutionProfile
 from cassandra.concurrent import execute_concurrent
-from cassandra.policies import DCAwareRoundRobinPolicy, TokenAwarePolicy
+from cassandra.policies import (
+    DCAwareRoundRobinPolicy,
+    ExponentialReconnectionPolicy,
+    TokenAwarePolicy,
+)
 
 
 class Cassandra:
@@ -19,28 +24,49 @@ class Cassandra:
             if config.cassandra_username
             else None
         )
+        contact_points = [host.strip() for host in config.cassandra_contact_points.split(",")]
+        if not all(contact_points) or len(set(contact_points)) != len(contact_points):
+            raise ValueError("Invalid Cassandra contact points")
+        if config.cassandra_consistency not in {"LOCAL_ONE", "LOCAL_QUORUM"}:
+            raise ValueError("Unsupported Cassandra consistency")
+        if config.cassandra_consistency == "LOCAL_QUORUM" and config.cassandra_create_keyspace:
+            raise ValueError("Distributed Cassandra requires a pre-provisioned keyspace")
         self.cluster = Cluster(
-            config.cassandra_contact_points.split(","),
+            contact_points,
             port=config.cassandra_port,
             auth_provider=auth,
-            load_balancing_policy=TokenAwarePolicy(
-                DCAwareRoundRobinPolicy(local_dc=config.cassandra_local_datacenter)
-            ),
+            execution_profiles={EXEC_PROFILE_DEFAULT: ExecutionProfile(
+                load_balancing_policy=TokenAwarePolicy(
+                    DCAwareRoundRobinPolicy(local_dc=config.cassandra_local_datacenter)
+                ),
+                consistency_level=getattr(ConsistencyLevel, config.cassandra_consistency),
+                serial_consistency_level=ConsistencyLevel.LOCAL_SERIAL,
+                request_timeout=60,
+            )},
+            reconnection_policy=ExponentialReconnectionPolicy(1.0, 60.0, max_attempts=None),
             connect_timeout=15,
         )
-        self.session = self.cluster.connect()
-        self.session.default_timeout = 60
-        self.session.default_fetch_size = 1000
         self.keyspace = config.cassandra_keyspace
-        if initialize_schema and config.cassandra_create_keyspace:
-            self.session.execute(
-                f"CREATE KEYSPACE IF NOT EXISTS {self.keyspace} WITH replication = {{'class':'NetworkTopologyStrategy','{config.cassandra_local_datacenter}':1}}"
-            )
-        self.session.set_keyspace(self.keyspace)
-        if initialize_schema:
-            self.initialize()
+        try:
+            self.session = self.cluster.connect()
+            self.session.default_fetch_size = 1000
+            if initialize_schema and config.cassandra_create_keyspace:
+                self.session.execute(
+                    f"CREATE KEYSPACE IF NOT EXISTS {self.keyspace} WITH replication = {{'class':'NetworkTopologyStrategy','{config.cassandra_local_datacenter}':1}}"
+                )
+            self.session.set_keyspace(self.keyspace)
+            if initialize_schema:
+                self.initialize(manage_schema=config.cassandra_consistency != "LOCAL_QUORUM")
+        except Exception:
+            self.cluster.shutdown()
+            raise
 
-    def initialize(self):
+    def initialize(self, manage_schema=True):
+        if manage_schema:
+            self.create_tables()
+        self.prepare_writes()
+
+    def create_tables(self):
         self.session.execute(
             "CREATE TABLE IF NOT EXISTS cves_by_id (cve_id text PRIMARY KEY, content_hash text, document text)"
         )
@@ -51,6 +77,7 @@ class Cassandra:
         self.session.execute(
             "CREATE TABLE IF NOT EXISTS kpi_snapshots (snapshot_id text PRIMARY KEY, payload text)"
         )
+    def prepare_writes(self):
         self.insert_id = self.session.prepare(
             "INSERT INTO cves_by_id (cve_id,content_hash,document) VALUES (?,?,?)"
         )
@@ -116,7 +143,7 @@ class Cassandra:
                 raise value
 
     def ping(self):
-        self.session.execute("SELECT release_version FROM system.local")
+        self.session.execute("SELECT snapshot_id FROM kpi_snapshots WHERE snapshot_id = 'latest'")
 
     def count(self):
         # A larger client timeout cannot prevent coordinator COUNT(*) timeouts.

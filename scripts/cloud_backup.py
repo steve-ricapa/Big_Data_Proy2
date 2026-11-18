@@ -12,6 +12,8 @@ ROOT = Path("/opt/threat-intelligence")
 COMPOSE = ["docker", "compose", "--env-file", "secrets/public.env"]
 for name in ("docker-compose.yml", "docker-compose.airflow3.yml", "docker-compose.secure.yml", "docker-compose.public.yml"):
     COMPOSE += ["-f", name]
+if (ROOT / "secrets/cassandra-cluster.env").is_file():
+    COMPOSE += ["--env-file", "secrets/cassandra-cluster.env", "-f", "docker-compose.cassandra-cluster.yml"]
 
 
 def upload(path, key):

@@ -24,6 +24,9 @@ if (ROOT / "secrets/public.env").exists():
     WRITERS += ["mcp-remote", "caddy", "keycloak"]
     DATABASES += ["keycloak-db"]
     VOLUMES += ["keycloak_postgres", "caddy_data", "caddy_config"]
+CLUSTER = (ROOT / "secrets/cassandra-cluster.env").is_file()
+if CLUSTER:
+    COMPOSE += ["--env-file", "secrets/cassandra-cluster.env", "-f", "docker-compose.cassandra-cluster.yml"]
 
 
 def run(args):
@@ -44,6 +47,11 @@ def main():
         for group in (WRITERS, DATABASES):
             selected = [name for name in group if name in running]
             if selected:
+                if CLUSTER and "cassandra" in selected:
+                    # RF=3 on exactly three nodes: a full repair from this replica
+                    # covers its entire ring. Refuse partial repairs during outages.
+                    for keyspace in ("threat_intelligence", "system_auth"):
+                        run([*COMPOSE, "exec", "-T", "cassandra", "nodetool", "repair", "--full", "--sequential", keyspace])
                 run([*COMPOSE, "stop", "--timeout", "120", *selected])
         for name in VOLUMES:
             volume = "threat-intelligence_" + name
@@ -66,9 +74,10 @@ def main():
             (directory / "manifest.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
         config = directory / "configuration.tar.gz"
         with tarfile.open(config, "w:gz") as archive:
-            for relative in ("docker-compose.yml", "docker-compose.airflow3.yml", "docker-compose.secure.yml", "docker-compose.public.yml", "scripts", "src", "airflow/dags", "infrastructure", "pyproject.toml", "uv.lock"):
+            for relative in ("docker-compose.yml", "docker-compose.airflow3.yml", "docker-compose.secure.yml", "docker-compose.public.yml", "docker-compose.cassandra-cluster.yml", "scripts", "src", "airflow/dags", "infrastructure", "pyproject.toml", "uv.lock"):
                 path = ROOT / relative
-                archive.add(path, arcname=relative, filter=lambda member: None if any(part in (".terraform", "__pycache__") for part in Path(member.name).parts) or ".tfstate" in member.name or member.name.endswith((".tfplan", ".tfvars")) else member)
+                if path.exists():
+                    archive.add(path, arcname=relative, filter=lambda member: None if any(part in (".terraform", "__pycache__") for part in Path(member.name).parts) or ".tfstate" in member.name or member.name.endswith((".tfplan", ".tfvars")) else member)
         result["status"] = "SUCCESS"
     finally:
         for group in (DATABASES, WRITERS):

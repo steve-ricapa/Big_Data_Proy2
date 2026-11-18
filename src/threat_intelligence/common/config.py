@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     cassandra_username: str = ""
     cassandra_password: str = ""
     cassandra_create_keyspace: bool = True
+    cassandra_consistency: str = "LOCAL_ONE"
     neo4j_uri: str = "bolt://localhost:7687"
     neo4j_username: str = "neo4j"
     neo4j_password: str = ""

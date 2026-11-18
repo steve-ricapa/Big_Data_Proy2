@@ -202,3 +202,8 @@ distribuida ni garantías ante escritores externos concurrentes; cobertura
 NVD parcial. HTTPS y sincronización NVD sí existen en cloud. La interfaz MCP
 conserva defaults legacy y ofrece summary opt-in. Cambios productivos,
 backfills y migraciones incompatibles requieren autorización explícita.
+# Cassandra en Google Cloud: actualización del entorno
+
+Véase [Cassandra distribuida en GCP](docs/architecture/cassandra-gcp-cluster.md)
+para la topología, operación y evidencia posteriores al cierre académico de una VM.
+El Compose de desarrollo local sigue usando una sola instancia por defecto.

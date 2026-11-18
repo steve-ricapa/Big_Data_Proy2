@@ -1,0 +1,60 @@
+Wed Nov 18 00:04:54 UTC 2026
+Datacenter: dc1
+===============
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load        Tokens  Owns (effective)  Host ID                               Rack
+UN  10.42.0.13  237.94 MiB  16      100.0%            c0d504c5-0c46-4a7c-8611-0a993df8d010  us-central1-c
+UN  10.42.0.2   241.77 MiB  16      100.0%            adf8bf62-1c2b-4946-946d-64c337345f83  rack1
+UN  10.42.0.12  237.94 MiB  16      100.0%            a6cf9c5d-73f7-4cdd-9b45-eab0c8dfdaef  us-central1-b
+
+Cluster Information:
+	Name: ti-dev-single-node
+	Snitch: org.apache.cassandra.locator.GossipingPropertyFileSnitch
+	DynamicEndPointSnitch: enabled
+	Partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+	Schema versions:
+		d437ed11-6712-31fb-9d9c-078cb739de86: [10.42.0.2, 10.42.0.12, 10.42.0.13]
+
+Stats for all nodes:
+	Live: 3
+	Joining: 0
+	Moving: 0
+	Leaving: 0
+	Unreachable: 0
+
+Data Centers:
+	dc1 #Nodes: 3 #Down: 0
+
+Database versions:
+	4.1.9: [10.42.0.2:7000, 10.42.0.12:7000, 10.42.0.13:7000]
+
+Keyspaces:
+	system_distributed -> Replication class: SimpleStrategy {replication_factor=3}
+	system_traces -> Replication class: SimpleStrategy {replication_factor=2}
+	threat_intelligence -> Replication class: NetworkTopologyStrategy {dc1=3}
+	system_auth -> Replication class: NetworkTopologyStrategy {dc1=3}
+	system_schema -> Replication class: LocalStrategy {}
+	system -> Replication class: LocalStrategy {}
+pending tasks: 0
+
+threat-intelligence-cassandra-1 3.37% 1.282GiB / 2GiB
+threat-intelligence-airflow3-dag-processor-1 Up 12 minutes (healthy)
+threat-intelligence-airflow3-api-1 Up 12 minutes (healthy)
+threat-intelligence-airflow3-scheduler-1 Up 12 minutes (healthy)
+threat-intelligence-api-1 Up 12 minutes (healthy)
+threat-intelligence-cassandra-1 Up 24 minutes (healthy)
+threat-intelligence-dashboard-1 Up 22 hours (healthy)
+threat-intelligence-caddy-1 Up 22 hours (healthy)
+threat-intelligence-keycloak-1 Up 22 hours (healthy)
+threat-intelligence-mcp-remote-1 Up 22 hours (healthy)
+threat-intelligence-mongodb-1 Up 22 hours (healthy)
+threat-intelligence-keycloak-db-1 Up 22 hours (healthy)
+threat-intelligence-airflow3-postgres-1 Up 22 hours (healthy)
+threat-intelligence-neo4j-1 Up 22 hours (healthy)
+enabled
+NEXT                        LEFT          LAST                        PASSED  UNIT            ACTIVATES
+Wed 2026-11-18 02:00:10 UTC 1h 55min left Tue 2026-11-17 02:00:50 UTC 22h ago ti-backup.timer ti-backup.service
+
+1 timers listed.
+Pass --all to see loaded but inactive timers, too.

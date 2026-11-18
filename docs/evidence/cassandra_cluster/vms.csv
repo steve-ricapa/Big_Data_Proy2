@@ -1,0 +1,4 @@
+name,zone,machine_type,network_ip,status
+ti-dev-data,us-central1-a,e2-standard-4,10.42.0.2,RUNNING
+ti-cassandra-02,us-central1-b,e2-standard-2,10.42.0.12,RUNNING
+ti-cassandra-03,us-central1-c,e2-standard-2,10.42.0.13,RUNNING

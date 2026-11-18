@@ -1,0 +1,1 @@
+{"at": "2026-11-18T00:04:13.834672+00:00", "id": "CVE-2099-252161980764378367", "engines": {"mongodb": {"create": "PASS", "read": "PASS", "update": "PASS", "delete": "PASS"}, "cassandra": {"create": "PASS", "read": "PASS", "update": "PASS", "delete": "PASS"}, "neo4j": {"create": "PASS", "read": "PASS", "update": "PASS", "delete": "PASS"}}, "cleanup_verified": true}

@@ -1,0 +1,6 @@
+TARGET                  SOURCE   FSTYPE OPTIONS
+/mnt/disks/ti-cassandra /dev/sdb ext4   rw,relatime,discard
+unless-stopped
+ti-cassandra 4.79% 1.229GiB / 3GiB
+/var/lib/cassandra/data/threat_intelligence/cves_by_id-f1878f60dd3e11f1ab1767aa2a381cb3/nb-13-big-Data.db
+pending tasks: 0

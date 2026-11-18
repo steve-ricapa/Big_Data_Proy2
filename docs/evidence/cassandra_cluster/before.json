@@ -1,0 +1,287 @@
+{
+  "at": "2026-11-17T23:28:47.601233+00:00",
+  "engines": {
+    "mongodb": {
+      "records": 177203,
+      "duplicates": 0,
+      "sha256_sum": "30c92af4b219225bb80167f21580642dceaac2063b500f43f5a10808785a6998",
+      "elapsed_s": 8.988
+    },
+    "cassandra": {
+      "records": 177203,
+      "duplicates": 0,
+      "sha256_sum": "30c92af4b219225bb80167f21580642dceaac2063b500f43f5a10808785a6998",
+      "elapsed_s": 6.151
+    },
+    "neo4j": {
+      "records": 177203,
+      "duplicates": 0,
+      "sha256_sum": "30c92af4b219225bb80167f21580642dceaac2063b500f43f5a10808785a6998",
+      "elapsed_s": 13.243
+    }
+  },
+  "kpis": {
+    "as_of": "2026-11-17T03:01:30.163270+00:00",
+    "total_cves": 177203,
+    "severity": {
+      "CRITICAL": 18126,
+      "HIGH": 65753,
+      "MEDIUM": 75303,
+      "LOW": 10305,
+      "UNKNOWN": 7637,
+      "NONE": 79
+    },
+    "graph": {
+      "nodes": 636059,
+      "relationships": 1505686
+    },
+    "modified_last_30_days": 53284,
+    "unique_affected_products": 23260
+  },
+  "replication": {
+    "system_auth": {
+      "class": "org.apache.cassandra.locator.SimpleStrategy",
+      "replication_factor": "1"
+    },
+    "system_schema": {
+      "class": "org.apache.cassandra.locator.LocalStrategy"
+    },
+    "system_distributed": {
+      "class": "org.apache.cassandra.locator.SimpleStrategy",
+      "replication_factor": "3"
+    },
+    "system": {
+      "class": "org.apache.cassandra.locator.LocalStrategy"
+    },
+    "system_traces": {
+      "class": "org.apache.cassandra.locator.SimpleStrategy",
+      "replication_factor": "2"
+    },
+    "threat_intelligence": {
+      "class": "org.apache.cassandra.locator.NetworkTopologyStrategy",
+      "dc1": "1"
+    }
+  },
+  "columns": [
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "bucket",
+      "kind": "partition_key",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "cve_id",
+      "kind": "clustering",
+      "position": 1,
+      "type": "text",
+      "clustering_order": "asc"
+    },
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "description",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "month",
+      "kind": "partition_key",
+      "position": 1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "published",
+      "kind": "clustering",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "desc"
+    },
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "score",
+      "kind": "regular",
+      "position": -1,
+      "type": "double",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_cwe",
+      "column_name": "severity",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_id",
+      "column_name": "content_hash",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_id",
+      "column_name": "cve_id",
+      "kind": "partition_key",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_id",
+      "column_name": "document",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "bucket",
+      "kind": "partition_key",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "cve_id",
+      "kind": "clustering",
+      "position": 1,
+      "type": "text",
+      "clustering_order": "asc"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "description",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "month",
+      "kind": "partition_key",
+      "position": 1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "published",
+      "kind": "clustering",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "desc"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "score",
+      "kind": "regular",
+      "position": -1,
+      "type": "double",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_product",
+      "column_name": "severity",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "bucket",
+      "kind": "partition_key",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "cve_id",
+      "kind": "clustering",
+      "position": 1,
+      "type": "text",
+      "clustering_order": "asc"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "description",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "month",
+      "kind": "partition_key",
+      "position": 1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "published",
+      "kind": "clustering",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "desc"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "score",
+      "kind": "regular",
+      "position": -1,
+      "type": "double",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "cves_by_severity",
+      "column_name": "severity",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "kpi_snapshots",
+      "column_name": "payload",
+      "kind": "regular",
+      "position": -1,
+      "type": "text",
+      "clustering_order": "none"
+    },
+    {
+      "table_name": "kpi_snapshots",
+      "column_name": "snapshot_id",
+      "kind": "partition_key",
+      "position": 0,
+      "type": "text",
+      "clustering_order": "none"
+    }
+  ],
+  "samples": [
+    {
+      "cve_id": "CVE-2021-44228",
+      "content_hash": "f511cfc4077364e056813387ae2de7b08e8b43ee30f236eec0f46fd99a17aa18"
+    },
+    {
+      "cve_id": "CVE-2024-0001",
+      "content_hash": "14e99ede43d8e83284903a467f836cd3f752f4882102296a6e9888341e081bd0"
+    }
+  ],
+  "snapshot_matches": true,
+  "graph_control_edges": 559
+}

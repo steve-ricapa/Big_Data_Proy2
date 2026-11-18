@@ -1,0 +1,37 @@
+2026-11-18T00:00:00Z
+Datacenter: dc1
+===============
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load        Tokens  Owns (effective)  Host ID                               Rack
+UN  10.42.0.13  237.87 MiB  16      100.0%            c0d504c5-0c46-4a7c-8611-0a993df8d010  us-central1-c
+UN  10.42.0.2   241.77 MiB  16      100.0%            adf8bf62-1c2b-4946-946d-64c337345f83  rack1
+UN  10.42.0.12  237.94 MiB  16      100.0%            a6cf9c5d-73f7-4cdd-9b45-eab0c8dfdaef  us-central1-b
+{"ready": {"status": "ready", "checked": ["mongodb", "cassandra", "neo4j"]}, "source": "cassandra", "as_of": "2026-11-17T03:01:30.163270+00:00", "total_cves": 177203}
+{"at": "2026-11-18T00:00:29.405076+00:00", "mode": "write", "key": "ti-cluster-acceptance-before-fault", "consistency": "LOCAL_QUORUM", "write_coordinator": "10.42.0.13", "read_coordinator": "10.42.0.13", "written_us": 1794960029311000, "ttl": 1800, "elapsed_ms": 147.1}
+ti-cassandra
+2026-11-18T00:01:03Z
+Datacenter: dc1
+===============
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load        Tokens  Owns (effective)  Host ID                               Rack
+DN  10.42.0.13  237.87 MiB  16      100.0%            c0d504c5-0c46-4a7c-8611-0a993df8d010  us-central1-c
+UN  10.42.0.2   241.77 MiB  16      100.0%            adf8bf62-1c2b-4946-946d-64c337345f83  rack1
+UN  10.42.0.12  237.94 MiB  16      100.0%            a6cf9c5d-73f7-4cdd-9b45-eab0c8dfdaef  us-central1-b
+{"at": "2026-11-18T00:01:17.640435+00:00", "mode": "write", "key": "ti-cluster-acceptance-during-node3-fault", "consistency": "LOCAL_QUORUM", "write_coordinator": "10.42.0.2", "read_coordinator": "10.42.0.2", "written_us": 1794960077610000, "ttl": 1800, "elapsed_ms": 38.15}
+{"ready": {"status": "ready", "checked": ["mongodb", "cassandra", "neo4j"]}, "source": "cassandra", "as_of": "2026-11-17T03:01:30.163270+00:00", "total_cves": 177203}
+{"at": "2026-11-18T00:01:44.583297+00:00", "method": "Streamlit AppTest -> real HTTP API", "writes": false, "cases": [{"id": "overview_four_live_metrics", "status": "PASS", "observation": {"CVE \u00fanicos": "177,203", "Cr\u00edticos": "18,126", "Modificados en 30 d\u00edas": "53,284", "Productos identificables": "23,260"}}, {"id": "overview_severity_and_month_charts", "status": "PASS", "observation": ["vega_lite_chart", "vega_lite_chart"]}, {"id": "explorer_live_total", "status": "PASS", "observation": null}, {"id": "explorer_combined_filters_and_detail", "status": "PASS", "observation": null}, {"id": "explorer_contradictory_filter_empty", "status": "PASS", "observation": null}, {"id": "explorer_invalid_filter_warning", "status": "PASS", "observation": null}, {"id": "analytics_cassandra_snapshot", "status": "PASS", "observation": null}, {"id": "analytics_top_cwes", "status": "PASS", "observation": null}, {"id": "analytics_top_vendors", "status": "PASS", "observation": null}, {"id": "analytics_top_products", "status": "PASS", "observation": null}, {"id": "graph_all_pages_unique", "status": "PASS", "observation": {"total": 559}}, {"id": "graph_relationship_filter", "status": "PASS", "observation": null}, {"id": "graph_svg_source_and_pagination_caption", "status": "PASS", "observation": null}, {"id": "pipeline_status_and_three_engine_readiness", "status": "PASS", "observation": null}, {"id": "snapshot_unchanged_during_suite", "status": "PASS", "observation": null}], "as_of": "2026-11-17T03:01:30.163270+00:00", "status": "PASS"}
+ti-cassandra
+2026-11-18T00:02:39Z
+Datacenter: dc1
+===============
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load        Tokens  Owns (effective)  Host ID                               Rack
+UN  10.42.0.13  237.96 MiB  16      100.0%            c0d504c5-0c46-4a7c-8611-0a993df8d010  us-central1-c
+UN  10.42.0.2   241.77 MiB  16      100.0%            adf8bf62-1c2b-4946-946d-64c337345f83  rack1
+UN  10.42.0.12  237.94 MiB  16      100.0%            a6cf9c5d-73f7-4cdd-9b45-eab0c8dfdaef  us-central1-b
+{"at": "2026-11-18T00:02:52.647649+00:00", "mode": "read-all", "key": "ti-cluster-acceptance-during-node3-fault", "consistency": "ALL", "write_coordinator": null, "read_coordinator": "10.42.0.12", "written_us": 1794960077610000, "ttl": 1705, "elapsed_ms": 54.85}
+{"mode": "delete", "key": "ti-cluster-acceptance-during-node3-fault", "coordinator": "10.42.0.2", "removed": true}
+{"mode": "delete", "key": "ti-cluster-acceptance-before-fault", "coordinator": "10.42.0.13", "removed": true}

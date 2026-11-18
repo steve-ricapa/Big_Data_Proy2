@@ -1,5 +1,7 @@
 # Decisiones de publicación cloud
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 Despliegue autorizado: una VM16GiB,objetivo USD5/día; bases en red Docker
 interna sin publicación de puertos. Caddy terminará TLS; SSH yAirflow solo IAP.
 Cloud Run se omite para evitar costos de sesiones Streamlit/conectividad.

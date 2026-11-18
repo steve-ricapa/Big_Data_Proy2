@@ -7,7 +7,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 destination = Path.home() / "AppData/Local/Temp/opencode/ti-cloud-source.tar.gz"
-sources = [root / name for name in (".dockerignore", "src", "services", "scripts", "airflow/dags", "airflow/tests", "airflow/requirements.in", "airflow/requirements.lock", "infrastructure/docker", "infrastructure/scripts", "tests", "README.md", "pyproject.toml", "requirements.lock", "requirements-mcp.lock", "uv.lock", "docker-compose.yml", "docker-compose.airflow3.yml", "docker-compose.secure.yml", "docker-compose.public.yml")]
+sources = [root / name for name in (".dockerignore", "src", "services", "scripts", "airflow/dags", "airflow/tests", "airflow/requirements.in", "airflow/requirements.lock", "infrastructure/docker", "infrastructure/scripts", "infrastructure/cassandra/cluster.env.example", "tests", "README.md", "pyproject.toml", "requirements.lock", "requirements-mcp.lock", "uv.lock", "docker-compose.yml", "docker-compose.airflow3.yml", "docker-compose.secure.yml", "docker-compose.public.yml", "docker-compose.cassandra-cluster.yml")]
 with tarfile.open(destination, "w:gz") as archive:
     for source in sources:
         archive.add(source, arcname=source.relative_to(root).as_posix(), filter=lambda member: None if "__pycache__" in Path(member.name).parts else member)

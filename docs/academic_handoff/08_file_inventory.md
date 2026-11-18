@@ -1,5 +1,7 @@
 # 08 — Inventario técnico de archivos
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](09_distributed_update.md).
+
 Todas las rutas son relativas al repositorio y fueron verificadas el
 16/11/2026 (commit `6d947ce`). Relevancia: ★★★ núcleo académico · ★★ soporte · ★ anexo.
 

@@ -2,7 +2,9 @@
 
 Análisis de vulnerabilidades NIST NVD con **MongoDB, Apache Cassandra, Neo4j, Airflow, FastAPI y Streamlit**. Entrega académica: 16/11/2026. CVE publicado no equivale a ataque confirmado.
 
-## Estado verificable — 16/11/2026
+**Entrega vigente:** [Cassandra distribuida y operación](docs/architecture/cassandra-gcp-cluster.md) · [corte de cierre del 18/11](docs/audits/distributed_final_closure.md) · [guion de demo](docs/report/distributed_demo.md).
+
+## Línea base de aceptación — 16/11/2026 (histórica)
 
 Runtime recomendado: **Python 3.11 y Airflow 3.4.0**, con locks separados.
 La referencia Airflow 2.11 se conserva como histórico, no para instalaciones
@@ -166,7 +168,19 @@ cero. **Prohibido apply/destroy, habilitar APIs o crear recursos facturables sin
 aprobación explícita.** [Costos](docs/architecture/gcp_cost_estimate.md),
 [operación/TLS](docs/architecture/gcp-operations.md).
 
-### Despliegue cloud real (10-11/2026, autorizado)
+### Despliegue GCP vigente — Cassandra distribuida
+
+Tres VMs en tres zonas de `us-central1`. `ti-dev-data` conserva MongoDB, Neo4j,
+Airflow, API, dashboard, MCP y Cassandra 1; `ti-cassandra-02` y `ti-cassandra-03`
+alojan los otros dos nodos Cassandra. Cassandra 4.1.9 usa `dc1`, RF=3 y
+`LOCAL_QUORUM` en la aplicación. Se demostró la pérdida de cada réplica remota
+por separado. **No es alta disponibilidad de toda la plataforma.**
+
+- [Diagrama y operación](docs/architecture/cassandra-gcp-cluster.md)
+- [Auditoría final](docs/audits/distributed_final_closure.md)
+- [Demo vigente sin escrituras](docs/report/distributed_demo.md)
+
+### Despliegue inicial de una VM — histórico (noviembre de 2026)
 
 Desplegado y verificado E2E en una VM e2-standard-4 (us-central1-a):
 13 contenedores, HTTPS `https://ti-136-114-21-18.sslip.io` (TLS 1.3, Basic
@@ -189,7 +203,7 @@ por IAM. Detalle histórico:
 
 ## Estructura y entregables
 
-`src/threat_intelligence/`: ETL, normalización, adapters, checkpoints, KPI y CLI. `airflow/dags/`: DAG delgado. `services/`: API y dashboard. `tests/`: pruebas. `scripts/`: operación. `infrastructure/`: Docker/Terraform. `data/`: originales/artefactos no versionables. `docs/`: arquitectura, modelos, [informe](docs/report/technical_report.md), [guion 24 minutos](docs/report/demo_script.md), [capturas](docs/evidence/screenshot_checklist.md), [decisiones](docs/implementation/decisions.md). Directorios iniciales vacíos se conservan, no implican funcionalidades extra.
+`src/threat_intelligence/`: ETL, normalización, adapters, checkpoints, KPI y CLI. `airflow/dags/`: DAG. `services/`: API, dashboard y MCP. `tests/`: pruebas. `scripts/`: operación. `infrastructure/`: Docker/Terraform. `data/`: originales/artefactos no versionables. `docs/`: [adenda académica vigente](docs/academic_handoff/09_distributed_update.md), [informe base histórico](docs/report/technical_report.md), [capturas históricas](docs/evidence/screenshot_checklist.md) y [decisiones](docs/implementation/decisions.md).
 
 Checkpoints en `checkpoint_data`; SQLite temporal de dedup en disco contenedor
 para evitar I/O aleatorio Windows. NDJSON/manifiestos en `data/staging/`.
@@ -197,13 +211,8 @@ No borrar checkpoints durante operación normal. API consulta Mongo, Cassandra
 y Neo4j; no todos los motores en cada gráfico.
 
 Apagar solo este proyecto sin eliminar datos: `powershell -File scripts/stop-local.ps1`.
-No usar `down -v` ni `--remove-orphans`. Límites: sin HA, sin transacción
+No usar `down -v` ni `--remove-orphans`. Límites: sin HA global, sin transacción
 distribuida ni garantías ante escritores externos concurrentes; cobertura
 NVD parcial. HTTPS y sincronización NVD sí existen en cloud. La interfaz MCP
 conserva defaults legacy y ofrece summary opt-in. Cambios productivos,
 backfills y migraciones incompatibles requieren autorización explícita.
-# Cassandra en Google Cloud: actualización del entorno
-
-Véase [Cassandra distribuida en GCP](docs/architecture/cassandra-gcp-cluster.md)
-para la topología, operación y evidencia posteriores al cierre académico de una VM.
-El Compose de desarrollo local sigue usando una sola instancia por defecto.

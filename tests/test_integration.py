@@ -58,15 +58,17 @@ def test_cassandra_reader_cannot_write():
     from pathlib import Path
 
     from cassandra import Unauthorized
-    from cassandra.auth import PlainTextAuthProvider
-    from cassandra.cluster import Cluster
+
+    from threat_intelligence.common.config import settings
+    from threat_intelligence.databases.cassandra import Cassandra
 
     password = Path("/run/secrets/cassandra_reader_password").read_text().strip()
-    cluster = Cluster(["cassandra"], auth_provider=PlainTextAuthProvider("ti_reader", password))
+    config = settings().model_copy(update={"cassandra_username": "ti_reader", "cassandra_password": password})
+    store = Cassandra(config, initialize_schema=False)
     try:
-        session = cluster.connect("threat_intelligence")
+        session = store.session
         assert session.execute("SELECT cve_id FROM cves_by_id LIMIT 1").one()
         with pytest.raises(Unauthorized):
             session.execute("DELETE FROM cves_by_id WHERE cve_id=%s", ("CVE-2099-0000000000000000001",))
     finally:
-        cluster.shutdown()
+        store.close()

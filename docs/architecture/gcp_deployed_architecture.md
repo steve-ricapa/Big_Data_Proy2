@@ -1,5 +1,7 @@
 # Arquitectura GCP real — desplegada y verificada
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 Proyecto `proyectobigdata2-514216`, región us-central1, zona us-central1-a.
 Terraform gestiona recursos reales de infraestructura, IAM y observabilidad;
 aplicaciones verificadas sobre esa base. Estado privado local; discos con

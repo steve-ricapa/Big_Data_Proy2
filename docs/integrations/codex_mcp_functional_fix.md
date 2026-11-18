@@ -1,5 +1,7 @@
 # Big Data II MCP — corrección funcional y pruebas reales
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 > Fase posterior de contratos, versiones CPE, paginación y payloads:
 > [`mcp_comprehensive_remediation.md`](mcp_comprehensive_remediation.md).
 > Este documento conserva el corte funcional anterior.

@@ -1,5 +1,7 @@
 # Arquitectura de la plataforma
 
+> **Vigencia:** el diagrama y la descripción de una VM de esta página corresponden al despliegue inicial. Para GCP actual, usar [la topología de tres VMs](cassandra-gcp-cluster.md).
+
 ## Alcance
 Plataforma académica desplegada en GCP, una VM e2-standard-4 y un nodo por
 motor. No es detección de ataques ni servicio HA. Terraform está aplicado;

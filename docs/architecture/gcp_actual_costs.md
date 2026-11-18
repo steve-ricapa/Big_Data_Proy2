@@ -1,5 +1,7 @@
 # Costos GCP — estimación vigente, no factura
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 Catálogo oficial consultado medianteAPICloudBilling:
 `docs/evidence/gcp_official_skus.json`. Regiónus-central1,USD,on-demand.
 Estimación aplicada al despliegue real (una VM std4, discos 30+100GiB,

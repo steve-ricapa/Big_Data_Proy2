@@ -1,0 +1,8 @@
+# Adenda vigente al dossier académico · 18/11/2026 UTC
+
+Los documentos `00`–`08` conservan su corte anterior a la expansión. Para la entrega vigente, sustituir sus cifras y topología antiguas por esta adenda cuando corresponda. No convertir resultados históricos en pruebas nuevas.
+
+- **Arquitectura:** [Mermaid vigente](../architecture/cassandra-gcp-cluster.md). Tres VMs en tres zonas: la principal mantiene el stack y Cassandra 1; cada réplica adicional ocupa una VM privada. Cassandra 4.1.9 es peer-to-peer; `dc1`, tres racks (`rack1` representa `us-central1-a`), RF=3 y `LOCAL_QUORUM`. Los modelos y el DAG de siete tareas permanecen. Los demás servicios no tienen HA global.
+- **Resultado del corte:** 178.482 CVE por motor a las 00:27:15 UTC, cero duplicados y huella común; 43 nuevos, 126 modificados, 986 sin cambios en la corrida de cierre. Citar [ETL](../evidence/final_closure/etl.json) y [paridad](../evidence/final_closure/parity.json). Para datos de exposición, mostrar el `as_of` vivo; para fórmulas, usar el [catálogo KPI](../kpis/catalog.md).
+- **Validación:** 15/15 comprobaciones del dashboard. [CRUD, restauración previa y caída de cada nodo remoto](../evidence/cassandra_cluster/) ya demostrados en el corte de migración. No ejecutar escrituras ni detener nodos en vivo. MCP: seis herramientas probadas por protocolo `stdio`; el E2E de OAuth público no fue confirmado en el cierre.
+- **Entrega:** [guion vigente de 8–10 minutos](../report/distributed_demo.md), [auditoría](../audits/distributed_final_closure.md) y [matriz académica interna](../implementation/requirements.md). No se encontró la rúbrica oficial ni se infieren nombres o aportes.

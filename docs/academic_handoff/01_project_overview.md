@@ -1,5 +1,7 @@
 # 01 — Contexto, problema y alcance del proyecto
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](09_distributed_update.md).
+
 ## 1.1 Identidad del sistema
 
 | Campo | Valor verificado |

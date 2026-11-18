@@ -1,5 +1,7 @@
 # Estimación GCP — 10 noviembre 2026
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 **Estimación, no factura ni aprobación para desplegar.** us-central1, Linux, on-demand, sin CUD/Spot, impuestos ni descuentos. Mes 730 h. Conversión ilustrativa S/3.75/USD, no tipo de cambio bancario: S/1000 ≈ USD266.67.
 
 Se obtuvo HTML oficial de [General purpose VM pricing](https://cloud.google.com/products/compute/pricing/general-purpose), fila `e2-standard-4`: **USD0.13402284/h** (4vCPU,16GiB). Los encabezados regionales son dinámicos: reconfirmar SKU/región con calculadora antes de autorizar; no tratar extracción de fila como cotización contractual. e2-standard-8 se estima al doble USD0.26804568/h; escenario extendido dos std4 al doble también.

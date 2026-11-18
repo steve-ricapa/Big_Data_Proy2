@@ -1,5 +1,7 @@
 # Entrega vigente — segunda revisión autónoma, 10/11/2026
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 ## A. Estado general
 
 **17/17 criterios funcionales/documentales locales implementados y verificados

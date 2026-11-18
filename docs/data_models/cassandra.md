@@ -1,6 +1,6 @@
 # Apache Cassandra
 
-Keyspace `threat_intelligence`, NetworkTopologyStrategy `dc1:1`: un nodo, sin HA. IDs de keyspace/DC validados antes de construir CQL. Consultas preparadas y timeout 60 s.
+En GCP: `threat_intelligence` y `system_auth`, NetworkTopologyStrategy `dc1:3`, tres nodos en tres racks; clientes `LOCAL_QUORUM`, LWT con `LOCAL_SERIAL`. En Compose local de desarrollo se conserva RF=1 y `LOCAL_ONE`. IDs de keyspace/DC validados antes de construir CQL. Consultas preparadas y timeout 60 s. [Topología y evidencia](../architecture/cassandra-gcp-cluster.md).
 
 | Tabla | Partition key | Clustering | Consulta |
 |---|---|---|---|
@@ -18,7 +18,7 @@ flowchart LR
  CVE --> W[CWE + mes]
 ```
 
-El mes limita particiones frente a año completo. Filas analíticas contienen descripción truncada a 500 caracteres, score nullable, severidad y claves. Identidad de producto = JSON de `[part,vendor,product]`; versiones CPE no multiplican filas del mismo producto/CVE. Partition sizing es una estrategia, no una medición de bytes de cada partición: revisar distribución/compaction para escalar. RF=1 no tolera pérdida del nodo.
+El mes limita particiones frente a año completo. Filas analíticas contienen descripción truncada a 500 caracteres, score nullable, severidad y claves. Identidad de producto = JSON de `[part,vendor,product]`; versiones CPE no multiplican filas del mismo producto/CVE. Partition sizing es una estrategia, no una medición de bytes de cada partición: revisar distribución/compaction para escalar. En GCP, RF=3 replica los rangos en tres hosts y permite un fallo individual a quorum; no es un aumento de capacidad útil.
 
 Ejemplo CQL sin filtrado:
 ```sql

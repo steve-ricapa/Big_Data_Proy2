@@ -8,9 +8,7 @@ from pathlib import Path
 
 ROOT = Path("/opt/threat-intelligence")
 OUT = ROOT / "docs/evidence/acceptance_v2"
-COMPOSE = ["docker", "compose", "--env-file", "secrets/public.env"]
-for name in ("docker-compose.yml", "docker-compose.airflow3.yml", "docker-compose.secure.yml", "docker-compose.public.yml"):
-    COMPOSE += ["-f", name]
+COMPOSE = ["bash", str(ROOT / "scripts/cloud_compose.sh")]
 
 
 def main():

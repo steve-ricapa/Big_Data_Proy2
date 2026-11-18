@@ -1,5 +1,7 @@
 # Auditoría de entregables técnicos — Big Data II · Threat Intelligence
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 **Fecha:** 16/11/2026. **Corte de consultas cloud:** 17:43–17:50 UTC.  
 **Repositorio:** `steve-ricapa/Big_Data_Proy2`, `main`, commit
 `74a557867d1d0c41f093292aff5a310d3e45adc2`.

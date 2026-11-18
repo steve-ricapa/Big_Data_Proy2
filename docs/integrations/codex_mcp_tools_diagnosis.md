@@ -1,5 +1,7 @@
 # Codex App: diagnóstico y corrección de herramientas MCP 0/6
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 > **Fase funcional posterior:** se ejecutaron las seis herramientas y se
 > corrigió la ausencia de Log4Shell y los filtros. Corte vigente174735 CVE,
 > fuente real y resultados por función en

@@ -1,5 +1,7 @@
 # Decisiones técnicas
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 1. Conservar infraestructura existente y los JSON originales. No re-descargar datos válidos.
 2. Python 3.11 aislado, Airflow 2.11.0: interoperabilidad de drivers y contenedores. No instalar Airflow nativo en Windows.
 3. Streaming `ijson`, NDJSON canónico por ejecución y hashes de contenido. XCom solo transporta rutas/manifiestos, nunca el dataset.

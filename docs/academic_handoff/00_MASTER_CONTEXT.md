@@ -1,5 +1,7 @@
 # 00 — CONTEXTO MAESTRO · Big Data II – Threat Intelligence
 
+> **Actualización distribuida, 18/11/2026:** para arquitectura, datos y demo vigentes, usar [la adenda](09_distributed_update.md). Las secciones siguientes reconstruyen el **corte histórico del 16/11**, con una VM y RF=1.
+
 > **Documento de transferencia técnica.** Autosuficiente: contiene lo esencial
 > para comprender y defender el proyecto. El detalle profundo está en los
 > ocho documentos enlazados. Basado en el repositorio `Big_Data_Proy2` (rama

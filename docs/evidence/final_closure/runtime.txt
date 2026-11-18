@@ -1,0 +1,68 @@
+Wed Nov 18 00:30:24 UTC 2026
+Datacenter: dc1
+===============
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address     Load        Tokens  Owns (effective)  Host ID                               Rack
+UN  10.42.0.13  237.94 MiB  16      100.0%            c0d504c5-0c46-4a7c-8611-0a993df8d010  us-central1-c
+UN  10.42.0.2   241.77 MiB  16      100.0%            adf8bf62-1c2b-4946-946d-64c337345f83  rack1
+UN  10.42.0.12  237.94 MiB  16      100.0%            a6cf9c5d-73f7-4cdd-9b45-eab0c8dfdaef  us-central1-b
+
+Cluster Information:
+	Name: ti-dev-single-node
+	Snitch: org.apache.cassandra.locator.GossipingPropertyFileSnitch
+	DynamicEndPointSnitch: enabled
+	Partitioner: org.apache.cassandra.dht.Murmur3Partitioner
+	Schema versions:
+		d437ed11-6712-31fb-9d9c-078cb739de86: [10.42.0.2, 10.42.0.12, 10.42.0.13]
+
+Stats for all nodes:
+	Live: 3
+	Joining: 0
+	Moving: 0
+	Leaving: 0
+	Unreachable: 0
+
+Data Centers:
+	dc1 #Nodes: 3 #Down: 0
+
+Database versions:
+	4.1.9: [10.42.0.2:7000, 10.42.0.12:7000, 10.42.0.13:7000]
+
+Keyspaces:
+	system_distributed -> Replication class: SimpleStrategy {replication_factor=3}
+	system_traces -> Replication class: SimpleStrategy {replication_factor=2}
+	threat_intelligence -> Replication class: NetworkTopologyStrategy {dc1=3}
+	system_auth -> Replication class: NetworkTopologyStrategy {dc1=3}
+	system_schema -> Replication class: LocalStrategy {}
+	system -> Replication class: LocalStrategy {}
+Mode: NORMAL
+Not sending any streams.
+Read Repair Statistics:
+Attempted: 0
+Mismatch (Blocking): 1
+Mismatch (Background): 0
+Pool Name                    Active   Pending      Completed   Dropped
+Large messages                  n/a         0           1581         0
+Small messages                  n/a         0          16516         0
+Gossip messages                 n/a         0           8617         0
+pending tasks: 0
+
+threat-intelligence-airflow3-dag-processor-1 Up 37 minutes (healthy)
+threat-intelligence-airflow3-api-1 Up 37 minutes (healthy)
+threat-intelligence-airflow3-scheduler-1 Up 37 minutes (healthy)
+threat-intelligence-api-1 Up 37 minutes (healthy)
+threat-intelligence-cassandra-1 Up 49 minutes (healthy)
+threat-intelligence-dashboard-1 Up 22 hours (healthy)
+threat-intelligence-caddy-1 Up 22 hours (healthy)
+threat-intelligence-keycloak-1 Up 22 hours (healthy)
+threat-intelligence-mcp-remote-1 Up 22 hours (healthy)
+threat-intelligence-mongodb-1 Up 22 hours (healthy)
+threat-intelligence-keycloak-db-1 Up 22 hours (healthy)
+threat-intelligence-airflow3-postgres-1 Up 22 hours (healthy)
+threat-intelligence-neo4j-1 Up 22 hours (healthy)
+LOCAL_QUORUM
+10.42.0.2,10.42.0.12,10.42.0.13
+LOCAL_QUORUM
+10.42.0.2,10.42.0.12,10.42.0.13
+{"ready": {"status": "ready", "checked": ["mongodb", "cassandra", "neo4j"]}, "source": "cassandra", "as_of": "2026-11-18T00:27:15.741564+00:00", "total_cves": 178482}

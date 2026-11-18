@@ -13,6 +13,8 @@ parser.add_argument("--hostname", required=True)
 parser.add_argument("--secure-compose-source")
 args = parser.parse_args()
 root = Path("/opt/threat-intelligence")
+if (root / "secrets/cassandra-cluster.env").exists():
+    raise SystemExit("Initial single-node installer is not valid on the distributed deployment; use scripts/cloud_compose.sh")
 if args.secure_compose_source:
     shutil.copyfile(Path(args.secure_compose_source).resolve(), root / "docker-compose.secure.yml")
 os.chdir(root)

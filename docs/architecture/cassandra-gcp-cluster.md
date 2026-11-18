@@ -49,6 +49,8 @@ El primer bootstrap no completó gossip: COS tenía `INPUT DROP` aunque el firew
 
 ## Replicación y consistencia
 
+**Decisión de cierre (18/11/2026):** conservar `rack1` como etiqueta de `us-central1-a`. Se comprobó la concordancia de configuración y `nodetool` en los tres hosts. El snitch trata los racks como identificadores distintos, no como nombres GCP; hay tres racks para tres zonas y RF=3. Renombrar el rack persistido aporta solo simetría visual y el arranque valida la topología guardada; no se usa un override para forzar el cambio.
+
 `threat_intelligence` y `system_auth` usan `NetworkTopologyStrategy`, `dc1:3`. El segundo cambio es necesario para no perder acceso a roles y permisos al caer su única réplica original. Los demás keyspaces internos se conservan. Con `LOCAL_QUORUM` se requieren dos réplicas sanas para las operaciones normales; las condicionales usan `LOCAL_SERIAL` en la fase Paxos. No se degrada automáticamente a consistencias menores. Un contact point no equivale a una réplica ni a un maestro. La aplicación descubre el anillo, usa balanceo consciente de tokens/DC y reconexión con backoff.
 
 RF=3 sobre tres hosts replica todas las particiones en los tres nodos. Es tolerancia a fallos, **no** tres veces la capacidad útil. Con dos nodos caídos no se promete escritura ni lectura a quorum. La VM principal sigue siendo un punto único de fallo para API, dashboard, MCP, MongoDB, Neo4j y Airflow.

@@ -1,5 +1,7 @@
 # Plan de despliegue GCP — Threat Intelligence
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 > **Plan operativo vigente y prueba de conexión:**
 > [gcp_deployment_readiness.md](gcp_deployment_readiness.md).
 > Este documento conserva la propuesta inicial; el apartado de funcionalidades

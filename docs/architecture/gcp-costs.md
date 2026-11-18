@@ -1,5 +1,7 @@
 # Estimación de costos GCP
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 **Estimación de planificación, no cotización**, 10/11/2026. Región us-central1,
 Linux on-demand, sin Spot, CUD, free tier ni impuestos. Tipo de cambio supuesto
 **S/3.75 por USD** (no cotización financiera): S/1,000 ≈ **USD 266.67**.

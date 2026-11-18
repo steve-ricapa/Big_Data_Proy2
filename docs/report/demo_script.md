@@ -1,5 +1,7 @@
 # Guion de defensa — 24 minutos
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 Antes: Docker saludable, carga terminada, sin pipeline activo paralelo, dashboard
 `http://127.0.0.1:18501`, OpenAPI `http://127.0.0.1:18000/docs`, Airflow 3
 `http://127.0.0.1:18081`. Iniciar con `scripts/start-local.ps1 -WithAirflow`.

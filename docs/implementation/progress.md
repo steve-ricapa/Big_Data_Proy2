@@ -1,5 +1,7 @@
 # Progreso vigente — 11/11/2026, cierre v2
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 **Despliegue GCP real completado y verificado** (autorizado: una VM, objetivo
 USD 5/día). VM e2-standard-4 con 13 servicios running; nueve con healthcheck
 Docker healthy y cuatro con sondas funcionales externas periódicas; HTTPS público TLS

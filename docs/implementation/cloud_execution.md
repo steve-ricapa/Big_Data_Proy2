@@ -1,5 +1,7 @@
 # Ejecución autorizada cloud — 10/11/2026
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 Usuario autorizó APIs, apply, una VM, discos, transferencias y servicios
 necesarios con objetivo máximo USD 5/día. No GPU/GKE/HA, destrucción de datos
 ni recursos ajenos. No significa gasto bloqueado automáticamente.

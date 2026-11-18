@@ -1,5 +1,7 @@
 # Threat Intelligence Platform — Informe técnico
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 **Big Data II · entrega objetivo 16/11/2026 · revisión de cierre 11/11/2026**
 
 Estado de aceptación: `final_acceptance_v2.md`. Los cortes históricos se

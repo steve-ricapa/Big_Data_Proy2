@@ -1,5 +1,7 @@
 # Entrega final cloud — Threat Intelligence Platform, 10-11/11/2026
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 > Cierre actualizado y límites verificados: [`final_acceptance_v2.md`](final_acceptance_v2.md).
 > Los resultados previos de este documento se conservan con su fecha; no se
 > suman a la nueva regresión cloud de 55 PASS.

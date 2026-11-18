@@ -1,5 +1,7 @@
 # Entrega local — Threat Intelligence Platform
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](../audits/distributed_final_closure.md).
+
 > **Resumen histórico conservado.** Para el estado vigente tras migración a
 > Airflow3.4,42tests,MCP local y usuarios Mongo mínimos, consultar
 > [`revalidation_delivery.md`](revalidation_delivery.md) y

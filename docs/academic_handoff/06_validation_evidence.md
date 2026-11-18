@@ -1,5 +1,7 @@
 # 06 — Validación, resultados y evidencias
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](09_distributed_update.md).
+
 ## 6.1 Regla de lectura
 
 Se distinguen tres niveles: **(a) código implementado** (existe en el repo),

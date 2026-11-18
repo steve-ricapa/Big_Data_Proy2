@@ -1,5 +1,7 @@
 # 07 — Blueprint: informe técnico, PPT y demostración
 
+> **Referencia histórica anterior a la expansión de Cassandra.** Las cifras, pruebas y comandos son de su corte original, no instrucciones vigentes para GCP. Para la arquitectura y operación actuales, consultar [el cierre distribuido](09_distributed_update.md).
+
 > NO es el informe final ni el PPT. Es la estructura para que otro asistente los redacte.
 > **Integrantes: DATO PENDIENTE** — obtener del equipo; no inventar nombres ni reparto.
 

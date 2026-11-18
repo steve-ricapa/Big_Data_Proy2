@@ -1,0 +1,130 @@
+{
+  "run_id": "final_closure_20261118T002607",
+  "state": "success",
+  "tasks": [
+    {
+      "task_id": "load_mongodb",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "verify",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "extract",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "validate",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "load_cassandra",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "load_neo4j",
+      "state": "success",
+      "try_number": 1
+    },
+    {
+      "task_id": "calculate_kpis",
+      "state": "success",
+      "try_number": 1
+    }
+  ],
+  "run_dir": "/opt/project/data/staging/377f14a85a149d6f5c34",
+  "stages": {
+    "nvd_sync": {
+      "from": "2026-11-17T21:59:43.957783+00:00",
+      "through": "2026-11-18T00:21:17.742125+00:00",
+      "pages": [
+        "window-00000-page-00000000.json"
+      ],
+      "records": 1155,
+      "requests": 1,
+      "retries": 0,
+      "complete": true
+    },
+    "validate": {
+      "seen": 1155,
+      "invalid": 0,
+      "duplicates": 0,
+      "unique_valid": 1155
+    },
+    "mongodb": {
+      "seen": 1155,
+      "new": 43,
+      "modified": 126,
+      "unchanged": 986,
+      "stale": 0,
+      "written": 169,
+      "batches_committed": 6,
+      "total_in_engine": 178482,
+      "seconds": 5.499
+    },
+    "cassandra": {
+      "seen": 1155,
+      "new": 43,
+      "modified": 126,
+      "unchanged": 986,
+      "stale": 0,
+      "written": 169,
+      "batches_committed": 6,
+      "total_in_engine": 178482,
+      "seconds": 23.344
+    },
+    "neo4j": {
+      "seen": 1155,
+      "new": 43,
+      "modified": 126,
+      "unchanged": 986,
+      "stale": 0,
+      "written": 169,
+      "batches_committed": 6,
+      "total_in_engine": 178482,
+      "seconds": 1.384
+    },
+    "kpis": {
+      "total_cves": 178482,
+      "as_of": "2026-11-18T00:27:15.741564+00:00"
+    },
+    "verify": {
+      "counts": {
+        "mongodb": 178482,
+        "cassandra": 178482,
+        "neo4j": 178482
+      },
+      "fingerprints": {
+        "mongodb": {
+          "records": 178482,
+          "sha256_sum": "c08b9b35004bcdc91c8c5a3e6738ddf79ea5ff519cf1bb9d6f96d2a4aa6265e9"
+        },
+        "cassandra": {
+          "records": 178482,
+          "sha256_sum": "c08b9b35004bcdc91c8c5a3e6738ddf79ea5ff519cf1bb9d6f96d2a4aa6265e9"
+        },
+        "neo4j": {
+          "records": 178482,
+          "sha256_sum": "c08b9b35004bcdc91c8c5a3e6738ddf79ea5ff519cf1bb9d6f96d2a4aa6265e9"
+        }
+      }
+    }
+  },
+  "nvd_sync": {
+    "from": "2026-11-17T21:59:43.957783+00:00",
+    "through": "2026-11-18T00:21:17.742125+00:00",
+    "pages": [
+      "window-00000-page-00000000.json"
+    ],
+    "records": 1155,
+    "requests": 1,
+    "retries": 0,
+    "complete": true
+  }
+}

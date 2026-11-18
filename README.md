@@ -4,6 +4,25 @@ Análisis de vulnerabilidades NIST NVD con **MongoDB, Apache Cassandra, Neo4j, A
 
 **Entrega vigente:** [Cassandra distribuida y operación](docs/architecture/cassandra-gcp-cluster.md) · [corte de cierre del 18/11](docs/audits/distributed_final_closure.md) · [guion de demo](docs/report/distributed_demo.md).
 
+## Acceso rápido a la demo
+
+Use el usuario y la contraseña que recibió por correo para cada interfaz.
+
+| Servicio | Cómo entrar |
+|---|---|
+| **Dashboard** | Abra [Threat Intelligence Platform](https://ti-136-114-21-18.sslip.io/). No necesita instalar Docker ni abrir un túnel. |
+| **Neo4j** | En el dashboard, seleccione **Vista → Graph Intelligence**. No tiene un enlace público ni requiere otro inicio de sesión. |
+| **Apache Cassandra** | En el dashboard, seleccione **Vista → Threat Analytics**. No tiene un enlace público ni requiere otro inicio de sesión. |
+| **Apache Airflow** | Abra el túnel de abajo y luego entre a [http://127.0.0.1:18081/](http://127.0.0.1:18081/). Busque el DAG `nvd_threat_intelligence`. |
+
+**Túnel de Airflow:** requiere `gcloud` y una cuenta de Google Cloud con acceso IAP al proyecto. Si aún no inició sesión en `gcloud`, ejecute primero `gcloud auth login`. Deje abierta la terminal mientras usa Airflow:
+
+```bash
+gcloud compute ssh ti-dev-data --project=proyectobigdata2-514216 --zone=us-central1-a --tunnel-through-iap -- -N -L 18081:127.0.0.1:18081
+```
+
+Si no tiene acceso IAP, puede consultar la vista **Data Pipeline** del dashboard para ver el estado del pipeline sin abrir Airflow.
+
 ## Línea base de aceptación — 16/11/2026 (histórica)
 
 Runtime recomendado: **Python 3.11 y Airflow 3.4.0**, con locks separados.
